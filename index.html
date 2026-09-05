@@ -203,23 +203,27 @@
       color: var(--accent);
     }
 
+    /* GRID RESPONSIVO PARA OS CONTROLES */
     .controls {
-      display: flex;
-      justify-content: space-between;
-      gap: 0.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
       margin-top: 1.5rem;
-      flex-wrap: wrap;
     }
 
     .btn-nav {
       background: #334155;
       border: none;
-      padding: 0.7rem 1.2rem;
-      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
       color: var(--text);
       font-weight: bold;
       cursor: pointer;
       transition: all 0.2s;
+      font-size: 0.95rem;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
     }
 
     .btn-nav:hover {
@@ -273,7 +277,6 @@
       font-weight: bold;
     }
 
-    /* ESTILOS DA REVISÃO DE QUESTÕES */
     .review-item {
       background: #0f172a;
       border: 1px solid #334155;
@@ -359,7 +362,7 @@
         <button class="btn-select active" onclick="setOpt('qtd', 'todas', this)">Todas</button>
         <button class="btn-select" onclick="setOpt('qtd', 10, this)">10</button>
         <button class="btn-select" onclick="setOpt('qtd', 20, this)">20</button>
-        <button class="btn-select" onclick="setOpt('qtd', 'custom', this)">Outra</button>
+        <button class="btn-select" onclick="setOpt('qtd', 'custom', this)">Digitar Qtd.</button>
       </div>
       <input type="number" id="qtd-custom-input" class="input-custom" placeholder="Digite a quantidade de questões" min="1">
     </div>
@@ -370,7 +373,7 @@
         <button class="btn-select active" onclick="setOpt('tempo', 0, this)">Livre</button>
         <button class="btn-select" onclick="setOpt('tempo', 15, this)">15 min</button>
         <button class="btn-select" onclick="setOpt('tempo', 30, this)">30 min</button>
-        <button class="btn-select" onclick="setOpt('tempo', 'custom', this)">Outro</button>
+        <button class="btn-select" onclick="setOpt('tempo', 'custom', this)">Definir Tempo</button>
       </div>
       <input type="number" id="tempo-custom-input" class="input-custom" placeholder="Digite o tempo em minutos" min="1">
     </div>
@@ -395,11 +398,12 @@
 
     <div id="dica" class="dica-box"></div>
 
+    <!-- DISPOSIÇÃO DOS BOTÕES: COLUNA 1 (Anterior/Encerrar) | COLUNA 2 (Próximo/Dica) -->
     <div class="controls">
       <button id="btn-anterior" class="btn-nav" onclick="anteriorPergunta()">Anterior</button>
-      <button class="btn-nav" onclick="mostrarDica()">💡 Dica</button>
       <button id="btn-proximo" class="btn-nav btn-primary-action" onclick="proximaPergunta()">Próximo</button>
       <button class="btn-nav btn-danger" onclick="encerrarSimulado()">Encerrar</button>
+      <button class="btn-nav" onclick="mostrarDica()">💡 Dica</button>
     </div>
   </div>
 
@@ -417,7 +421,6 @@
 
     <button class="btn-nav btn-primary-action btn-start" onclick="reiniciarApp()">Novo Simulado</button>
 
-    <!-- SEÇÃO DE REVISÃO DETALHADA E ESTUDO AWS -->
     <h3 style="margin-top: 2rem; color: var(--accent); text-align: left; border-bottom: 1px solid #334155; padding-bottom: 0.5rem;">
       📚 Correção e Materiais para Estudo
     </h3>
@@ -694,7 +697,6 @@
         htmlContent += `<div style="font-size:0.85rem; color:#94a3b8; margin-top:0.5rem;">💡 <b>Explicação:</b> ${q.dica}</div>`;
       }
 
-      // Link oficial de estudo na AWS
       const urlAws = q.link || `https://aws.amazon.com/pt/search/?searchQuery=${encodeURIComponent(q.categoria || 'AWS Cloud')}`;
       htmlContent += `<a href="${urlAws}" target="_blank" rel="noopener noreferrer" class="review-aws-link">📖 Estudar este tema na Documentação AWS ↗</a>`;
 
