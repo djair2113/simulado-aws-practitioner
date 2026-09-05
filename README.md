@@ -28,4 +28,4 @@ Este projeto é de código aberto desenvolvido de forma independente para **fins
 
 ---
 
-© 2026 Djair Francisco Dos Santos. Todos os direitos reservados para fins de estudo.
+© 2026 Djair Santos. Todos os direitos reservados para fins de estudo.
