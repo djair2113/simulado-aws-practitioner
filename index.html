@@ -278,7 +278,7 @@
 
 <div class="container">
   <header>
-    <h1>Simulado AWS Practitioner</h1>
+    <h1>AWS Quiz Master</h1>
     <p id="progresso">Prepare-se para o CLF-C02</p>
   </header>
 
@@ -287,10 +287,10 @@
     <div class="form-group">
       <label>Dificuldade</label>
       <div class="options-grid">
-        <button class="btn-select active" onclick="setOpt('dificuldade', 'todas', this)">Todas</button>
-        <button class="btn-select" onclick="setOpt('dificuldade', 'fácil', this)">Fácil</button>
-        <button class="btn-select" onclick="setOpt('dificuldade', 'médio', this)">Médio</button>
-        <button class="btn-select" onclick="setOpt('dificuldade', 'difícil', this)">Difícil</button>
+        <button class="btn-select active" onclick="setOpt('dificuldade', 'todas', this)">Practitioner</button>
+        <button class="btn-select" onclick="setOpt('dificuldade', 'Fácil', this)">Fácil</button>
+        <button class="btn-select" onclick="setOpt('dificuldade', 'Médio', this)">Médio</button>
+        <button class="btn-select" onclick="setOpt('dificuldade', 'Hard', this)">Hard</button>
       </div>
     </div>
 
@@ -370,7 +370,6 @@
   let tempoGastoTotal = 0;
   let timerInterval = null;
   let modoContagemRegressiva = false;
-  let tempoLimiteInicial = 0;
 
   let config = {
     dificuldade: 'todas',
@@ -407,8 +406,14 @@
   function iniciarSimulado() {
     questoesFiltradas = [...todasQuestoes];
 
+    // Filtro Flexível (não diferencia maiúsculas/minúsculas nem acentos)
     if (config.dificuldade !== 'todas') {
-      questoesFiltradas = questoesFiltradas.filter(q => q.dificuldade === config.dificuldade);
+      const diffFiltro = config.dificuldade.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      questoesFiltradas = questoesFiltradas.filter(q => {
+        if (!q.dificuldade) return false;
+        const diffQuestao = q.dificuldade.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        return diffQuestao === diffFiltro;
+      });
     }
 
     let limiteQtd = config.qtd;
@@ -441,8 +446,6 @@
         return;
       }
     }
-
-    tempoLimiteInicial = limiteTempo;
 
     if (limiteTempo > 0) {
       tempoSegundos = limiteTempo * 60;
