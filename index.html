@@ -295,85 +295,107 @@
       background: #e68a00;
     }
 
-    .btn-danger {
-      background: rgba(239, 68, 68, 0.2);
-      border: 1px solid var(--wrong);
-      color: var(--wrong);
-    }
-
-    .btn-danger:hover {
-      background: var(--wrong);
-      color: #fff;
-    }
-
     .btn-start {
       width: 100%;
       padding: 1rem;
       font-size: 1.1rem;
       margin-top: 1rem;
     }
+  </style>
+</head>
+<body>
 
-    .result-score {
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--primary);
-      text-align: center;
-      margin: 1rem 0;
-      text-shadow: 0 0 15px var(--primary-glow);
+  <div class="container">
+    <header>
+      <h1>Cloud Practitioner</h1>
+      <p>Simulador Oficial de Exame AWS</p>
+    </header>
+
+    <div class="bot-section">
+      <img src="bot-icon.svg" alt="CloudBot" class="bot-avatar">
+      <div class="bot-speech" id="bot-speech">
+        Olá! Eu sou o seu assistente AWS. Configure o seu simulado abaixo para começarmos os estudos! 🚀
+      </div>
+    </div>
+
+    <div class="card" id="app-card">
+      <!-- O conteúdo dinâmico do Quiz será injetado via JavaScript aqui -->
+      <div id="setup-screen">
+        <div class="form-group">
+          <label for="student-name">Seu Nome:</label>
+          <input type="text" id="student-name" class="input-text" placeholder="Digite seu nome...">
+        </div>
+
+        <div class="form-group">
+          <label>Quantidade de Questões:</label>
+          <div class="options-grid" id="qtd-options">
+            <button class="btn-select active" data-value="10">10</button>
+            <button class="btn-select" data-value="20">20</button>
+            <button class="btn-select" data-value="50">50</button>
+            <button class="btn-select" data-value="all">Todas</button>
+          </div>
+          <input type="number" id="custom-qtd" class="input-custom" placeholder="Outro valor...">
+        </div>
+
+        <button class="btn-nav btn-primary-action btn-start" id="btn-iniciar">Iniciar Simulado</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Registro do Service Worker para PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(() => console.log('Service Worker registrado com sucesso!'))
+          .catch((err) => console.log('Falha ao registrar Service Worker:', err));
+      });
     }
 
-    .result-stat {
-      background: #1e293b;
-      padding: 0.8rem 1.2rem;
-      border-radius: 10px;
-      margin-bottom: 0.6rem;
-      display: flex;
-      justify-content: space-between;
-      font-weight: bold;
-    }
+    let questoesGlobais = [];
+    let qtdSelecionada = 10;
 
-    .review-item {
-      background: #0f172a;
-      border: 1px solid #334155;
-      border-radius: 12px;
-      padding: 1.2rem;
-      margin-top: 1.2rem;
-      text-align: left;
-    }
+    // Seleção de quantidade
+    document.querySelectorAll('#qtd-options .btn-select').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('#qtd-options .btn-select').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        qtdSelecionada = e.target.getAttribute('data-value');
+      });
+    });
 
-    .review-item.errou {
-      border-left: 6px solid var(--wrong);
-    }
+    // Carregar questões do JSON
+    fetch('questoes.json')
+      .then(res => res.json())
+      .then(data => {
+        questoesGlobais = data;
+      })
+      .catch(err => {
+        console.error('Erro ao carregar questoes.json:', err);
+        document.getElementById('bot-speech').innerHTML = '<strong>Erro:</strong> Não foi possível carregar o arquivo <code>questoes.json</code>.';
+      });
 
-    .review-item.acertou {
-      border-left: 6px solid var(--correct);
-    }
-
-    .review-q-title {
-      font-size: 0.95rem;
-      font-weight: bold;
-      color: var(--text);
-      margin-bottom: 0.8rem;
-    }
-
-    .review-ans {
-      font-size: 0.88rem;
-      padding: 0.5rem 0.8rem;
-      border-radius: 6px;
-      margin-bottom: 0.4rem;
-    }
-
-    .review-ans-wrong {
-      background: rgba(239, 68, 68, 0.15);
-      color: #fca5a5;
-    }
-
-    .review-ans-correct {
-      background: rgba(16, 185, 129, 0.15);
-      color: #6ee7b7;
-    }
-
-    .review-aws-link {
-      display: inline-block;
-      margin-top: 0.8rem;
-      background:
+    document.getElementById('btn-iniciar').addEventListener('click', () => {
+      const nome = document.getElementById('student-name').value.trim();
+      if (!nome) {
+        alert('Por favor, digite seu nome para iniciar!');
+        return;
+      }
+      if (questoesGlobais.length === 0) {
+        alert('As questões ainda estão carregando ou houve um erro no arquivo JSON.');
+        return;
+      }
+      
+      // Inicia a aplicação simulando o fluxo principal
+      document.getElementById('app-card').innerHTML = `
+        <div style="text-align: center; padding: 2rem;">
+          <h2 style="color: var(--primary)">Simulado Pronto!</h2>
+          <p>Olá, <strong>${nome}</strong>! O sistema está pronto com ${questoesGlobais.length} questões carregadas.</p>
+          <button class="btn-nav btn-primary-action" onclick="location.reload()" style="margin-top: 1rem;">Reiniciar</button>
+        </div>
+      `;
+      document.getElementById('bot-speech').innerHTML = `Boa sorte nos estudos, <strong>${nome}</strong>! Você vai passar na certificação AWS! ☁️🎯`;
+    });
+  </script>
+</body>
+</html>
