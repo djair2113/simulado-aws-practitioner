@@ -3,7 +3,8 @@ const urlsToCache = [
   './',
   './index.html',
   './questoes.json',
-  './manifest.json'
+  './manifest.json',
+  './bot-icon.svg'
 ];
 
 self.addEventListener('install', (event) => {
@@ -34,7 +35,6 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     fetch(event.request)
       .then((response) => {
-        // Atualiza o cache dinamicamente com a versão mais nova da rede
         return response;
       })
       .catch(() => {
