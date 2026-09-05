@@ -272,83 +272,258 @@
       display: flex;
       justify-content: space-between;
       font-weight: bold;
+   <script>
+  let todasQuestoes = [];
+  let questoesFiltradas = [];
+  let respostasUsuario = {};
+  let indiceAtual = 0;
+  
+  let tempoSegundos = 0;
+  let tempoGastoTotal = 0;
+  let timerInterval = null;
+  let modoContagemRegressiva = false;
+  let tempoLimiteInicial = 0;
+
+  let config = {
+    dificuldade: 'todas',
+    qtd: 'todas',
+    tempo: 0
+  };
+
+  async function carregarQuestoes() {
+    try {
+      const resposta = await fetch('questoes.json');
+      todasQuestoes = await resposta.json();
+    } catch (erro) {
+      alert("Erro ao carregar questoes.json");
     }
-  </style>
-</head>
-<body>
+  }
 
-<div class="container">
-  <header>
-    <h1>AWS Quiz Master</h1>
-    <p id="progresso">Prepare-se para o CLF-C02</p>
-  </header>
+  function setOpt(chave, valor, btn) {
+    config[chave] = valor;
+    const parent = btn.parentElement;
+    parent.querySelectorAll('.btn-select').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-  <!-- TELA INICIAL / CONFIGURAÇÃO -->
-  <div class="card" id="setup-card">
-    <div class="form-group">
-      <label>Dificuldade:</label>
-      <div class="options-grid">
-        <button class="btn-select active" onclick="setOpt('dificuldade', 'todas', this)">Practitioner</button>
-        <button class="btn-select" onclick="setOpt('dificuldade', 'Fácil', this)">Fácil</button>
-        <button class="btn-select" onclick="setOpt('dificuldade', 'Médio', this)">Médio</button>
-        <button class="btn-select" onclick="setOpt('dificuldade', 'Hard', this)">Hard</button>
-      </div>
-    </div>
+    if (chave === 'qtd') {
+      const customInput = document.getElementById('qtd-custom-input');
+      customInput.style.display = (valor === 'custom') ? 'block' : 'none';
+    }
 
-    <div class="form-group">
-      <label>Quantidade de Questões:</label>
-      <div class="options-grid">
-        <button class="btn-select" onclick="setOpt('qtd', 30, this)">30</button>
-        <button class="btn-select" onclick="setOpt('qtd', 90, this)">90</button>
-        <button class="btn-select active" onclick="setOpt('qtd', 'todas', this)">Todas</button>
-        <button class="btn-select" onclick="setOpt('qtd', 'custom', this)">Personalizar</button>
-      </div>
-      <input type="number" id="qtd-custom-input" class="input-custom" placeholder="Digite a quantidade exata (Ex: 15)">
-    </div>
+    if (chave === 'tempo') {
+      const customInput = document.getElementById('tempo-custom-input');
+      customInput.style.display = (valor === 'custom') ? 'block' : 'none';
+    }
+  }
 
-    <div class="form-group">
-      <label>Tempo Limite:</label>
-      <div class="options-grid">
-        <button class="btn-select active" onclick="setOpt('tempo', 0, this)">Sem Tempo</button>
-        <button class="btn-select" onclick="setOpt('tempo', 30, this)">30 min</button>
-        <button class="btn-select" onclick="setOpt('tempo', 90, this)">90 min</button>
-        <button class="btn-select" onclick="setOpt('tempo', 'custom', this)">Personalizar</button>
-      </div>
-      <input type="number" id="tempo-custom-input" class="input-custom" placeholder="Digite os minutos (Ex: 45)">
-    </div>
+  function iniciarSimulado() {
+    questoesFiltradas = [...todasQuestoes];
 
-    <button class="btn-nav btn-primary-action btn-start" onclick="iniciarSimulado()">Iniciar Simulado</button>
-  </div>
+    if (config.dificuldade !== 'todas') {
+      questoesFiltradas = questoesFiltradas.filter(q => q.dificuldade === config.dificuldade);
+    }
 
-  <!-- TELA DO QUIZ -->
-  <div class="card" id="quiz-card" style="display: none;">
-    <div class="progress-bar-bg">
-      <div class="progress-bar-fill" id="progress-bar"></div>
-    </div>
+    let limiteQtd = config.qtd;
+    if (config.qtd === 'custom') {
+      limiteQtd = parseInt(document.getElementById('qtd-custom-input').value);
+      if (isNaN(limiteQtd) || limiteQtd <= 0) {
+        alert("Por favor, digite uma quantidade válida de questões.");
+        return;
+      }
+    }
 
-    <div class="badge-bar">
-      <span class="badge" id="categoria">Categoria</span>
-      <span class="timer-badge" id="timer-display">⏱️ 00:00</span>
-    </div>
+    if (limiteQtd !== 'todas') {
+      questoesFiltradas = questoesFiltradas.sort(() => 0.5 - Math.random()).slice(0, limiteQtd);
+    }
 
-    <h3 id="pergunta" style="line-height: 1.4; font-size: 1.1rem;">Pergunta</h3>
-    <div id="opcoes"></div>
-    <div class="dica-box" id="dica"></div>
+    if (questoesFiltradas.length === 0) {
+      alert("Nenhuma questão encontrada para os filtros selecionados!");
+      return;
+    }
 
-    <div class="controls">
-      <button class="btn-nav" id="btn-anterior" onclick="anteriorPergunta()">Anterior</button>
-      <button class="btn-nav" id="btn-dica" onclick="mostrarDica()">💡 Dica</button>
-      <button class="btn-nav btn-primary-action" id="btn-proximo" onclick="proximaPergunta()">Próximo</button>
-      <button class="btn-nav btn-danger" onclick="encerrarSimulado()">Encerrar</button>
-    </div>
-  </div>
+    respostasUsuario = {};
+    indiceAtual = 0;
+    tempoGastoTotal = 0;
 
-  <!-- TELA DE RESULTADO FINAL -->
-  <div class="card" id="result-card" style="display: none; text-align: center;">
-    <h2 style="color: var(--primary); margin: 0;">Simulado Concluído!</h2>
-    <p id="result-status" style="color: #94a3b8; font-weight: bold;"></p>
+    let limiteTempo = config.tempo;
+    if (config.tempo === 'custom') {
+      limiteTempo = parseInt(document.getElementById('tempo-custom-input').value);
+      if (isNaN(limiteTempo) || limiteTempo <= 0) {
+        alert("Por favor, digite um tempo limite válido em minutos.");
+        return;
+      }
+    }
+
+    tempoLimiteInicial = limiteTempo;
+
+    if (limiteTempo > 0) {
+      tempoSegundos = limiteTempo * 60;
+      modoContagemRegressiva = true;
+    } else {
+      tempoSegundos = 0;
+      modoContagemRegressiva = false;
+    }
+
+    document.getElementById('setup-card').style.display = 'none';
+    document.getElementById('quiz-card').style.display = 'block';
+
+    iniciarCronometro();
+    exibirPergunta();
+  }
+
+  function iniciarCronometro() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+      tempoGastoTotal++;
+
+      if (modoContagemRegressiva) {
+        tempoSegundos--;
+        if (tempoSegundos <= 0) {
+          clearInterval(timerInterval);
+          alert("⏰ Tempo esgotado!");
+          encerrarSimulado();
+          return;
+        }
+      } else {
+        tempoSegundos++;
+      }
+      atualizarDisplayTimer();
+    }, 1000);
+  }
+
+  function formatarTempo(segundos) {
+    let seg = Math.max(0, parseInt(segundos) || 0);
+    let min = Math.floor(seg / 60);
+    let sec = seg % 60;
+    return `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`;
+  }
+
+  function atualizarDisplayTimer() {
+    document.getElementById('timer-display').innerText = `⏱️ ${formatarTempo(tempoSegundos)}`;
+  }
+
+  function exibirPergunta() {
+    const q = questoesFiltradas[indiceAtual];
     
-    <div class="result-score" id="result-percentage">0%</div>
+    document.getElementById('progresso').innerText = `Questão ${indiceAtual + 1} de ${questoesFiltradas.length}`;
+    document.getElementById('categoria').innerText = `${q.categoria} | ${q.dificuldade}`;
+    document.getElementById('pergunta').innerText = q.pergunta;
+
+    let progressoPct = ((indiceAtual + 1) / questoesFiltradas.length) * 100;
+    document.getElementById('progress-bar').style.width = `${progressoPct}%`;
+    
+    const dicaBox = document.getElementById('dica');
+    dicaBox.style.display = 'none';
+    dicaBox.innerText = `💡 Dica: ${q.dica}`;
+
+    const conteinerOpcoes = document.getElementById('opcoes');
+    conteinerOpcoes.innerHTML = '';
+
+    const respostaSalva = respostasUsuario[indiceAtual];
+
+    q.opcoes.forEach((opcao, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'btn-opcao';
+      btn.innerText = opcao;
+
+      if (respostaSalva !== undefined) {
+        btn.disabled = true;
+        if (idx === q.correta) {
+          btn.classList.add('correta');
+        }
+        if (respostaSalva === idx && respostaSalva !== q.correta) {
+          btn.classList.add('errada');
+        }
+      } else {
+        btn.onclick = () => verificarResposta(idx, q.correta, btn);
+      }
+
+      conteinerOpcoes.appendChild(btn);
+    });
+
+    document.getElementById('btn-anterior').disabled = indiceAtual === 0;
+    document.getElementById('btn-proximo').innerText = (indiceAtual === questoesFiltradas.length - 1) ? 'Finalizar' : 'Próximo';
+  }
+
+  function verificarResposta(selecionada, correta, elemento) {
+    respostasUsuario[indiceAtual] = selecionada;
+
+    const botoes = document.querySelectorAll('.btn-opcao');
+    botoes.forEach(b => b.disabled = true);
+
+    if (selecionada === correta) {
+      elemento.classList.add('correta');
+    } else {
+      elemento.classList.add('errada');
+      botoes[correta].classList.add('correta');
+    }
+  }
+
+  function mostrarDica() {
+    document.getElementById('dica').style.display = 'block';
+  }
+
+  function proximaPergunta() {
+    if (indiceAtual < questoesFiltradas.length - 1) {
+      indiceAtual++;
+      exibirPergunta();
+    } else {
+      encerrarSimulado();
+    }
+  }
+
+  function anteriorPergunta() {
+    if (indiceAtual > 0) {
+      indiceAtual--;
+      exibirPergunta();
+    }
+  }
+
+  function encerrarSimulado() {
+    clearInterval(timerInterval);
+
+    let acertos = 0;
+    let totalRespondidas = Object.keys(respostasUsuario).length;
+
+    questoesFiltradas.forEach((q, index) => {
+      if (respostasUsuario[index] === q.correta) {
+        acertos++;
+      }
+    });
+
+    let erros = totalRespondidas - acertos;
+    let porcentagem = totalRespondidas > 0 ? Math.round((acertos / questoesFiltradas.length) * 100) : 0;
+
+    document.getElementById('quiz-card').style.display = 'none';
+    document.getElementById('result-card').style.display = 'block';
+
+    document.getElementById('result-percentage').innerText = `${porcentagem}%`;
+    document.getElementById('stat-acertos').innerText = `${acertos} / ${questoesFiltradas.length}`;
+    document.getElementById('stat-erros').innerText = erros;
+    document.getElementById('stat-tempo').innerText = formatarTempo(tempoGastoTotal);
+
+    const statusEl = document.getElementById('result-status');
+    if (porcentagem >= 70) {
+      statusEl.innerText = "🎉 APROVADO! Excelente resultado!";
+      statusEl.style.color = "var(--correct)";
+    } else {
+      statusEl.innerText = "⚠️ AINDA NÃO FOI DESSA VEZ. Continue praticando!";
+      statusEl.style.color = "var(--wrong)";
+    }
+  }
+
+  function reiniciarApp() {
+    document.getElementById('result-card').style.display = 'none';
+    document.getElementById('setup-card').style.display = 'block';
+    document.getElementById('progresso').innerText = "Prepare-se para o CLF-C02";
+  }
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+
+  carregarQuestoes();
+</script>
 
     <div style="margin: 1.5rem 0; text-align: left;">
       <div class="result-stat"><span>Acertos:</span><span id="stat-acertos" style="color: var(--correct);">0</span></div>
