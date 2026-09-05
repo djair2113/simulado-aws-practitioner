@@ -6,7 +6,7 @@ Um simulado web interativo, gamificado e responsivo, desenvolvido para auxiliar 
 
 ## 🖼️ Pré-visualização do Aplicativo
 
-![Tela Inicial do Simulado](./quiz.png)
+![Tela Inicial do Simulado](./quiz.PNG)
 
 ---
 
