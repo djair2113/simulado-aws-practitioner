@@ -1,7 +1,19 @@
-const CACHE_NAME = 'aws-quiz-v3';
+const CACHE_NAME = 'aws-quiz-v4';
+const urlsToCache = [
+  './',
+  './index.html',
+  './questoes.json',
+  './manifest.json'
+];
 
 self.addEventListener('install', (event) => {
-  self.skipWaiting();
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then((cache) => {
+        return cache.addAll(urlsToCache);
+      })
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', (event) => {
@@ -22,6 +34,7 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     fetch(event.request)
       .then((response) => {
+        // Atualiza o cache dinamicamente com a versão mais nova da rede
         return response;
       })
       .catch(() => {
