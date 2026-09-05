@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#232f3e">
-  <title> Simulado AWS Cloud Practitioner </title>
+  <title>Simulado AWS Cloud Practitioner</title>
   <link rel="manifest" href="data:application/manifest+json;utf8,{%22name%22:%22Simulado%20AWS%22,%22short_name%22:%22AWS%20Quiz%22,%22start_url%22:%22index.html%22,%22display%22:%22standalone%22,%22background_color%22:%22#0f172a%22,%22theme_color%22:%22#232f3e%22}">
   <style>
     :root {
-      --bg: #0f172a;
-      --card-bg: #1e293b;
+      --bg: #0b0f19;
+      --card-bg: #161e2e;
       --primary: #ff9900;
+      --primary-glow: rgba(255, 153, 0, 0.4);
+      --accent: #38bdf8;
       --text: #f8fafc;
-      --correct: #22c55e;
+      --correct: #10b981;
       --wrong: #ef4444;
     }
 
@@ -24,17 +26,588 @@
       padding: 1rem;
       display: flex;
       justify-content: center;
+      min-height: 100vh;
+      box-sizing: border-box;
     }
 
     .container {
-      max-width: 650px;
+      max-width: 680px;
       width: 100%;
     }
 
     header {
       text-align: center;
       margin-bottom: 1.5rem;
-      border-bottom: 2px solid var(--primary);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      color: var(--primary);
+      text-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    header p {
+      color: #94a3b8;
+      margin-top: 0.3rem;
+      font-size: 0.95rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 1.8rem;
+      border: 1px solid #1e293b;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 153, 0, 0.05);
+      position: relative;
+    }
+
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+      gap: 0.6rem;
+    }
+
+    .btn-select {
+      background: #1e293b;
+      color: var(--text);
+      border: 2px solid #334155;
+      padding: 0.7rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+
+    .btn-select:hover {
+      border-color: var(--primary);
+    }
+
+    .btn-select.active {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: #000;
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+
+    .input-custom {
+      display: none;
+      width: 100%;
+      margin-top: 0.6rem;
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: 2px solid var(--primary);
+      background: #0f172a;
+      color: var(--text);
+      font-size: 1rem;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    .badge-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      background: var(--primary);
+      color: #000;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-weight: 800;
+      font-size: 0.8rem;
+    }
+
+    .timer-badge {
+      background: #0284c7;
+      color: #fff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: #1e293b;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .btn-opcao {
+      width: 100%;
+      text-align: left;
+      padding: 1rem;
+      margin: 0.6rem 0;
+      background-color: #1e293b;
+      color: var(--text);
+      border: 2px solid #334155;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .btn-opcao:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-opcao.correta {
+      background-color: var(--correct) !important;
+      color: #000;
+      font-weight: bold;
+      border-color: var(--correct);
+    }
+
+    .btn-opcao.errada {
+      background-color: var(--wrong) !important;
+      color: #fff;
+      border-color: var(--wrong);
+    }
+
+    .dica-box {
+      margin-top: 1rem;
+      padding: 0.9rem;
+      background-color: rgba(2, 132, 199, 0.2);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      display: none;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-nav {
+      background: #334155;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      color: var(--text);
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-nav:hover {
+      background: #475569;
+    }
+
+    .btn-primary-action {
+      background: var(--primary);
+      color: #000;
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    .btn-primary-action:hover {
+      background: #e68a00;
+    }
+
+    .btn-danger {
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid var(--wrong);
+      color: var(--wrong);
+    }
+
+    .btn-danger:hover {
+      background: var(--wrong);
+      color: #fff;
+    }
+
+    .btn-start {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    /* TELA DE RESULTADO GAMEFICADA */
+    .result-score {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--primary);
+      text-align: center;
+      margin: 1rem 0;
+      text-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .result-stat {
+      background: #1e293b;
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+      margin-bottom: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>AWS Quiz Master</h1>
+    <p id="progresso">Prepare-se para o CLF-C02</p>
+  </header>
+
+  <!-- TELA INICIAL / CONFIGURAÇÃO -->
+  <div class="card" id="setup-card">
+    <div class="form-group">
+      <label>Dificuldade:</label>
+      <div class="options-grid">
+        <button class="btn-select active" onclick="setOpt('dificuldade', 'todas', this)">Practitioner</button>
+        <button class="btn-select" onclick="setOpt('dificuldade', 'Fácil', this)">Fácil</button>
+        <button class="btn-select" onclick="setOpt('dificuldade', 'Médio', this)">Médio</button>
+        <button class="btn-select" onclick="setOpt('dificuldade', 'Hard', this)">Hard</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Quantidade de Questões:</label>
+      <div class="options-grid">
+        <button class="btn-select" onclick="setOpt('qtd', 30, this)">30</button>
+        <button class="btn-select" onclick="setOpt('qtd', 90, this)">90</button>
+        <button class="btn-select active" onclick="setOpt('qtd', 'todas', this)">Todas</button>
+        <button class="btn-select" onclick="setOpt('qtd', 'custom', this)">Personalizar</button>
+      </div>
+      <input type="number" id="qtd-custom-input" class="input-custom" placeholder="Digite a quantidade exata (Ex: 15)">
+    </div>
+
+    <div class="form-group">
+      <label>Tempo Limite:</label>
+      <div class="options-grid">
+        <button class="btn-select active" onclick="setOpt('tempo', 0, this)">Sem Tempo</button>
+        <button class="btn-select" onclick="setOpt('tempo', 30, this)">30 min</button>
+        <button class="btn-select" onclick="setOpt('tempo', 90, this)">90 min</button>
+        <button class="btn-select" onclick="setOpt('tempo', 'custom', this)">Personalizar</button>
+      </div>
+      <input type="number" id="tempo-custom-input" class="input-custom" placeholder="Digite os minutos (Ex: 45)">
+    </div>
+
+    <button class="btn-nav btn-primary-action btn-start" onclick="iniciarSimulado()">Iniciar Simulado</button>
+  </div>
+
+  <!-- TELA DO QUIZ -->
+  <div class="card" id="quiz-card" style="display: none;">
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progress-bar"></div>
+    </div>
+
+    <div class="badge-bar">
+      <span class="badge" id="categoria">Categoria</span>
+      <span class="timer-badge" id="timer-display">⏱️ 00:00</span>
+    </div>
+
+    <h3 id="pergunta" style="line-height: 1.4; font-size: 1.1rem;">Pergunta</h3>
+    <div id="opcoes"></div>
+    <div class="dica-box" id="dica"></div>
+
+    <div class="controls">
+      <button class="btn-nav" id="btn-anterior" onclick="anteriorPergunta()">Anterior</button>
+      <button class="btn-nav" id="btn-dica" onclick="mostrarDica()">💡 Dica</button>
+      <button class="btn-nav btn-primary-action" id="btn-proximo" onclick="proximaPergunta()">Próximo</button>
+      <button class="btn-nav btn-danger" onclick="encerrarSimulado()">Encerrar</button>
+    </div>
+  </div>
+
+  <!-- TELA DE RESULTADO FINAL -->
+  <div class="card" id="result-card" style="display: none; text-align: center;">
+    <h2 style="color: var(--primary); margin: 0;">Simulado Concluído!</h2>
+    <p id="result-status" style="color: #94a3b8; font-weight: bold;"></p>
+    
+    <div class="result-score" id="result-percentage">0%</div>
+
+    <div style="margin: 1.5rem 0; text-align: left;">
+      <div class="result-stat"><span>Acertos:</span><span id="stat-acertos" style="color: var(--correct);">0</span></div>
+      <div class="result-stat"><span>Erros:</span><span id="stat-erros" style="color: var(--wrong);">0</span></div>
+      <div class="result-stat"><span>Tempo Total:</span><span id="stat-tempo" style="color: var(--accent);">00:00</span></div>
+    </div>
+
+    <button class="btn-nav btn-primary-action btn-start" onclick="reiniciarApp()">Novo Simulado</button>
+  </div>
+</div>
+
+<script>
+  let todasQuestoes = [];
+  let questoesFiltradas = [];
+  let respostasUsuario = {};
+  let indiceAtual = 0;
+  
+  let tempoSegundos = 0;
+  let timerInterval = null;
+  let modoContagemRegressiva = false;
+
+  let config = {
+    dificuldade: 'todas',
+    qtd: 'todas',
+    tempo: 0
+  };
+
+  async function carregarQuestoes() {
+    try {
+      const resposta = await fetch('questoes.json');
+      todasQuestoes = await resposta.json();
+    } catch (erro) {
+      alert("Erro ao carregar questoes.json");
+    }
+  }
+
+  function setOpt(chave, valor, btn) {
+    config[chave] = valor;
+    const parent = btn.parentElement;
+    parent.querySelectorAll('.btn-select').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    if (chave === 'qtd') {
+      const customInput = document.getElementById('qtd-custom-input');
+      customInput.style.display = (valor === 'custom') ? 'block' : 'none';
+    }
+
+    if (chave === 'tempo') {
+      const customInput = document.getElementById('tempo-custom-input');
+      customInput.style.display = (valor === 'custom') ? 'block' : 'none';
+    }
+  }
+
+  function iniciarSimulado() {
+    questoesFiltradas = [...todasQuestoes];
+
+    if (config.dificuldade !== 'todas') {
+      questoesFiltradas = questoesFiltradas.filter(q => q.dificuldade === config.dificuldade);
+    }
+
+    let limiteQtd = config.qtd;
+    if (config.qtd === 'custom') {
+      limiteQtd = parseInt(document.getElementById('qtd-custom-input').value);
+      if (isNaN(limiteQtd) || limiteQtd <= 0) {
+        alert("Por favor, digite uma quantidade válida de questões.");
+        return;
+      }
+    }
+
+    if (limiteQtd !== 'todas') {
+      questoesFiltradas = questoesFiltradas.sort(() => 0.5 - Math.random()).slice(0, limiteQtd);
+    }
+
+    if (questoesFiltradas.length === 0) {
+      alert("Nenhuma questão encontrada para os filtros selecionados!");
+      return;
+    }
+
+    respostasUsuario = {};
+    indiceAtual = 0;
+
+    let limiteTempo = config.tempo;
+    if (config.tempo === 'custom') {
+      limiteTempo = parseInt(document.getElementById('tempo-custom-input').value);
+      if (isNaN(limiteTempo) || limiteTempo <= 0) {
+        alert("Por favor, digite um tempo limite válido em minutos.");
+        return;
+      }
+    }
+
+    if (limiteTempo > 0) {
+      tempoSegundos = limiteTempo * 60;
+      modoContagemRegressiva = true;
+    } else {
+      tempoSegundos = 0;
+      modoContagemRegressiva = false;
+    }
+
+    document.getElementById('setup-card').style.display = 'none';
+    document.getElementById('quiz-card').style.display = 'block';
+
+    iniciarCronometro();
+    exibirPergunta();
+  }
+
+  function iniciarCronometro() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+      if (modoContagemRegressiva) {
+        tempoSegundos--;
+        if (tempoSegundos <= 0) {
+          clearInterval(timerInterval);
+          alert("⏰ Tempo esgotado!");
+          encerrarSimulado();
+          return;
+        }
+      } else {
+        tempoSegundos++;
+      }
+      atualizarDisplayTimer();
+    }, 1000);
+  }
+
+  function formatarTempo(segundos) {
+    let min = Math.floor(Math.abs(segundos) / 60);
+    let sec = Math.abs(segundos) % 60;
+    return `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`;
+  }
+
+  function atualizarDisplayTimer() {
+    document.getElementById('timer-display').innerText = `⏱️ ${formatarTempo(tempoSegundos)}`;
+  }
+
+  function exibirPergunta() {
+    const q = questoesFiltradas[indiceAtual];
+    
+    document.getElementById('progresso').innerText = `Questão ${indiceAtual + 1} de ${questoesFiltradas.length}`;
+    document.getElementById('categoria').innerText = `${q.categoria} | ${q.dificuldade}`;
+    document.getElementById('pergunta').innerText = q.pergunta;
+
+    let progressoPct = ((indiceAtual + 1) / questoesFiltradas.length) * 100;
+    document.getElementById('progress-bar').style.width = `${progressoPct}%`;
+    
+    const dicaBox = document.getElementById('dica');
+    dicaBox.style.display = 'none';
+    dicaBox.innerText = `💡 Dica: ${q.dica}`;
+
+    const conteinerOpcoes = document.getElementById('opcoes');
+    conteinerOpcoes.innerHTML = '';
+
+    const respostaSalva = respostasUsuario[indiceAtual];
+
+    q.opcoes.forEach((opcao, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'btn-opcao';
+      btn.innerText = opcao;
+
+      if (respostaSalva !== undefined) {
+        btn.disabled = true;
+        if (idx === q.correta) {
+          btn.classList.add('correta');
+        }
+        if (respostaSalva === idx && respostaSalva !== q.correta) {
+          btn.classList.add('errada');
+        }
+      } else {
+        btn.onclick = () => verificarResposta(idx, q.correta, btn);
+      }
+
+      conteinerOpcoes.appendChild(btn);
+    });
+
+    document.getElementById('btn-anterior').disabled = indiceAtual === 0;
+    document.getElementById('btn-proximo').innerText = (indiceAtual === questoesFiltradas.length - 1) ? 'Finalizar' : 'Próximo';
+  }
+
+  function verificarResposta(selecionada, correta, elemento) {
+    respostasUsuario[indiceAtual] = selecionada;
+
+    const botoes = document.querySelectorAll('.btn-opcao');
+    botoes.forEach(b => b.disabled = true);
+
+    if (selecionada === correta) {
+      elemento.classList.add('correta');
+    } else {
+      elemento.classList.add('errada');
+      botoes[correta].classList.add('correta');
+    }
+  }
+
+  function mostrarDica() {
+    document.getElementById('dica').style.display = 'block';
+  }
+
+  function proximaPergunta() {
+    if (indiceAtual < questoesFiltradas.length - 1) {
+      indiceAtual++;
+      exibirPergunta();
+    } else {
+      encerrarSimulado();
+    }
+  }
+
+  function anteriorPergunta() {
+    if (indiceAtual > 0) {
+      indiceAtual--;
+      exibirPergunta();
+    }
+  }
+
+  function encerrarSimulado() {
+    clearInterval(timerInterval);
+
+    let acertos = 0;
+    let totalRespondidas = Object.keys(respostasUsuario).length;
+
+    questoesFiltradas.forEach((q, index) => {
+      if (respostasUsuario[index] === q.correta) {
+        acertos++;
+      }
+    });
+
+    let erros = totalRespondidas - acertos;
+    let porcentagem = totalRespondidas > 0 ? Math.round((acertos / questoesFiltradas.length) * 100) : 0;
+
+    document.getElementById('quiz-card').style.display = 'none';
+    document.getElementById('result-card').style.display = 'block';
+
+    document.getElementById('result-percentage').innerText = `${porcentagem}%`;
+    document.getElementById('stat-acertos').innerText = `${acertos} / ${questoesFiltradas.length}`;
+    document.getElementById('stat-erros').innerText = erros;
+
+    let tempoGasto = modoContagemRegressiva ? (config.tempo * 60 - tempoSegundos) : tempoSegundos;
+    document.getElementById('stat-tempo').innerText = formatarTempo(tempoGasto);
+
+    const statusEl = document.getElementById('result-status');
+    if (porcentagem >= 70) {
+      statusEl.innerText = "🎉 APROVADO! Excelente resultado!";
+      statusEl.style.color = "var(--correct)";
+    } else {
+      statusEl.innerText = "⚠️ AINDA NÃO FOI DESSA VEZ. Continue praticando!";
+      statusEl.style.color = "var(--wrong)";
+    }
+  }
+
+  function reiniciarApp() {
+    document.getElementById('result-card').style.display = 'none';
+    document.getElementById('setup-card').style.display = 'block';
+    document.getElementById('progresso').innerText = "Prepare-se para o CLF-C02";
+  }
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+
+  carregarQuestoes();
+</script>
+</body>
+</html>
       padding-bottom: 0.5rem;
     }
 
