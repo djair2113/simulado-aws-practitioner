@@ -1,0 +1,3740 @@
+[
+  {
+    "id": 1,
+    "pergunta": "Uma equipe de desenvolvedores quer implantar rapidamente uma aplicação web, sem gerenciar manualmente a infraestrutura subjacente, mas mantendo controle sobre os recursos. Qual serviço da AWS usar?",
+    "opcoes": [
+      "AWS Lambda",
+      "AWS Elastic Beanstalk",
+      "AWS CloudFormation",
+      "Amazon Lightsail"
+    ],
+    "correta": 1,
+    "dica": "Plataforma como Serviço (PaaS) que gerencia o ambiente automaticamente.",
+    "dificuldade": "Médio",
+    "categoria": "Computação & Deployment"
+  },
+  {
+    "id": 2,
+    "pergunta": "De acordo com o Modelo de Responsabilidade Compartilhada da AWS, qual das seguintes atribuições é de responsabilidade direta do cliente?",
+    "opcoes": [
+      "Configuração de regras de firewall e Security Groups",
+      "Manutenção física dos data centers",
+      "Atualização de firmware em switches de rede",
+      "Descarte seguro de discos rígidos danificados"
+    ],
+    "correta": 0,
+    "dica": "O cliente é responsável pela segurança 'NA' nuvem.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Conformidade"
+  },
+  {
+    "id": 3,
+    "pergunta": "Uma cooperativa deseja compartilhar uma infraestrutura de nuvem com preocupações de conformidade e requisitos específicos em comum. Esse modelo é chamado de:",
+    "opcoes": [
+      "Nuvem pública",
+      "Nuvem privada",
+      "Nuvem comunitária (community cloud)",
+      "Nuvem híbrida"
+    ],
+    "correta": 2,
+    "dica": "Modelo compartilhado por uma comunidade com interesses comuns.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem"
+  },
+  {
+    "id": 4,
+    "pergunta": "Atualmente, quantos pilares compõem o AWS Well-Architected Framework?",
+    "opcoes": [
+      "Quatro",
+      "Cinco",
+      "Seis",
+      "Oito"
+    ],
+    "correta": 2,
+    "dica": "Excelência Operacional, Segurança, Confiabilidade, Eficiência de Desempenho, Otimização de Custos e Sustentabilidade.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 5,
+    "pergunta": "Uma empresa aplica uma política de controle de serviço (SCP) no AWS Organizations negando acesso ao S3. Mesmo que um usuário tenha política do IAM concedendo acesso total, o que acontece?",
+    "opcoes": [
+      "O usuário terá acesso, pois IAM prevalece",
+      "O acesso será negado, pois a SCP define o limite máximo de permissões",
+      "As SCPs e IAM não interagem",
+      "Depende do plano de suporte"
+    ],
+    "correta": 1,
+    "dica": "A SCP estabelece o limite máximo (boundary) de permissões.",
+    "dificuldade": "Hard",
+    "categoria": "Segurança & Governança"
+  },
+  {
+    "id": 6,
+    "pergunta": "Qual serviço permite consultar dados diretamente no Amazon S3 utilizando sintaxe SQL padrão sem precisar carregar dados em banco?",
+    "opcoes": [
+      "Amazon Redshift",
+      "Amazon Athena",
+      "Amazon EMR",
+      "AWS Glue"
+    ],
+    "correta": 1,
+    "dica": "Serviço de consulta interativa serverless para S3 usando SQL.",
+    "dificuldade": "Médio",
+    "categoria": "Analytics"
+  },
+  {
+    "id": 7,
+    "pergunta": "Para conectar com segurança uma rede corporativa local a uma VPC na AWS via túnel criptografado pela internet pública, qual serviço usar?",
+    "opcoes": [
+      "AWS Direct Connect",
+      "AWS Site-to-Site VPN",
+      "VPC Peering",
+      "Amazon CloudFront"
+    ],
+    "correta": 1,
+    "dica": "VPN cria um túnel IPSec seguro sobre a internet pública.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & Conectividade"
+  },
+  {
+    "id": 8,
+    "pergunta": "Qual serviço de banco de dados NoSQL chave-valor oferece desempenho consistente de milissegundos de um dígito em qualquer escala?",
+    "opcoes": [
+      "Amazon RDS",
+      "Amazon DynamoDB",
+      "Amazon Redshift",
+      "Amazon DocumentDB"
+    ],
+    "correta": 1,
+    "dica": "Banco NoSQL serverless e totalmente gerenciado da AWS.",
+    "dificuldade": "Fácil",
+    "categoria": "Bancos de Dados"
+  },
+  {
+    "id": 9,
+    "pergunta": "Qual serviço ou ferramenta permite monitorar métricas, criar alarmes e visualizar logs de aplicações e recursos na AWS?",
+    "opcoes": [
+      "AWS CloudTrail",
+      "Amazon CloudWatch",
+      "AWS Config",
+      "AWS Trusted Advisor"
+    ],
+    "correta": 1,
+    "dica": "Focado em métricas de desempenho, logs e alarmes operacionais.",
+    "dificuldade": "Fácil",
+    "categoria": "Monitoramento & Operações"
+  },
+  {
+    "id": 10,
+    "pergunta": "Para transferir petabytes de dados para a AWS quando a conexão de rede local é insuficiente, qual dispositivo físico utilizar?",
+    "opcoes": [
+      "AWS Direct Connect",
+      "AWS Snowball",
+      "AWS Storage Gateway",
+      "Amazon S3 Transfer Acceleration"
+    ],
+    "correta": 1,
+    "dica": "Dispositivo físico da família Snow para transporte offline de dados.",
+    "dificuldade": "Fácil",
+    "categoria": "Migração & Armazenamento"
+  },
+  {
+    "id": 11,
+    "pergunta": "Qual serviço da AWS permite que as empresas implantem um aplicativo próximo aos usuários finais usando Pontos de Presença?",
+    "opcoes": [
+      "Amazon Route 53",
+      "AWS AppSync",
+      "AWS Auto Scaling",
+      "Amazon CloudFront"
+    ],
+    "correta": 3,
+    "dica": "CDN global para entrega de conteúdo com baixa latência.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & CDN"
+  },
+  {
+    "id": 12,
+    "pergunta": "Quais das alternativas a seguir são pilares do AWS Well-Architected Framework? (Escolha dois)",
+    "opcoes": [
+      "Eficiência de desempenho e Otimização de custos",
+      "Desenvolvimento contínuo e Globalização em minutos",
+      "Alta disponibilidade e Escalabilidade",
+      "Automação e Monitoramento"
+    ],
+    "correta": 0,
+    "dica": "Faz parte dos 6 pilares oficiais do Framework.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 13,
+    "pergunta": "Uma empresa deseja migrar seu banco de dados para um serviço gerenciado da AWS compatível com PostgreSQL. Quais utilizar? (Escolha dois)",
+    "opcoes": [
+      "Amazon Aurora e Amazon RDS",
+      "Amazon Athena e Amazon DynamoDB",
+      "Amazon EC2 e Redshift",
+      "Amazon Neptune e Glue"
+    ],
+    "correta": 0,
+    "dica": "Suportam nativamente motores relacionais gerenciados.",
+    "dificuldade": "Fácil",
+    "categoria": "Bancos de Dados"
+  },
+  {
+    "id": 14,
+    "pergunta": "Qual serviço de segurança da AWS protege aplicativos contra ataques DDoS com detecção sempre ativa e mitigações automáticas?",
+    "opcoes": [
+      "Elastic Load Balancing",
+      "Amazon Inspector",
+      "AWS WAF",
+      "AWS Shield"
+    ],
+    "correta": 3,
+    "dica": "Proteção gerenciada contra ataques DDoS.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Proteção"
+  },
+  {
+    "id": 15,
+    "pergunta": "Qual serviço permite automatizar a implantação de infraestrutura declarativa usando arquivos de código (IaC)?",
+    "opcoes": [
+      "Amazon CloudWatch",
+      "AWS CloudFormation",
+      "AWS Config",
+      "AWS Trusted Advisor"
+    ],
+    "correta": 1,
+    "dica": "Infraestrutura como Código (IaC) via YAML ou JSON.",
+    "dificuldade": "Fácil",
+    "categoria": "Automação & IaC"
+  },
+  {
+    "id": 16,
+    "pergunta": "Qual serviço da AWS oferece armazenamento de objetos altamente durável?",
+    "opcoes": [
+      "Amazon FSx",
+      "Amazon S3",
+      "Amazon EFS",
+      "Amazon EBS"
+    ],
+    "correta": 1,
+    "dica": "Simple Storage Service com 99.999999999% de durabilidade.",
+    "dificuldade": "Fácil",
+    "categoria": "Armazenamento"
+  },
+  {
+    "id": 17,
+    "pergunta": "Configurar cargas de trabalho para executar suas funções e se recuperar rapidamente de falhas alinha-se a qual pilar?",
+    "opcoes": [
+      "Sustentabilidade",
+      "Eficiência de desempenho",
+      "Confiabilidade",
+      "Segurança"
+    ],
+    "correta": 2,
+    "dica": "Capacidade de auto-recuperação e mitigação de falhas.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 18,
+    "pergunta": "Para implantar um banco de dados NoSQL sem gerenciar hardware ou software subjacente, qual serviço usar?",
+    "opcoes": [
+      "Amazon Aurora",
+      "Amazon RDS",
+      "Amazon Redshift",
+      "Amazon DynamoDB"
+    ],
+    "correta": 3,
+    "dica": "Banco NoSQL totalmente gerenciado e serverless.",
+    "dificuldade": "Fácil",
+    "categoria": "Bancos de Dados"
+  },
+  {
+    "id": 19,
+    "pergunta": "Quais dos itens a seguir são características das ACLs de Rede (NACLs)? (Escolha dois)",
+    "opcoes": [
+      "Processam regras em ordem crescente e Não têm estado (stateless)",
+      "Operam na instância e Têm estado (stateful)",
+      "Avaliam todas as regras antes de permitir",
+      "Criptografam o tráfego automaticamente"
+    ],
+    "correta": 0,
+    "dica": "Atuam na sub-rede, são stateless e avaliam por ordem numérica.",
+    "dificuldade": "Hard",
+    "categoria": "Redes & Segurança"
+  },
+  {
+    "id": 20,
+    "pergunta": "Quais tipos de criptografia protegem objetos em repouso no Amazon S3? (Escolha dois)",
+    "opcoes": [
+      "SSE-KMS e SSE-S3",
+      "TDE e SSL",
+      "TLS e SG",
+      "WAF e Macie"
+    ],
+    "correta": 0,
+    "dica": "Server-Side Encryption gerenciada por KMS ou pelo próprio S3.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança & Criptografia"
+  },
+  {
+    "id": 21,
+    "pergunta": "Qual serviço da AWS é utilizado para migrar bancos de dados para a AWS com tempo de inatividade mínimo?",
+    "opcoes": [
+      "AWS Application Migration Service",
+      "Cloud Adoption Readiness Tool",
+      "AWS Migration Hub",
+      "AWS Database Migration Service (AWS DMS)"
+    ],
+    "correta": 3,
+    "dica": "DMS migra bancos de dados relacionais e NoSQL.",
+    "dificuldade": "Fácil",
+    "categoria": "Migração & Bancos de Dados"
+  },
+  {
+    "id": 22,
+    "pergunta": "Armazenar dados raramente acessados que podem ser regenerados na classe S3 mais econômica refere-se a:",
+    "opcoes": [
+      "S3 Intelligent-Tiering",
+      "S3 Standard",
+      "S3 One Zone-Infrequent Access (S3 One Zone-IA)",
+      "S3 Standard-IA"
+    ],
+    "correta": 2,
+    "dica": "One Zone-IA economiza armazenando em uma única AZ.",
+    "dificuldade": "Médio",
+    "categoria": "Armazenamento & Custos"
+  },
+  {
+    "id": 23,
+    "pergunta": "Em que nível de suporte os usuários recebem acesso a um Concierge de Suporte dedicado?",
+    "opcoes": [
+      "Developer Support",
+      "Enterprise Support",
+      "Basic Support",
+      "Business Support"
+    ],
+    "correta": 1,
+    "dica": "Atendimento exclusivo de contas para o plano Enterprise.",
+    "dificuldade": "Fácil",
+    "categoria": "Suporte & Planos"
+  },
+  {
+    "id": 24,
+    "pergunta": "Qual serviço permite criar contas da AWS, agrupá-las em Organizações e aplicar políticas SCP?",
+    "opcoes": [
+      "AWS IAM",
+      "AWS CloudFormation",
+      "AWS Organizations",
+      "AWS Trusted Advisor"
+    ],
+    "correta": 2,
+    "dica": "Gerenciamento central de contas e governança.",
+    "dificuldade": "Fácil",
+    "categoria": "Governança & Contas"
+  },
+  {
+    "id": 25,
+    "pergunta": "Qual serviço ajuda a implantar aplicações de desktop transmitindo para laptops leves sem investir em hardware potente?",
+    "opcoes": [
+      "Amazon WorkLink",
+      "AWS AppSync",
+      "AWS Elastic Beanstalk",
+      "Amazon AppStream 2.0"
+    ],
+    "correta": 3,
+    "dica": "Transmissão de apps de desktop via navegador.",
+    "dificuldade": "Médio",
+    "categoria": "End User Computing"
+  },
+  {
+    "id": 26,
+    "pergunta": "Para garantir alta disponibilidade no Amazon RDS com tempo de recuperação inferior a 5 minutos, qual solução adotar?",
+    "opcoes": [
+      "Modelo no CloudFormation",
+      "Réplica de leitura",
+      "Implantação Multi-AZ",
+      "Snapshots frequentes no S3"
+    ],
+    "correta": 2,
+    "dica": "Multi-AZ cria réplica síncrona com failover automático.",
+    "dificuldade": "Fácil",
+    "categoria": "Bancos de Dados"
+  },
+  {
+    "id": 27,
+    "pergunta": "Qual serviço/rede de parceiros ajuda a contratar consultores terceirizados para apoiar necessidades de negócios?",
+    "opcoes": [
+      "AWS Partner Network (APN)",
+      "AWS Support",
+      "AWS Service Catalog",
+      "AWS Organizations"
+    ],
+    "correta": 0,
+    "dica": "Rede global de parceiros e consultorias certificadas.",
+    "dificuldade": "Fácil",
+    "categoria": "Ecossistema AWS"
+  },
+  {
+    "id": 28,
+    "pergunta": "Qual catálogo digital da AWS permite adquirir software e licenças de terceiros prontos para uso?",
+    "opcoes": [
+      "AWS Marketplace",
+      "AWS License Manager",
+      "AWS Managed Service",
+      "AWS Resource Access Manager"
+    ],
+    "correta": 0,
+    "dica": "Loja digital para compra e deploy de softwares de terceiros.",
+    "dificuldade": "Fácil",
+    "categoria": "Ecossistema AWS"
+  },
+  {
+    "id": 29,
+    "pergunta": "Quais painéis monitoram a saúde geral dos serviços e impactos específicos na sua conta? (Escolha dois)",
+    "opcoes": [
+      "AWS Personal Health Dashboard e AWS Service Health Dashboard",
+      "AWS Service Catalog e Systems Manager",
+      "AWS Trusted Advisor e CloudWatch",
+      "AWS Config e IAM Analyzer"
+    ],
+    "correta": 0,
+    "dica": "Health Dashboards exibem status público e eventos afetando sua conta.",
+    "dificuldade": "Médio",
+    "categoria": "Monitoramento & Operações"
+  },
+  {
+    "id": 30,
+    "pergunta": "Qual serviço desacopla aplicações permitindo a troca de mensagens em fila?",
+    "opcoes": [
+      "AWS Auto Scaling",
+      "Amazon Kinesis",
+      "Amazon Simple Queue Service (SQS)",
+      "Elastic Load Balancing"
+    ],
+    "correta": 2,
+    "dica": "Serviço de filas gerenciado para microsserviços.",
+    "dificuldade": "Fácil",
+    "categoria": "Integração & Mensageria"
+  },
+  {
+    "id": 31,
+    "pergunta": "Qual serviço gerencia e executa centenas de milhares de trabalhos de computação em lote (batch)?",
+    "opcoes": [
+      "AWS Service Catalog",
+      "AWS Batch",
+      "AWS Step Functions",
+      "Amazon SQS"
+    ],
+    "correta": 1,
+    "dica": "Planeja e executa batch processing escalável.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação"
+  },
+  {
+    "id": 32,
+    "pergunta": "Como grupos do Amazon EC2 Auto Scaling ajustam a capacidade de computação?",
+    "opcoes": [
+      "Dimensionando automaticamente o número de instâncias com base na demanda",
+      "Criando instâncias sem servidor",
+      "Transferindo CPU entre máquinas",
+      "Alterando o hardware físico"
+    ],
+    "correta": 0,
+    "dica": "Adiciona ou remove instâncias EC2 conforme métricas.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação & Auto Scaling"
+  },
+  {
+    "id": 33,
+    "pergunta": "Qual serviço oferece armazenamento de arquivos gerenciado acessível via protocolo SMB no Windows?",
+    "opcoes": [
+      "Amazon S3",
+      "Amazon EFS",
+      "Amazon FSx for Windows File Server",
+      "Amazon EBS"
+    ],
+    "correta": 2,
+    "dica": "Sistema de arquivos nativo Windows com suporte a SMB.",
+    "dificuldade": "Médio",
+    "categoria": "Armazenamento"
+  },
+  {
+    "id": 34,
+    "pergunta": "Monitorar o desempenho das cargas de trabalho para garantir o nível de serviço dos negócios refere-se a qual perspectiva do CAF?",
+    "opcoes": [
+      "Plataforma",
+      "Operações",
+      "Governança",
+      "Negócio"
+    ],
+    "correta": 1,
+    "dica": "Perspectiva de Operações do Cloud Adoption Framework.",
+    "dificuldade": "Médio",
+    "categoria": "Conceitos de Nuvem & CAF"
+  },
+  {
+    "id": 35,
+    "pergunta": "Qual serviço pesquisa texto em documentos armazenados no S3 usando aprendizado de máquina?",
+    "opcoes": [
+      "Amazon Lex",
+      "Amazon Rekognition",
+      "Amazon Kendra",
+      "Amazon Polly"
+    ],
+    "correta": 2,
+    "dica": "Busca empresarial inteligente alimentada por IA.",
+    "dificuldade": "Médio",
+    "categoria": "Machine Learning & IA"
+  },
+  {
+    "id": 36,
+    "pergunta": "Qual serviço executa data warehouse para análise de dados sem gerenciar infraestrutura de clusters?",
+    "opcoes": [
+      "Amazon RDS",
+      "Amazon Aurora",
+      "Amazon Redshift Serverless",
+      "AWS Lambda"
+    ],
+    "correta": 2,
+    "dica": "Data warehouse em SQL sem servidor.",
+    "dificuldade": "Fácil",
+    "categoria": "Analytics & Data Warehouse"
+  },
+  {
+    "id": 37,
+    "pergunta": "Identificar configurações incorretas de segurança ou comportamentos anômalos alinha-se a qual recurso no CAF?",
+    "opcoes": [
+      "Engenharia de plataforma",
+      "Disponibilidade e continuidade",
+      "Detecção de ameaças",
+      "Gerenciamento de identidade"
+    ],
+    "correta": 2,
+    "dica": "Threat Detection na perspectiva de Segurança do CAF.",
+    "dificuldade": "Médio",
+    "categoria": "Conceitos de Nuvem & CAF"
+  },
+  {
+    "id": 38,
+    "pergunta": "Qual dos seguintes é um banco de dados de grafos totalmente gerenciado na AWS?",
+    "opcoes": [
+      "Amazon Neptune",
+      "Amazon DynamoDB",
+      "Amazon FSx",
+      "Amazon Aurora"
+    ],
+    "correta": 0,
+    "dica": "Neptune é otimizado para dados em grafos altamente conectados.",
+    "dificuldade": "Fácil",
+    "categoria": "Bancos de Dados"
+  },
+  {
+    "id": 39,
+    "pergunta": "Qual plataforma gratuita permite tirar dúvidas e ler artigos técnicos da comunidade AWS?",
+    "opcoes": [
+      "AWS Knowledge Center",
+      "AWS Enterprise Support",
+      "AWS re:Post",
+      "AWS IQ"
+    ],
+    "correta": 2,
+    "dica": "Comunidade oficial de perguntas e respostas da AWS.",
+    "dificuldade": "Fácil",
+    "categoria": "Ecossistema AWS"
+  },
+  {
+    "id": 40,
+    "pergunta": "Para simplificar e conectar centenas de VPCs e redes locais usando o Direct Connect, qual serviço hub-and-spoke usar?",
+    "opcoes": [
+      "Amazon Route 53",
+      "AWS Secrets Manager",
+      "AWS Transit Gateway",
+      "VPC Endpoints"
+    ],
+    "correta": 2,
+    "dica": "Hub de roteamento central para VPCs e redes físicas.",
+    "dificuldade": "Médio",
+    "categoria": "Redes & Conectividade"
+  },
+  {
+    "id": 41,
+    "pergunta": "Qual serviço de DNS highly disponível conecta usuários finais a plataformas e aplicações web?",
+    "opcoes": [
+      "Amazon RDS",
+      "Amazon Route 53",
+      "Amazon EC2",
+      "Amazon VPC"
+    ],
+    "correta": 1,
+    "dica": "DNS e gerenciamento de tráfego de internet da AWS.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & DNS"
+  },
+  {
+    "id": 42,
+    "pergunta": "Qual serviço converte texto em vozes faladas realistas?",
+    "opcoes": [
+      "Amazon Rekognition",
+      "Amazon Transcribe",
+      "Amazon Polly",
+      "Amazon Textract"
+    ],
+    "correta": 2,
+    "dica": "Serviço de conversão Text-to-Speech com IA.",
+    "dificuldade": "Fácil",
+    "categoria": "Machine Learning & IA"
+  },
+  {
+    "id": 43,
+    "pergunta": "Para permitir que instâncias privadas baixem atualizações na internet impedindo conexões externas não solicitadas, qual serviço usar?",
+    "opcoes": [
+      "VPC Endpoint",
+      "NAT Gateway",
+      "Amazon PrivateLink",
+      "VPC Peering"
+    ],
+    "correta": 1,
+    "dica": "NAT Gateway possibilita saída para a internet em sub-redes privadas.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & Segurança"
+  },
+  {
+    "id": 44,
+    "pergunta": "Para gerenciar centralmente regras de Security Groups e WAF em várias contas no AWS Organizations, qual serviço usar?",
+    "opcoes": [
+      "Amazon GuardDuty",
+      "AWS Firewall Manager",
+      "AWS WAF",
+      "Amazon Detective"
+    ],
+    "correta": 1,
+    "dica": "Gerenciamento centralizado de políticas de segurança e firewall.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança & Governança"
+  },
+  {
+    "id": 45,
+    "pergunta": "Qual dispositivo físico permite coletar e processar dados no mar com conectividade nula para depois enviar à AWS?",
+    "opcoes": [
+      "Amazon Lightsail",
+      "AWS Storage Gateway",
+      "AWS IoT Core",
+      "AWS Snowball Edge"
+    ],
+    "correta": 3,
+    "dica": "Armazenamento e computação física em locais remotos.",
+    "dificuldade": "Fácil",
+    "categoria": "Dispositivos & Migração"
+  },
+  {
+    "id": 46,
+    "pergunta": "Qual banco de dados totalmente gerenciado é especializado em eventos e séries temporais (time series)?",
+    "opcoes": [
+      "Amazon Timestream",
+      "Amazon DocumentDB",
+      "Amazon Neptune",
+      "Amazon Forecast"
+    ],
+    "correta": 0,
+    "dica": "Banco otimizado para dados ordenados no tempo.",
+    "dificuldade": "Fácil",
+    "categoria": "Bancos de Dados"
+  },
+  {
+    "id": 47,
+    "pergunta": "Quais opções conectam redes locais a uma VPC? (Escolha dois)",
+    "opcoes": [
+      "AWS Direct Connect e AWS VPN",
+      "ELB e CloudFront",
+      "VPC Peering e WAF",
+      "Route 53 e Storage Gateway"
+    ],
+    "correta": 0,
+    "dica": "Link dedicado (Direct Connect) e VPN criptografada via internet.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & Conectividade"
+  },
+  {
+    "id": 48,
+    "pergunta": "Qual serviço permite integrar bibliotecas de fitas virtuais de backup local ao S3 sem alterar fluxos existentes?",
+    "opcoes": [
+      "AWS Lambda",
+      "Amazon ECS",
+      "AWS Storage Gateway",
+      "Amazon EBS"
+    ],
+    "correta": 2,
+    "dica": "Tape Gateway substitui fitas físicas por armazenamento no S3.",
+    "dificuldade": "Médio",
+    "categoria": "Armazenamento & Backup"
+  },
+  {
+    "id": 49,
+    "pergunta": "Qual relatório fornece dados detalhados de custos diários para alimentar painéis no Amazon QuickSight?",
+    "opcoes": [
+      "AWS Cost Explorer",
+      "AWS Budgets",
+      "AWS Cost Anomaly Detection",
+      "AWS Cost and Usage Report (CUR)"
+    ],
+    "correta": 3,
+    "dica": "Relatório mais abrangente de faturamento no S3.",
+    "dificuldade": "Médio",
+    "categoria": "Suporte & Cobrança"
+  },
+  {
+    "id": 50,
+    "pergunta": "No modelo de responsabilidade compartilhada para o DynamoDB, quais atribuições pertencem à AWS? (Escolha dois)",
+    "opcoes": [
+      "Fornecer endpoints públicos seguros e Gerenciar a infraestrutura/SO",
+      "Classificar dados e Configurar IAM",
+      "Gerenciar chaves e Inserir dados",
+      "Criar tabelas e Índices"
+    ],
+    "correta": 0,
+    "dica": "AWS gerencia a infraestrutura, sistema operacional e endpoints públicos.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança & Responsabilidade"
+  },
+  {
+    "id": 51,
+    "pergunta": "Aumentar e reduzir recursos computacionais conforme a demanda no evento da Black Friday sem pagar por ociosidade reflete qual benefício?",
+    "opcoes": [
+      "Segurança física",
+      "Elasticidade",
+      "Redundância automática",
+      "Eliminação de monitoramento"
+    ],
+    "correta": 1,
+    "dica": "Ajuste dinâmico de recursos em picos de tráfego.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem"
+  },
+  {
+    "id": 52,
+    "pergunta": "Parar de investir em servidores físicos com alto custo inicial e pagar apenas pelos recursos consumidos é conhecido como:",
+    "opcoes": [
+      "Trocar CapEx por OpEx",
+      "Redução de deploy",
+      "Economia de escala",
+      "Eliminação de custos operacionais"
+    ],
+    "correta": 0,
+    "dica": "Substituir despesas de capital por despesas variáveis.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem & Custos"
+  },
+  {
+    "id": 53,
+    "pergunta": "Qual recurso avalia se a arquitetura segue as melhores práticas dos pilares de nuvem da AWS?",
+    "opcoes": [
+      "AWS Trusted Advisor",
+      "AWS Well-Architected Framework",
+      "AWS Config",
+      "AWS Cost Explorer"
+    ],
+    "correta": 1,
+    "dica": "Estrutura de avaliação de arquiteturas.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 54,
+    "pergunta": "Operar parte do datacenter local e parte na AWS com link dedicado caracteriza qual modelo?",
+    "opcoes": [
+      "Nuvem privada",
+      "Nuvem híbrida",
+      "Nuvem pública",
+      "Nuvem comunitária"
+    ],
+    "correta": 1,
+    "dica": "Integração entre ambiente local e nuvem pública.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem"
+  },
+  {
+    "id": 55,
+    "pergunta": "Para reduzir a latência de usuários na Europa, Ásia e América do Sul, onde implantar recursos de computação?",
+    "opcoes": [
+      "Zonas de Disponibilidade nos EUA",
+      "Múltiplas Regiões da AWS próximas aos usuários",
+      "Data center centralizado",
+      "Local Zones"
+    ],
+    "correta": 1,
+    "dica": "Hospedar em Regiões geograficamente próximas aos clientes.",
+    "dificuldade": "Fácil",
+    "categoria": "Infraestrutura Global"
+  },
+  {
+    "id": 56,
+    "pergunta": "O que descreve corretamente uma Zona de Disponibilidade (AZ)?",
+    "opcoes": [
+      "Data center sem redundância",
+      "Ponto de presença do CloudFront",
+      "Um ou mais data centers discretos com infraestrutura física redundante dentro de uma Região",
+      "Região inteira"
+    ],
+    "correta": 2,
+    "dica": "Instalação física isolada com energia e rede redundantes.",
+    "dificuldade": "Fácil",
+    "categoria": "Infraestrutura Global"
+  },
+  {
+    "id": 57,
+    "pergunta": "Garantir operação contínua sem interrupção caso uma Zona de Disponibilidade falhe atinge qual objetivo?",
+    "opcoes": [
+      "Elasticidade",
+      "Alta disponibilidade e tolerância a falhas",
+      "Redução de custos",
+      "Consolidação de faturamento"
+    ],
+    "correta": 1,
+    "dica": "Arquitetura resiliente a falhas de infraestrutura.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem"
+  },
+  {
+    "id": 58,
+    "pergunta": "Lançar novos recursos rapidamente sem esperar a compra de servidores físicos relaciona-se a:",
+    "opcoes": [
+      "Economia de escala",
+      "Agilidade",
+      "Segurança compartilhada",
+      "Faturamento consolidado"
+    ],
+    "correta": 1,
+    "dica": "Disponibilização rápida de tecnologia para os negócios.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem"
+  },
+  {
+    "id": 59,
+    "pergunta": "Qual pilar trata da capacidade de auto-recuperação de falhas e atendimento dinâmico da demanda?",
+    "opcoes": [
+      "Excelência operacional",
+      "Eficiência de custos",
+      "Confiabilidade (Reliability)",
+      "Segurança"
+    ],
+    "correta": 2,
+    "dica": "Pilar focado em resiliência de sistemas.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 60,
+    "pergunta": "Qual pilar foca em executar e monitorar sistemas para entregar valor de negócio e melhorar procedimentos?",
+    "opcoes": [
+      "Excelência Operacional",
+      "Eficiência de desempenho",
+      "Sustentabilidade",
+      "Confiabilidade"
+    ],
+    "correta": 0,
+    "dica": "Pilar de processos, monitoramento e automação.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 61,
+    "pergunta": "Garantir o uso correto do tipo de instância para atender a demanda com o menor custo refere-se a:",
+    "opcoes": [
+      "Segurança",
+      "Eficiência de Custos (Cost Optimization)",
+      "Confiabilidade",
+      "Excelência operacional"
+    ],
+    "correta": 1,
+    "dica": "Dimensionamento correto e eliminação de desperdícios.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 62,
+    "pergunta": "Qual pilar foca no uso eficiente de recursos de computação à medida que a tecnologia evolui?",
+    "opcoes": [
+      "Eficiência de Desempenho",
+      "Segurança",
+      "Confiabilidade",
+      "Sustentabilidade"
+    ],
+    "correta": 0,
+    "dica": "Performance Efficiency e evolução tecnológica.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 63,
+    "pergunta": "Reduzir o impacto ambiental otimizando consumo de energia alinha-se a qual pilar?",
+    "opcoes": [
+      "Sustentabilidade",
+      "Confiabilidade",
+      "Segurança",
+      "Eficiência de custos"
+    ],
+    "correta": 0,
+    "dica": "Pilar de sustentabilidade na nuvem.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 64,
+    "pergunta": "Eliminar a necessidade de adivinhar necessidades futuras de capacidade de infraestrutura é:",
+    "opcoes": [
+      "Stop guessing capacity",
+      "Time-to-market",
+      "Consolidação de faturamento",
+      "Modelo de responsabilidade"
+    ],
+    "correta": 0,
+    "dica": "Ajuste preciso de capacidade sob demanda.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem"
+  },
+  {
+    "id": 65,
+    "pergunta": "Aproveitar preços mais baixos decorrentes do grande volume de operações da AWS é denominado:",
+    "opcoes": [
+      "Elasticidade",
+      "Economia de escala",
+      "Agilidade",
+      "Alta disponibilidade"
+    ],
+    "correta": 1,
+    "dica": "Preços reduzidos repassados por volume global.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem"
+  },
+  {
+    "id": 66,
+    "pergunta": "No modelo de responsabilidade compartilhada, qual das opções é atribuição da AWS?",
+    "opcoes": [
+      "Configuração de Security Groups",
+      "Segurança física dos datacenters e hardware global",
+      "Patches no SO das instâncias EC2",
+      "Criptografia cliente"
+    ],
+    "correta": 1,
+    "dica": "Segurança 'DA' nuvem (infraestrutura física).",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Responsabilidade"
+  },
+  {
+    "id": 67,
+    "pergunta": "Qual a recomendação de segurança para a conta Root em um novo ambiente AWS?",
+    "opcoes": [
+      "Usar no dia a dia",
+      "Compartilhar credenciais",
+      "Habilitar MFA e usar apenas quando estritamente necessário",
+      "Excluir a conta"
+    ],
+    "correta": 2,
+    "dica": "Proteger com MFA e restringir o uso.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & IAM"
+  },
+  {
+    "id": 68,
+    "pergunta": "Conceder apenas o acesso estritamente necessário para que um colaborador execute suas tarefas é:",
+    "opcoes": [
+      "Responsabilidade compartilhada",
+      "Princípio do menor privilégio",
+      "Criptografia em repouso",
+      "Alta disponibilidade"
+    ],
+    "correta": 1,
+    "dica": "Least Privilege Access.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & IAM"
+  },
+  {
+    "id": 69,
+    "pergunta": "Para permitir que uma aplicação no EC2 acesse o S3 sem credenciais fixas no código, qual recurso usar?",
+    "opcoes": [
+      "Chave fixa no código",
+      "Função (IAM Role) associada ao EC2",
+      "Senha do usuário Root",
+      "Grupo sem políticas"
+    ],
+    "correta": 1,
+    "dica": "IAM Roles para EC2.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & IAM"
+  },
+  {
+    "id": 70,
+    "pergunta": "Qual opção descreve um Grupo de Segurança (Security Group)?",
+    "opcoes": [
+      "Firewall stateless na sub-rede",
+      "Firewall stateful na instância permitindo tráfego especificado",
+      "Serviço de detecção por IA",
+      "Serviço de criptografia"
+    ],
+    "correta": 1,
+    "dica": "Firewall stateful no nível da interface de rede.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & Segurança"
+  },
+  {
+    "id": 71,
+    "pergunta": "Qual opção descreve uma Network ACL (NACL)?",
+    "opcoes": [
+      "Camada de segurança stateless na sub-rede aceitando regras de permissão/negação por ordem",
+      "Substituto de Security Groups",
+      "Firewall de aplicação web",
+      "Repositório de chaves"
+    ],
+    "correta": 0,
+    "dica": "Firewall stateless no nível da sub-rede.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & Segurança"
+  },
+  {
+    "id": 72,
+    "pergunta": "Ao rodar um banco de dados direto no EC2, quem responde pelos patches de segurança do SO?",
+    "opcoes": [
+      "AWS",
+      "Cliente",
+      "Terceiros",
+      "Ninguém"
+    ],
+    "correta": 1,
+    "dica": "Na IaaS, o cliente gerencia o SO e patches.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Responsabilidade"
+  },
+  {
+    "id": 73,
+    "pergunta": "No Amazon RDS gerenciado, quem aplica os patches no mecanismo de banco de dados?",
+    "opcoes": [
+      "Cliente",
+      "AWS",
+      "Ambos",
+      "Parceiro do Marketplace"
+    ],
+    "correta": 1,
+    "dica": "Na PaaS (RDS), a AWS aplica atualizações do motor.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Responsabilidade"
+  },
+  {
+    "id": 74,
+    "pergunta": "Para gerenciar chaves de criptografia de forma centralizada nos serviços S3, EBS e RDS, qual serviço usar?",
+    "opcoes": [
+      "ACM",
+      "AWS Key Management Service (KMS)",
+      "Amazon Macie",
+      "Secrets Manager"
+    ],
+    "correta": 1,
+    "dica": "Criação e gerenciamento de chaves no AWS KMS.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Criptografia"
+  },
+  {
+    "id": 75,
+    "pergunta": "Qual serviço protege aplicações web contra SQL Injection e Cross-Site Scripting (XSS)?",
+    "opcoes": [
+      "AWS Shield",
+      "AWS WAF",
+      "Amazon GuardDuty",
+      "AWS Config"
+    ],
+    "correta": 1,
+    "dica": "Web Application Firewall para camada 7.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Proteção"
+  },
+  {
+    "id": 76,
+    "pergunta": "Qual serviço foi criado especificamente para mitigar ataques de negação de serviço (DDoS)?",
+    "opcoes": [
+      "AWS Shield",
+      "Amazon Inspector",
+      "AWS Artifact",
+      "AWS Trusted Advisor"
+    ],
+    "correta": 0,
+    "dica": "Proteção DDoS gerenciada.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Proteção"
+  },
+  {
+    "id": 77,
+    "pergunta": "Para monitorar continuamente a conta em busca de comportamentos maliciosos usando Machine Learning, qual serviço usar?",
+    "opcoes": [
+      "Amazon GuardDuty",
+      "AWS Config",
+      "Amazon Macie",
+      "AWS CloudTrail"
+    ],
+    "correta": 0,
+    "dica": "Detecção inteligente de ameaças.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança & Monitoramento"
+  },
+  {
+    "id": 78,
+    "pergunta": "Qual serviço analisa instâncias EC2 e contêineres em busca de vulnerabilidades de software?",
+    "opcoes": [
+      "Amazon Inspector",
+      "AWS Shield",
+      "AWS Organizations",
+      "Amazon CloudFront"
+    ],
+    "correta": 0,
+    "dica": "Varredura automatizada de vulnerabilidades.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança & Conformidade"
+  },
+  {
+    "id": 79,
+    "pergunta": "Qual serviço descobre e classifica dados confidenciais (PII) armazenados em buckets do S3 com IA?",
+    "opcoes": [
+      "Amazon Macie",
+      "AWS KMS",
+      "AWS Config",
+      "Amazon Inspector"
+    ],
+    "correta": 0,
+    "dica": "Proteção e descoberta de PII no S3.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança & Dados"
+  },
+  {
+    "id": 80,
+    "pergunta": "Qual serviço oferece relatórios de auditoria e conformidade (como SOC e ISO) para download?",
+    "opcoes": [
+      "AWS Artifact",
+      "AWS Trusted Advisor",
+      "Amazon Inspector",
+      "AWS Config"
+    ],
+    "correta": 0,
+    "dica": "Portal de acordos e relatórios de conformidade.",
+    "dificuldade": "Fácil",
+    "categoria": "Conformidade & Auditoria"
+  },
+  {
+    "id": 81,
+    "pergunta": "Qual serviço avalia continuamente o histórico de configurações dos recursos para verificar conformidade?",
+    "opcoes": [
+      "AWS Config",
+      "AWS CloudTrail",
+      "Amazon CloudWatch",
+      "AWS Trusted Advisor"
+    ],
+    "correta": 0,
+    "dica": "Auditoria de configurações e mudanças nos recursos.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança & Governança"
+  },
+  {
+    "id": 82,
+    "pergunta": "Qual serviço registra chamadas de API com horário, usuário e IP de origem?",
+    "opcoes": [
+      "Amazon CloudWatch",
+      "AWS CloudTrail",
+      "AWS Config",
+      "Amazon Macie"
+    ],
+    "correta": 1,
+    "dica": "Histórico de auditoria de chamadas de API.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Auditoria"
+  },
+  {
+    "id": 83,
+    "pergunta": "No AWS Organizations, qual recurso aplica restrições de permissões máximas para contas membros?",
+    "opcoes": [
+      "Service Control Policies (SCPs)",
+      "Security Groups",
+      "NACLs",
+      "Politicas de bucket"
+    ],
+    "correta": 0,
+    "dica": "SCPs estabelecem os limites máximos de acesso.",
+    "dificuldade": "Hard",
+    "categoria": "Governança & Contas"
+  },
+  {
+    "id": 84,
+    "pergunta": "Qual a regra geral sobre testes de penetração na AWS sem autorização prévia?",
+    "opcoes": [
+      "Proibido",
+      "Permitido para uma lista de serviços principais respeitando regras",
+      "Exige taxa extra",
+      "Apenas parceiros"
+    ],
+    "correta": 1,
+    "dica": "Permitido em serviços de computação e redes sem aprovação prévia.",
+    "dificuldade": "Hard",
+    "categoria": "Segurança & Conformidade"
+  },
+  {
+    "id": 85,
+    "pergunta": "Qual serviço IaaS fornece máquinas virtuais com total controle sobre o sistema operacional?",
+    "opcoes": [
+      "AWS Lambda",
+      "Amazon EC2",
+      "Amazon S3",
+      "Amazon RDS"
+    ],
+    "correta": 1,
+    "dica": "Servidor virtual sob demanda.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação"
+  },
+  {
+    "id": 86,
+    "pergunta": "Para rodar código Serverless em resposta a eventos sem gerenciar servidores, qual serviço usar?",
+    "opcoes": [
+      "Amazon EC2",
+      "AWS Lambda",
+      "Amazon Lightsail",
+      "AWS Batch"
+    ],
+    "correta": 1,
+    "dica": "Computação orientada a eventos serverless.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação Serverless"
+  },
+  {
+    "id": 87,
+    "pergunta": "Qual a classe do S3 mais barata para arquivar dados retidos por anos onde o resgate leva horas?",
+    "opcoes": [
+      "S3 Standard",
+      "S3 Intelligent-Tiering",
+      "S3 Glacier Deep Archive",
+      "S3 One Zone-IA"
+    ],
+    "correta": 2,
+    "dica": "Menor custo de armazenamento de longo prazo.",
+    "dificuldade": "Fácil",
+    "categoria": "Armazenamento & Custos"
+  },
+  {
+    "id": 88,
+    "pergunta": "Qual serviço de arquivos permite acesso compartilhado simultâneo para várias instâncias EC2?",
+    "opcoes": [
+      "Amazon EBS",
+      "Amazon EFS",
+      "Amazon S3 Glacier",
+      "Instance Store"
+    ],
+    "correta": 1,
+    "dica": "Sistema de arquivos compartilhado NFS.",
+    "dificuldade": "Médio",
+    "categoria": "Armazenamento"
+  },
+  {
+    "id": 89,
+    "pergunta": "O Amazon EBS (Elastic Block Store) é melhor definido como:",
+    "opcoes": [
+      "Armazenamento de objetos",
+      "Volume de bloco persistente anexado a instâncias EC2",
+      "Banco de dados NoSQL",
+      "Serviço de arquivo de alta latência"
+    ],
+    "correta": 1,
+    "dica": "Disco de bloco para instâncias EC2.",
+    "dificuldade": "Fácil",
+    "categoria": "Armazenamento em Bloco"
+  },
+  {
+    "id": 90,
+    "pergunta": "Qual serviço provê banco de dados relacional gerenciado com backups e suporte a MySQL, PostgreSQL e SQL Server?",
+    "opcoes": [
+      "Amazon DynamoDB",
+      "Amazon RDS",
+      "Amazon Redshift",
+      "Amazon ElastiCache"
+    ],
+    "correta": 1,
+    "dica": "Relational Database Service.",
+    "dificuldade": "Fácil",
+    "categoria": "Bancos de Dados"
+  },
+  {
+    "id": 91,
+    "pergunta": "Qual banco NoSQL chave-valor é recomendado para aplicativos móveis com resposta na casa dos milissegundos?",
+    "opcoes": [
+      "Amazon DynamoDB",
+      "Amazon RDS",
+      "Amazon Redshift",
+      "Amazon S3"
+    ],
+    "correta": 0,
+    "dica": "DynamoDB NoSQL.",
+    "dificuldade": "Fácil",
+    "categoria": "Bancos de Dados"
+  },
+  {
+    "id": 92,
+    "pergunta": "Para consultas analíticas sobre petabytes de dados em um Data Warehouse, qual serviço utilizar?",
+    "opcoes": [
+      "Amazon RDS",
+      "Amazon Redshift",
+      "Amazon DynamoDB",
+      "AWS Lambda"
+    ],
+    "correta": 1,
+    "dica": "Data Warehouse baseado em SQL.",
+    "dificuldade": "Médio",
+    "categoria": "Analytics & Data Warehouse"
+  },
+  {
+    "id": 93,
+    "pergunta": "Qual serviço provê uma rede virtual isolada para definir sub-redes, rotas e gateways?",
+    "opcoes": [
+      "Amazon Route 53",
+      "Amazon VPC",
+      "Amazon CloudFront",
+      "AWS Direct Connect"
+    ],
+    "correta": 1,
+    "dica": "Virtual Private Cloud.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & Infraestrutura"
+  },
+  {
+    "id": 94,
+    "pergunta": "Qual serviço é o DNS gerenciado e altamente disponível da AWS?",
+    "opcoes": [
+      "Amazon Route 53",
+      "Amazon CloudFront",
+      "ELB",
+      "AWS Global Accelerator"
+    ],
+    "correta": 0,
+    "dica": "Serviço de DNS da AWS.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & DNS"
+  },
+  {
+    "id": 95,
+    "pergunta": "Para distribuir arquivos estáticos mundialmente com baixa latência usando cache em Edge Locations, qual serviço usar?",
+    "opcoes": [
+      "Amazon CloudFront",
+      "Amazon Route 53",
+      "AWS Direct Connect",
+      "Amazon VPC"
+    ],
+    "correta": 0,
+    "dica": "CDN global da AWS.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & CDN"
+  },
+  {
+    "id": 96,
+    "pergunta": "Qual serviço distribui o tráfego recebido entre várias instâncias EC2 de forma automática?",
+    "opcoes": [
+      "Amazon Route 53",
+      "Elastic Load Balancing (ELB)",
+      "AWS Direct Connect",
+      "AWS Snowball"
+    ],
+    "correta": 1,
+    "dica": "Balanceador de carga de aplicação/rede.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & Balanceamento"
+  },
+  {
+    "id": 97,
+    "pergunta": "Para escalar o número de instâncias EC2 automaticamente conforme variações na demanda, qual recurso usar?",
+    "opcoes": [
+      "AWS Auto Scaling",
+      "Amazon CloudFront",
+      "AWS Direct Connect",
+      "Amazon Route 53"
+    ],
+    "correta": 0,
+    "dica": "Ajuste dinâmico do número de instâncias.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação & Auto Scaling"
+  },
+  {
+    "id": 98,
+    "pergunta": "Qual serviço de mensagens assíncronas armazena mensagens em uma fila até a leitura do consumidor?",
+    "opcoes": [
+      "Amazon SNS",
+      "Amazon SQS",
+      "Amazon SES",
+      "AWS Step Functions"
+    ],
+    "correta": 1,
+    "dica": "Simple Queue Service.",
+    "dificuldade": "Fácil",
+    "categoria": "Integração & Mensageria"
+  },
+  {
+    "id": 99,
+    "pergunta": "Qual serviço envia notificações simultâneas para múltiplos assinantes no modelo pub/sub?",
+    "opcoes": [
+      "Amazon SNS",
+      "Amazon SQS",
+      "Amazon Route 53",
+      "AWS CloudTrail"
+    ],
+    "correta": 0,
+    "dica": "Simple Notification Service.",
+    "dificuldade": "Fácil",
+    "categoria": "Integração & Notificação"
+  },
+  {
+    "id": 100,
+    "pergunta": "Para transferir centenas de terabytes de dados offline via dispositivo físico até o S3, qual serviço usar?",
+    "opcoes": [
+      "AWS Snowball",
+      "Amazon Kinesis",
+      "AWS Direct Connect",
+      "Amazon CloudFront"
+    ],
+    "correta": 0,
+    "dica": "Aparelho físico para migração de dados.",
+    "dificuldade": "Fácil",
+    "categoria": "Migração de Dados"
+  },
+  {
+    "id": 101,
+    "pergunta": "Qual serviço conecta a rede local à AWS por um link físico dedicado e privado?",
+    "opcoes": [
+      "AWS Direct Connect",
+      "AWS VPN",
+      "Amazon Route 53",
+      "AWS Snowmobile"
+    ],
+    "correta": 0,
+    "dica": "Conexão física dedicada sem usar internet.",
+    "dificuldade": "Médio",
+    "categoria": "Redes & Conectividade"
+  },
+  {
+    "id": 102,
+    "pergunta": "Qual PaaS faz deploy rápido de aplicações mantendo controle dos recursos subjacentes?",
+    "opcoes": [
+      "AWS Elastic Beanstalk",
+      "AWS Lambda",
+      "AWS CloudFormation",
+      "Amazon Lightsail"
+    ],
+    "correta": 0,
+    "dica": "Orquestrador de implantação PaaS.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação & Deployment"
+  },
+  {
+    "id": 103,
+    "pergunta": "Qual serviço permite provisionar infraestrutura usando modelos declarativos como código (IaC)?",
+    "opcoes": [
+      "AWS CloudFormation",
+      "AWS Config",
+      "AWS Systems Manager",
+      "AWS OpsWorks"
+    ],
+    "correta": 0,
+    "dica": "Infraestrutura como Código nativa.",
+    "dificuldade": "Fácil",
+    "categoria": "Automação & IaC"
+  },
+  {
+    "id": 104,
+    "pergunta": "Qual serviço gerencia atualizações, comandos e parâmetros em instâncias EC2 sem acesso SSH direto?",
+    "opcoes": [
+      "AWS Systems Manager",
+      "Amazon Inspector",
+      "AWS Config",
+      "Amazon CloudWatch"
+    ],
+    "correta": 0,
+    "dica": "Gerenciamento operacional centralizado (SSM).",
+    "dificuldade": "Médio",
+    "categoria": "Gerenciamento & Operações"
+  },
+  {
+    "id": 105,
+    "pergunta": "Qual serviço estende o armazenamento local para o S3 com cache local de baixa latência?",
+    "opcoes": [
+      "AWS Storage Gateway",
+      "AWS Snowball",
+      "Amazon EFS",
+      "Amazon FSx"
+    ],
+    "correta": 0,
+    "dica": "Ponte de armazenamento híbrido.",
+    "dificuldade": "Médio",
+    "categoria": "Armazenamento Híbrido"
+  },
+  {
+    "id": 106,
+    "pergunta": "Qual plano de suporte dá suporte 24x7 por chat/telefone com custo acessível sem exigir TAM?",
+    "opcoes": [
+      "Basic Support",
+      "Developer Support",
+      "Business Support",
+      "Enterprise Support"
+    ],
+    "correta": 2,
+    "dica": "Atendimento 24x7 recomendado para produção.",
+    "dificuldade": "Fácil",
+    "categoria": "Suporte & Planos"
+  },
+  {
+    "id": 107,
+    "pergunta": "Qual o único plano do AWS Support que inclui um Gerente Técnico de Contas (TAM) dedicado?",
+    "opcoes": [
+      "Basic Support",
+      "Developer Support",
+      "Business Support",
+      "Enterprise Support"
+    ],
+    "correta": 3,
+    "dica": "TAM exclusivo da categoria Enterprise.",
+    "dificuldade": "Fácil",
+    "categoria": "Suporte & Planos"
+  },
+  {
+    "id": 108,
+    "pergunta": "Qual modelo de precificação dá o maior desconto no EC2 para uso contínuo previsível de 1 a 3 anos?",
+    "opcoes": [
+      "On-Demand",
+      "Instâncias Reservadas",
+      "Instâncias Spot",
+      "Dedicated Hosts"
+    ],
+    "correta": 1,
+    "dica": "Desconto por compromisso de longo prazo.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação & Custos"
+  },
+  {
+    "id": 109,
+    "pergunta": "Qual modalidade de compra no EC2 oferece os maiores descontos para tarefas tolerantes a interrupções?",
+    "opcoes": [
+      "Instâncias Reservadas",
+      "On-Demand",
+      "Instâncias Spot",
+      "Savings Plans"
+    ],
+    "correta": 2,
+    "dica": "Capacidade ociosa sujeita a interrupção.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação & Custos"
+  },
+  {
+    "id": 110,
+    "pergunta": "O programa que disponibiliza limites de uso grátis por 12 meses ou sempre gratuitos é o:",
+    "opcoes": [
+      "AWS Free Tier",
+      "AWS Marketplace",
+      "AWS Activate",
+      "Savings Plans"
+    ],
+    "correta": 0,
+    "dica": "Nível gratuito para aprendizado e testes.",
+    "dificuldade": "Fácil",
+    "categoria": "Nível Gratuito & Custos"
+  },
+  {
+    "id": 111,
+    "pergunta": "Qual ferramenta permite estimar custos mensais de uma arquitetura antes de criar os recursos?",
+    "opcoes": [
+      "AWS Cost Explorer",
+      "AWS Budgets",
+      "AWS Pricing Calculator",
+      "AWS Trusted Advisor"
+    ],
+    "correta": 2,
+    "dica": "Calculadora de estimativas de preços.",
+    "dificuldade": "Fácil",
+    "categoria": "Suporte & Cobrança"
+  },
+  {
+    "id": 112,
+    "pergunta": "Qual ferramenta gráfica analisa históricos de custos e projeta tendências financeiras futuras?",
+    "opcoes": [
+      "AWS Pricing Calculator",
+      "AWS Cost Explorer",
+      "AWS Artifact",
+      "AWS Organizations"
+    ],
+    "correta": 1,
+    "dica": "Análise gráfica de relatórios de faturamento.",
+    "dificuldade": "Fácil",
+    "categoria": "Suporte & Cobrança"
+  },
+  {
+    "id": 113,
+    "pergunta": "Qual serviço envia alertas quando os gastos ultrapassam limites orçamentários definidos?",
+    "opcoes": [
+      "AWS Budgets",
+      "AWS Cost Explorer",
+      "AWS Trusted Advisor",
+      "CloudWatch Billing"
+    ],
+    "correta": 0,
+    "dica": "Alertas personalizados de orçamento.",
+    "dificuldade": "Fácil",
+    "categoria": "Suporte & Cobrança"
+  },
+  {
+    "id": 114,
+    "pergunta": "Qual recurso do AWS Organizations unifica o pagamento de várias contas aproveitando descontos por volume?",
+    "opcoes": [
+      "AWS Budgets",
+      "Consolidated Billing",
+      "AWS Cost Explorer",
+      "Reserved Instance Marketplace"
+    ],
+    "correta": 1,
+    "dica": "Faturamento consolidado entre contas.",
+    "dificuldade": "Fácil",
+    "categoria": "Governança & Custos"
+  },
+  {
+    "id": 115,
+    "pergunta": "Qual modelo de contrato flexível reduz custos com base em compromisso de uso financeiro por hora ($/hora)?",
+    "opcoes": [
+      "Instâncias Spot",
+      "Savings Plans",
+      "On-Demand",
+      "Dedicated Hosts"
+    ],
+    "correta": 1,
+    "dica": "Plano de economia flexível por consumo.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação & Custos"
+  },
+  {
+    "id": 116,
+    "pergunta": "Qual serviço AWS permite executar contêineres Docker sem gerenciar servidores ou clusters EC2 (Serverless)?",
+    "opcoes": [
+      "Amazon ECS com AWS Fargate",
+      "Amazon EC2",
+      "AWS Elastic Beanstalk",
+      "AWS Batch"
+    ],
+    "correta": 0,
+    "dica": "AWS Fargate é o mecanismo de computação sem servidor para contêineres.",
+    "dificuldade": "Médio",
+    "categoria": "Contêineres & Serverless"
+  },
+  {
+    "id": 117,
+    "pergunta": "Uma empresa deseja detectar automaticamente dados sensíveis como cartões de crédito em arquivos do S3. Qual serviço usar?",
+    "opcoes": [
+      "Amazon Macie",
+      "Amazon Inspector",
+      "AWS KMS",
+      "AWS GuardDuty"
+    ],
+    "correta": 0,
+    "dica": "Amazon Macie usa aprendizado de máquina para descobrir dados confidenciais.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança & Dados"
+  },
+  {
+    "id": 118,
+    "pergunta": "Qual o benefício de utilizar Instâncias Reservadas em relação às instâncias On-Demand?",
+    "opcoes": [
+      "Descontos significativos em troca de compromisso de 1 ou 3 anos",
+      "Possibilidade de encerrar a qualquer momento sem custos",
+      "Acesso automático a hardware dedicado",
+      "Isenção de taxas de transferência de dados"
+    ],
+    "correta": 0,
+    "dica": "Troca de compromisso de tempo por desconto financeiro.",
+    "dificuldade": "Fácil",
+    "categoria": "Preços & Custos"
+  },
+  {
+    "id": 119,
+    "pergunta": "Qual serviço permite gerenciar centralmente o acesso a múltiplas contas AWS através do Single Sign-On (SSO)?",
+    "opcoes": [
+      "AWS IAM Identity Center",
+      "AWS Organizations",
+      "AWS Directory Service",
+      "AWS Shield"
+    ],
+    "correta": 0,
+    "dica": "Anteriormente conhecido como AWS Single Sign-On.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & IAM"
+  },
+  {
+    "id": 120,
+    "pergunta": "Uma empresa precisa de um sistema de arquivos distribuído e nativo para Linux acessível via NFS. Qual utilizar?",
+    "opcoes": [
+      "Amazon EFS",
+      "Amazon EBS",
+      "Amazon FSx for Windows",
+      "Amazon S3"
+    ],
+    "correta": 0,
+    "dica": "Elastic File System com suporte ao protocolo NFS.",
+    "dificuldade": "Fácil",
+    "categoria": "Armazenamento"
+  },
+  {
+    "id": 121,
+    "pergunta": "Qual funcionalidade do Amazon CloudWatch permite reagir a alterações de estado dos recursos em tempo real?",
+    "opcoes": [
+      "Amazon EventBridge (CloudWatch Events)",
+      "CloudWatch Logs",
+      "CloudWatch Metrics",
+      "CloudWatch Alarms"
+    ],
+    "correta": 0,
+    "dica": "EventBridge roteia eventos em tempo real para alvos especificados.",
+    "dificuldade": "Médio",
+    "categoria": "Automação & Eventos"
+  },
+  {
+    "id": 122,
+    "pergunta": "Qual serviço AWS provê recomendações automatizadas para otimizar custos, melhorar segurança e aumentar tolerância a falhas?",
+    "opcoes": [
+      "AWS Trusted Advisor",
+      "AWS Config",
+      "AWS Service Catalog",
+      "AWS Systems Manager"
+    ],
+    "correta": 0,
+    "dica": "Inspeciona o ambiente AWS e faz recomendações baseadas nas melhores práticas.",
+    "dificuldade": "Fácil",
+    "categoria": "Governança & Suporte"
+  },
+  {
+    "id": 123,
+    "pergunta": "Qual classe de armazenamento S3 ajusta automaticamente os dados entre camadas de acesso com base nos padrões de uso?",
+    "opcoes": [
+      "S3 Intelligent-Tiering",
+      "S3 Standard-IA",
+      "S3 Glacier",
+      "S3 Outposts"
+    ],
+    "correta": 0,
+    "dica": "Otimiza custos automaticamente movendo objetos sem impacto no desempenho.",
+    "dificuldade": "Fácil",
+    "categoria": "Armazenamento"
+  },
+  {
+    "id": 124,
+    "pergunta": "No modelo de responsabilidade compartilhada, quem é responsável pela segurança física dos centros de dados?",
+    "opcoes": [
+      "AWS",
+      "Cliente",
+      "Parceiro da APN",
+      "Usuário Root"
+    ],
+    "correta": 0,
+    "dica": "Segurança DA nuvem é de responsabilidade exclusiva da AWS.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Responsabilidade"
+  },
+  {
+    "id": 125,
+    "pergunta": "Qual serviço é utilizado para armazenar parâmetros como senhas e cadeias de conexão criptografadas de forma segura?",
+    "opcoes": [
+      "AWS Systems Manager Parameter Store / Secrets Manager",
+      "AWS KMS",
+      "AWS CloudTrail",
+      "AWS Config"
+    ],
+    "correta": 0,
+    "dica": "Secrets Manager e Parameter Store armazenam credenciais com segurança.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança & Segredos"
+  },
+  {
+    "id": 126,
+    "pergunta": "Qual serviço conecta VPCs em diferentes regiões da AWS permitindo comunicação privada entre elas?",
+    "opcoes": [
+      "VPC Peering Inter-Região",
+      "AWS Direct Connect",
+      "AWS Site-to-Site VPN",
+      "Internet Gateway"
+    ],
+    "correta": 0,
+    "dica": "VPC Peering permite tráfego privado entre VPCs mesmo em regiões distintas.",
+    "dificuldade": "Médio",
+    "categoria": "Redes & Conectividade"
+  },
+  {
+    "id": 127,
+    "pergunta": "Uma empresa deseja criar alertas quando os custos mensais ultrapassarem $500. Qual ferramenta usar?",
+    "opcoes": [
+      "AWS Budgets",
+      "AWS Cost Explorer",
+      "AWS Pricing Calculator",
+      "AWS Cost and Usage Report"
+    ],
+    "correta": 0,
+    "dica": "AWS Budgets envia notificações personalizadas de custos.",
+    "dificuldade": "Fácil",
+    "categoria": "Faturamento & Custos"
+  },
+  {
+    "id": 128,
+    "pergunta": "Qual serviço permite a busca e entrega de conteúdo de mídia estático e dinâmico com segurança e alta velocidade?",
+    "opcoes": [
+      "Amazon CloudFront",
+      "AWS Global Accelerator",
+      "Amazon Route 53",
+      "AWS Direct Connect"
+    ],
+    "correta": 0,
+    "dica": "CDN global da AWS.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & CDN"
+  },
+  {
+    "id": 129,
+    "pergunta": "Qual a função do Internet Gateway (IGW) em uma VPC?",
+    "opcoes": [
+      "Permitir comunicação entre recursos da VPC e a internet pública",
+      "Criptografar todo o tráfego interno",
+      "Balancear tráfego entre instâncias",
+      "Fornecer IP estático para instâncias privadas"
+    ],
+    "correta": 0,
+    "dica": "Componente de VPC que conecta sub-redes públicas à internet.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & Infraestrutura"
+  },
+  {
+    "id": 130,
+    "pergunta": "Para consultar logs de acesso do S3 usando comandos SQL sem precisar importar dados, qual serviço é o ideal?",
+    "opcoes": [
+      "Amazon Athena",
+      "Amazon Redshift",
+      "Amazon DynamoDB",
+      "AWS Glue"
+    ],
+    "correta": 0,
+    "dica": "Serviço serverless de consulta SQL direta no S3.",
+    "dificuldade": "Médio",
+    "categoria": "Analytics"
+  },
+  {
+    "id": 131,
+    "pergunta": "Qual serviço de inteligência artificial converte fala em texto (Speech-to-Text)?",
+    "opcoes": [
+      "Amazon Transcribe",
+      "Amazon Polly",
+      "Amazon Rekognition",
+      "Amazon Lex"
+    ],
+    "correta": 0,
+    "dica": "Transcribe transcreve áudios para texto.",
+    "dificuldade": "Fácil",
+    "categoria": "Machine Learning & IA"
+  },
+  {
+    "id": 132,
+    "pergunta": "Qual serviço de inteligência artificial é utilizado para criar chatbots de conversa por texto e voz?",
+    "opcoes": [
+      "Amazon Lex",
+      "Amazon Polly",
+      "Amazon Kendra",
+      "Amazon Comprehend"
+    ],
+    "correta": 0,
+    "dica": "Lex fornece tecnologia de processamento de linguagem natural usada na Alexa.",
+    "dificuldade": "Fácil",
+    "categoria": "Machine Learning & IA"
+  },
+  {
+    "id": 133,
+    "pergunta": "Qual recurso do Amazon S3 previne que um objeto seja excluído ou sobrescrito durante um período especificado (WORM)?",
+    "opcoes": [
+      "S3 Object Lock",
+      "S3 Versioning",
+      "S3 Replication",
+      "S3 Lifecycle"
+    ],
+    "correta": 0,
+    "dica": "Object Lock garante o modelo Write Once, Read Many (WORM).",
+    "dificuldade": "Hard",
+    "categoria": "Armazenamento & Segurança"
+  },
+  {
+    "id": 134,
+    "pergunta": "Qual plano de suporte dá acesso 24x7 a engenheiros de suporte via e-mail, chat e telefone com tempo de resposta em menos de 15 minutos para falhas críticas?",
+    "opcoes": [
+      "Enterprise Support",
+      "Business Support",
+      "Developer Support",
+      "Basic Support"
+    ],
+    "correta": 0,
+    "dica": "Enterprise Support atende casos de missão crítica em até 15 minutos.",
+    "dificuldade": "Médio",
+    "categoria": "Suporte & Planos"
+  },
+  {
+    "id": 135,
+    "pergunta": "Qual serviço da AWS simplifica a criação, migração e gerenciamento de licenças de software de terceiros?",
+    "opcoes": [
+      "AWS License Manager",
+      "AWS Marketplace",
+      "AWS Systems Manager",
+      "AWS Service Catalog"
+    ],
+    "correta": 0,
+    "dica": "Gerencia a conformidade de licenças de software.",
+    "dificuldade": "Médio",
+    "categoria": "Governança & Licenciamento"
+  },
+  {
+    "id": 136,
+    "pergunta": "O que é o Amazon EC2 Instance Store?",
+    "opcoes": [
+      "Armazenamento em bloco temporário de altíssimo desempenho conectado diretamente ao servidor físico",
+      "Volume de bloco persistente que sobrevive ao encerramento da instância",
+      "Armazenamento de arquivos compartilhado por NFS",
+      "Serviço de backup automatizado"
+    ],
+    "correta": 0,
+    "dica": "Armazenamento efémero (temporário) de alta velocidade.",
+    "dificuldade": "Hard",
+    "categoria": "Armazenamento em Bloco"
+  },
+  {
+    "id": 137,
+    "pergunta": "Qual o propósito do AWS Outposts?",
+    "opcoes": [
+      "Executar serviços nativos da AWS em datacenters locais do cliente",
+      "Conectar redes locais à nuvem via VPN",
+      "Transferir dados via dispositivos móveis",
+      "Criar réplicas de leitura geograficamente distantes"
+    ],
+    "correta": 0,
+    "dica": "Leva a infraestrutura e serviços da AWS para o ambiente on-premises.",
+    "dificuldade": "Médio",
+    "categoria": "Nuvem Híbrida"
+  },
+  {
+    "id": 138,
+    "pergunta": "Para proteger credenciais de banco de dados e rotacioná-las automaticamente, qual serviço utilizar?",
+    "opcoes": [
+      "AWS Secrets Manager",
+      "AWS KMS",
+      "AWS SSM Parameter Store",
+      "AWS IAM"
+    ],
+    "correta": 0,
+    "dica": "Secrets Manager rotaciona e gerencia segredos e credenciais.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Segredos"
+  },
+  {
+    "id": 139,
+    "pergunta": "Qual serviço é um repositório gerenciado de código-fonte baseado em Git?",
+    "opcoes": [
+      "AWS CodeCommit",
+      "AWS CodeBuild",
+      "AWS CodeDeploy",
+      "AWS CodePipeline"
+    ],
+    "correta": 0,
+    "dica": "Hospeda repositórios privados baseados em Git.",
+    "dificuldade": "Fácil",
+    "categoria": "Ferramentas de Desenvolvimento"
+  },
+  {
+    "id": 140,
+    "pergunta": "Qual serviço automatiza o processo de compilação, teste e implantação de código (CI/CD)?",
+    "opcoes": [
+      "AWS CodePipeline",
+      "AWS CodeArtifact",
+      "AWS Cloud9",
+      "AWS X-Ray"
+    ],
+    "correta": 0,
+    "dica": "Orquestrador de pipelines de entrega contínua.",
+    "dificuldade": "Médio",
+    "categoria": "Ferramentas de Desenvolvimento"
+  },
+  {
+    "id": 141,
+    "pergunta": "O que descreve corretamente o conceito de Região na AWS?",
+    "opcoes": [
+      "Uma área geográfica física contendo duas ou mais Zonas de Disponibilidade",
+      "Um único centro de dados com energia redundante",
+      "Um grupo de contas gerenciadas centralmente",
+      "Uma zona de presença para cache do CloudFront"
+    ],
+    "correta": 0,
+    "dica": "Regiões são áreas geográficas isoladas com múltiplas AZs.",
+    "dificuldade": "Fácil",
+    "categoria": "Infraestrutura Global"
+  },
+  {
+    "id": 142,
+    "pergunta": "Qual o benefício da arquitetura baseada em microsserviços desacoplados?",
+    "opcoes": [
+      "Permitir que componentes falhem ou escalem de forma independente sem afetar todo o sistema",
+      "Reduzir os custos de licença de banco de dados",
+      "Eliminar a necessidade de monitoramento de segurança",
+      "Garantir que todas as instâncias rodem em um único servidor"
+    ],
+    "correta": 0,
+    "dica": "Desacoplamento aumenta a resiliência e a flexibilidade de escala.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Nuvem"
+  },
+  {
+    "id": 143,
+    "pergunta": "Qual recurso do Route 53 permite direcionar o tráfego de usuários para a região AWS com menor latência?",
+    "opcoes": [
+      "Roteamento baseado em latência (Latency Routing)",
+      "Roteamento de ponderação (Weighted Routing)",
+      "Roteamento Failover",
+      "Roteamento de Geolocalização"
+    ],
+    "correta": 0,
+    "dica": "Roteia solicitações para a região que oferece a menor latência ao usuário.",
+    "dificuldade": "Médio",
+    "categoria": "Redes & DNS"
+  },
+  {
+    "id": 144,
+    "pergunta": "Qual serviço provê análise de imagens e vídeos usando aprendizado de máquina para reconhecer objetos e rostos?",
+    "opcoes": [
+      "Amazon Rekognition",
+      "Amazon Comprehend",
+      "Amazon Polly",
+      "Amazon Textract"
+    ],
+    "correta": 0,
+    "dica": "Análise visual automatizada com IA.",
+    "dificuldade": "Fácil",
+    "categoria": "Machine Learning & IA"
+  },
+  {
+    "id": 145,
+    "pergunta": "Uma empresa quer ser notificada quando os recursos atingirem limites de cotas da conta AWS. Qual serviço ajuda a visualizar isso?",
+    "opcoes": [
+      "Service Quotas",
+      "AWS Organizations",
+      "AWS Budgets",
+      "AWS Config"
+    ],
+    "correta": 0,
+    "dica": "Service Quotas gerencia e monitora os limites de uso da sua conta.",
+    "dificuldade": "Fácil",
+    "categoria": "Governança & Cotas"
+  },
+  {
+    "id": 146,
+    "pergunta": "Qual serviço totalmente gerenciado permite processar e analisar dados em tempo real em fluxo (streaming)?",
+    "opcoes": [
+      "Amazon Kinesis",
+      "AWS Glue",
+      "Amazon Athena",
+      "AWS Batch"
+    ],
+    "correta": 0,
+    "dica": "Coleta e processa dados em tempo real em grande escala.",
+    "dificuldade": "Médio",
+    "categoria": "Analytics & Streaming"
+  },
+  {
+    "id": 147,
+    "pergunta": "Para criar um ambiente de desenvolvimento integrado (IDE) diretamente no navegador, qual serviço utilizar?",
+    "opcoes": [
+      "AWS Cloud9",
+      "AWS CodeStar",
+      "AWS CloudShell",
+      "AWS AppRunner"
+    ],
+    "correta": 0,
+    "dica": "IDE baseada em nuvem para escrever e depurar código.",
+    "dificuldade": "Fácil",
+    "categoria": "Ferramentas de Desenvolvimento"
+  },
+  {
+    "id": 148,
+    "pergunta": "Como se chama o modelo em que a cobrança do Amazon EC2 é feita por segundo ou minuto com base no uso direto sem compromisso prévio?",
+    "opcoes": [
+      "On-Demand (Sob demanda)",
+      "Instâncias Reservadas",
+      "Savings Plans",
+      "Instâncias Spot"
+    ],
+    "correta": 0,
+    "dica": "Pay-as-you-go sem custos iniciais.",
+    "dificuldade": "Fácil",
+    "categoria": "Preços & Custos"
+  },
+  {
+    "id": 149,
+    "pergunta": "Qual ferramenta fornece relatórios detalhados contendo metadados de tags para identificar qual departamento gastou em cada recurso?",
+    "opcoes": [
+      "Tags de alocação de custos (Cost Allocation Tags)",
+      "AWS Trusted Advisor",
+      "AWS License Manager",
+      "AWS Pricing Calculator"
+    ],
+    "correta": 0,
+    "dica": "Tags ajudam a categorizar e rastrear custos por departamento.",
+    "dificuldade": "Fácil",
+    "categoria": "Faturamento & Custos"
+  },
+  {
+    "id": 150,
+    "pergunta": "Qual serviço permite a orquestração de microsserviços e aplicações serverless usando fluxos de trabalho visuais?",
+    "opcoes": [
+      "AWS Step Functions",
+      "AWS Lambda",
+      "AWS Batch",
+      "Amazon SQS"
+    ],
+    "correta": 0,
+    "dica": "Coordena múltiplos serviços em fluxos de trabalho de máquinas de estado.",
+    "dificuldade": "Médio",
+    "categoria": "Integração & Serverless"
+  },
+  {
+    "id": 151,
+    "pergunta": "Qual a diferença entre o Amazon S3 e o Amazon EBS?",
+    "opcoes": [
+      "S3 é armazenamento de objetos acessível via web; EBS é armazenamento em bloco para instâncias EC2",
+      "S3 é mais rápido que EBS em todos os cenários",
+      "EBS é público na internet por padrão; S3 é privado",
+      "Não há diferença entre ambos"
+    ],
+    "correta": 0,
+    "dica": "S3 é de objetos; EBS é de bloco conectado a servidores.",
+    "dificuldade": "Fácil",
+    "categoria": "Armazenamento"
+  },
+  {
+    "id": 152,
+    "pergunta": "Qual serviço AWS permite enviar mensagens de e-mail de marketing e transacionais em massa?",
+    "opcoes": [
+      "Amazon SES (Simple Email Service)",
+      "Amazon SNS",
+      "Amazon SQS",
+      "AWS Pinpoint"
+    ],
+    "correta": 0,
+    "dica": "Serviço de e-mail em nuvem altamente escalável.",
+    "dificuldade": "Fácil",
+    "categoria": "Integração & Comunicação"
+  },
+  {
+    "id": 153,
+    "pergunta": "Qual opção garante que os dados armazenados no S3 sejam replicados automaticamente para outra região AWS?",
+    "opcoes": [
+      "Replicação entre regiões (Cross-Region Replication - CRR)",
+      "S3 Lifecycle Rules",
+      "S3 Versioning",
+      "S3 Transfer Acceleration"
+    ],
+    "correta": 0,
+    "dica": "CRR copia objetos automaticamente para buckets em regiões distintas.",
+    "dificuldade": "Fácil",
+    "categoria": "Armazenamento & Resiliência"
+  },
+  {
+    "id": 154,
+    "pergunta": "Qual o objetivo de habilitar o Versionamento em um bucket do Amazon S3?",
+    "opcoes": [
+      "Manter múltiplas variantes de um mesmo objeto no mesmo bucket para proteção contra exclusão acidental",
+      "Aumentar a velocidade de upload",
+      "Reduzir custos de armazenamento",
+      "Criptografar arquivos automaticamente"
+    ],
+    "correta": 0,
+    "dica": "Permite recuperar versões anteriores de arquivos modificados ou excluídos.",
+    "dificuldade": "Fácil",
+    "categoria": "Armazenamento"
+  },
+  {
+    "id": 155,
+    "pergunta": "Qual o prazo padrão para retenção de eventos no histórico do AWS CloudTrail sem custo adicional?",
+    "opcoes": [
+      "90 dias",
+      "30 dias",
+      "1 ano",
+      "Indefinido"
+    ],
+    "correta": 0,
+    "dica": "CloudTrail armazena 90 dias de histórico de eventos por padrão.",
+    "dificuldade": "Hard",
+    "categoria": "Segurança & Auditoria"
+  },
+  {
+    "id": 156,
+    "pergunta": "O que é o AWS Direct Connect Location?",
+    "opcoes": [
+      "Uma instalação de colocation onde um parceiro estabelece a conexão física com a rede da AWS",
+      "Um datacenter primário da AWS",
+      "Um ponto de borda do CloudFront",
+      "Um tipo de VPC privada"
+    ],
+    "correta": 0,
+    "dica": "Ponto físico de facilidade de rede onde o link dedicado é conectado.",
+    "dificuldade": "Hard",
+    "categoria": "Redes & Conectividade"
+  },
+  {
+    "id": 157,
+    "pergunta": "Qual serviço permite converter formatos de vídeo e áudio em massa na nuvem?",
+    "opcoes": [
+      "AWS Elemental MediaConvert",
+      "Amazon Rekognition",
+      "Amazon Polly",
+      "AWS Batch"
+    ],
+    "correta": 0,
+    "dica": "Processamento e transcodificação de arquivos de mídia.",
+    "dificuldade": "Hard",
+    "categoria": "Mídia & Processamento"
+  },
+  {
+    "id": 158,
+    "pergunta": "Como o Elastic Load Balancing (ELB) verifica se uma instância EC2 está apta a receber tráfego?",
+    "opcoes": [
+      "Através de verificações de integridade (Health Checks)",
+      "Analisando a fatura da conta",
+      "Consultando o AWS Trusted Advisor",
+      "Medindo a quantidade de espaço em disco"
+    ],
+    "correta": 0,
+    "dica": "Health checks enviam pings periódicos para verificar o status do alvo.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & Balanceamento"
+  },
+  {
+    "id": 159,
+    "pergunta": "Qual serviço provê um banco de dados relacional compatível com MySQL e PostgreSQL com desempenho até 5x superior ao MySQL padrão?",
+    "opcoes": [
+      "Amazon Aurora",
+      "Amazon DynamoDB",
+      "Amazon Redshift",
+      "Amazon Neptune"
+    ],
+    "correta": 0,
+    "dica": "Motor relacional de alto desempenho desenvolvido pela AWS.",
+    "dificuldade": "Fácil",
+    "categoria": "Bancos de Dados"
+  },
+  {
+    "id": 160,
+    "pergunta": "Qual serviço AWS permite criar e publicar APIs REST e WebSocket seguras em qualquer escala?",
+    "opcoes": [
+      "Amazon API Gateway",
+      "AWS AppSync",
+      "Amazon Route 53",
+      "AWS Elastic Beanstalk"
+    ],
+    "correta": 0,
+    "dica": "Porta de entrada gerenciada para APIs de microsserviços.",
+    "dificuldade": "Médio",
+    "categoria": "Integração & APIs"
+  },
+  {
+    "id": 161,
+    "pergunta": "Qual funcionalidade do AWS Organizations unifica o limite de uso para aplicar faixas de desconto por volume em serviços como o S3?",
+    "opcoes": [
+      "Faturamento Consolidado (Consolidated Billing)",
+      "Service Control Policies",
+      "AWS Budgets",
+      "Cost Allocation Tags"
+    ],
+    "correta": 0,
+    "dica": "Agrupa o consumo de todas as contas da organização.",
+    "dificuldade": "Fácil",
+    "categoria": "Faturamento & Governança"
+  },
+  {
+    "id": 162,
+    "pergunta": "Qual o principal benefício do AWS Cloud Architecture Center?",
+    "opcoes": [
+      "Acessar orientações de arquitetura, diagramas de referência e boas práticas oficiais",
+      "Comprar servidores físicos usados",
+      "Contratar suporte telefônico gratuito",
+      "Gerenciar senhas do IAM"
+    ],
+    "correta": 0,
+    "dica": "Hub de conhecimento oficial com arquiteturas de referência.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Recursos"
+  },
+  {
+    "id": 163,
+    "pergunta": "Em uma sub-rede privada sem NAT Gateway, como uma instância EC2 pode acessar o Amazon S3 de forma segura sem trafegar pela internet pública?",
+    "opcoes": [
+      "Através de um VPC Endpoint para o S3",
+      "Usando um Internet Gateway",
+      "Através de VPC Peering",
+      "Usando o AWS Shield"
+    ],
+    "correta": 0,
+    "dica": "VPC Endpoints conectam de forma privada cargas de trabalho a serviços AWS.",
+    "dificuldade": "Hard",
+    "categoria": "Redes & Segurança"
+  },
+  {
+    "id": 164,
+    "pergunta": "Qual serviço monitora alterações nas configurações dos recursos e compara com regras de conformidade desejadas?",
+    "opcoes": [
+      "AWS Config",
+      "AWS CloudTrail",
+      "Amazon CloudWatch",
+      "AWS GuardDuty"
+    ],
+    "correta": 0,
+    "dica": "Registra e avalia configurações dos recursos AWS.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança & Governança"
+  },
+  {
+    "id": 165,
+    "pergunta": "Qual das opções abaixo é um pilar oficial do AWS Well-Architected Framework?",
+    "opcoes": [
+      "Excelência Operacional",
+      "Velocidade de Código",
+      "Portabilidade Híbrida",
+      "Independência de Fornecedor"
+    ],
+    "correta": 0,
+    "dica": "Operational Excellence é o 1º pilar do framework.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 166,
+    "pergunta": "Para implantar recursos AWS em locais com requisitos rígidos de baixa latência (ex: jogos interativos ou manufatura), qual recurso estende a infraestrutura para cidades específicas?",
+    "opcoes": [
+      "AWS Local Zones",
+      "AWS Wavelength",
+      "AWS Outposts",
+      "Amazon CloudFront"
+    ],
+    "correta": 0,
+    "dica": "Local Zones aproximam computação e armazenamento de grandes centros urbanos.",
+    "dificuldade": "Hard",
+    "categoria": "Infraestrutura Global"
+  },
+  {
+    "id": 167,
+    "pergunta": "Qual serviço estende os serviços AWS para bordas de redes móveis 5G de operadoras de telecomunicações?",
+    "opcoes": [
+      "AWS Wavelength",
+      "AWS Local Zones",
+      "AWS Direct Connect",
+      "Amazon Route 53"
+    ],
+    "correta": 0,
+    "dica": "Wavelength integra computação à rede 5G para baixíssima latência.",
+    "dificuldade": "Hard",
+    "categoria": "Infraestrutura Global"
+  },
+  {
+    "id": 168,
+    "pergunta": "Qual a função do AWS Control Tower?",
+    "opcoes": [
+      "Configurar e governar um ambiente com múltiplas contas de forma automatizada usando melhores práticas",
+      "Monitorar chamadas de API do sistema",
+      "Gerenciar tráfego de rede entre regiões",
+      "Controlar custos de instâncias EC2"
+    ],
+    "correta": 0,
+    "dica": "Cria uma landing zone segura para gerenciar múltiplas contas.",
+    "dificuldade": "Hard",
+    "categoria": "Governança & Organizações"
+  },
+  {
+    "id": 169,
+    "pergunta": "Qual serviço provê um ambiente de banco de dados em memória chave-valor para aceleração de leitura (caching)?",
+    "opcoes": [
+      "Amazon ElastiCache",
+      "Amazon RDS",
+      "Amazon DynamoDB",
+      "Amazon Redshift"
+    ],
+    "correta": 0,
+    "dica": "ElastiCache suporta Redis e Memcached para cache em memória.",
+    "dificuldade": "Médio",
+    "categoria": "Bancos de Dados & Cache"
+  },
+  {
+    "id": 170,
+    "pergunta": "Para migrar uma aplicação sem alterar seu código ou arquitetura (lift-and-shift), qual serviço de migração é mais indicado?",
+    "opcoes": [
+      "AWS Application Migration Service (MGN)",
+      "AWS Database Migration Service",
+      "AWS Snowball",
+      "AWS DataSync"
+    ],
+    "correta": 0,
+    "dica": "MGN automatiza a migração rehosting (lift-and-shift) de servidores.",
+    "dificuldade": "Médio",
+    "categoria": "Migração"
+  },
+  {
+    "id": 171,
+    "pergunta": "Qual ferramenta provê acesso interativo via linha de comando diretamente do navegador sem precisar instalar o AWS CLI localmente?",
+    "opcoes": [
+      "AWS CloudShell",
+      "AWS CLI",
+      "AWS Cloud9",
+      "AWS Management Console"
+    ],
+    "correta": 0,
+    "dica": "Shell pré-autenticado diretamente no navegador.",
+    "dificuldade": "Fácil",
+    "categoria": "Ferramentas de Gerenciamento"
+  },
+  {
+    "id": 172,
+    "pergunta": "Qual tipo de IP em uma instância EC2 permanece inalterado mesmo que a instância seja interrompida e reiniciada?",
+    "opcoes": [
+      "Endereço IP Elástico (Elastic IP)",
+      "Endereço IP Público dinâmico",
+      "Endereço MAC",
+      "IP de sub-rede secundário"
+    ],
+    "correta": 0,
+    "dica": "Elastic IP é um endereço IPv4 estático projetado para computação dinâmica.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & EC2"
+  },
+  {
+    "id": 173,
+    "pergunta": "Como a AWS garante a durabilidade de 99.999999999% no Amazon S3 Standard?",
+    "opcoes": [
+      "Armazenando dados de forma redundante em múltiplas Zonas de Disponibilidade dentro da Região",
+      "Fazendo backup em fitas diárias",
+      "Criptografando com chaves de 4096 bits",
+      "Mantendo uma única cópia em um datacenter ultra-seguro"
+    ],
+    "correta": 0,
+    "dica": "Replicação automática em pelo menos 3 AZs fisicamente separadas.",
+    "dificuldade": "Fácil",
+    "categoria": "Armazenamento & Resiliência"
+  },
+  {
+    "id": 174,
+    "pergunta": "Qual o objetivo do serviço AWS X-Ray?",
+    "opcoes": [
+      "Analisar e depurar aplicações distribuídas identificando gargalos de desempenho",
+      "Proteger contra vírus e malwares",
+      "Realizar varreduras de portas de rede",
+      "Validar faturas financeiras"
+    ],
+    "correta": 0,
+    "dica": "X-Ray rastreia solicitações que passam por microsserviços.",
+    "dificuldade": "Hard",
+    "categoria": "Monitoramento & Depuração"
+  },
+  {
+    "id": 175,
+    "pergunta": "Para sincronizar arquivos entre sistemas de arquivos locais e o Amazon S3 ou EFS de forma rápida e automatizada, qual serviço usar?",
+    "opcoes": [
+      "AWS DataSync",
+      "AWS Storage Gateway",
+      "AWS Snowball",
+      "AWS Direct Connect"
+    ],
+    "correta": 0,
+    "dica": "DataSync acelera e automatiza a movimentação de dados online.",
+    "dificuldade": "Médio",
+    "categoria": "Migração & Dados"
+  },
+  {
+    "id": 176,
+    "pergunta": "Qual serviço permite criar catálogos de recursos de TI aprovados para uso interno na organização?",
+    "opcoes": [
+      "AWS Service Catalog",
+      "AWS Organizations",
+      "AWS Marketplace",
+      "AWS Config"
+    ],
+    "correta": 0,
+    "dica": "Permite criar e gerenciar catálogos de serviços de TI aprovados.",
+    "dificuldade": "Médio",
+    "categoria": "Governança"
+  },
+  {
+    "id": 177,
+    "pergunta": "Qual recurso do IAM permite conceder acesso temporário com permissões específicas a usuários ou serviços?",
+    "opcoes": [
+      "Funções do IAM (IAM Roles)",
+      "Grupos do IAM",
+      "Políticas gerenciadas pelo usuário",
+      "Chaves de acesso do IAM"
+    ],
+    "correta": 0,
+    "dica": "IAM Roles utilizam credenciais temporárias sem senhas fixas.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & IAM"
+  },
+  {
+    "id": 178,
+    "pergunta": "Qual pilar do Well-Architected Framework enfatiza o uso de automação com o conceito de 'infraestrutura como código'?",
+    "opcoes": [
+      "Excelência Operacional",
+      "Sustentabilidade",
+      "Otimização de Custos",
+      "Confiabilidade"
+    ],
+    "correta": 0,
+    "dica": "Perform operations as code é um princípio da Excelência Operacional.",
+    "dificuldade": "Médio",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 179,
+    "pergunta": "Uma empresa deseja executar uma carga de trabalho intermitente por alguns minutos poucas vezes ao dia sem pagar por servidores ociosos. Qual a melhor opção?",
+    "opcoes": [
+      "AWS Lambda",
+      "Instâncias EC2 On-Demand",
+      "Instâncias Reservadas",
+      "Dedicated Hosts"
+    ],
+    "correta": 0,
+    "dica": "Execução serverless cobrada estritamente pelo tempo de execução em milissegundos.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação Serverless"
+  },
+  {
+    "id": 180,
+    "pergunta": "Qual o prazo mínimo de compromisso ao adquirir um Savings Plan ou Instância Reservada?",
+    "opcoes": [
+      "1 ano",
+      "1 mês",
+      "6 meses",
+      "3 anos obrigatoriamente"
+    ],
+    "correta": 0,
+    "dica": "Compromissos podem ser firmados para 1 ou 3 anos.",
+    "dificuldade": "Fácil",
+    "categoria": "Preços & Custos"
+  },
+  {
+    "id": 181,
+    "pergunta": "Como a AWS define o conceito de 'Elasticidade'?",
+    "opcoes": [
+      "Capacidade de dimensionar recursos automaticamente conforme a variação da demanda",
+      "Garantia de que o sistema nunca falhará",
+      "Capacidade de migrar aplicações entre provedores",
+      "Pagamento de valor fixo mensal"
+    ],
+    "correta": 0,
+    "dica": "Aumenta e reduz capacidade dinamicamente conforme necessário.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem"
+  },
+  {
+    "id": 182,
+    "pergunta": "Qual serviço permite a criação de um Data Lake gerenciado para centralizar, limpar e catalogar dados no S3?",
+    "opcoes": [
+      "AWS Lake Formation",
+      "Amazon Redshift",
+      "AWS Glue",
+      "Amazon Athena"
+    ],
+    "correta": 0,
+    "dica": "Lake Formation simplifica a criação e governança de um Data Lake.",
+    "dificuldade": "Hard",
+    "categoria": "Analytics & Data Lake"
+  },
+  {
+    "id": 183,
+    "pergunta": "Qual o benefício de utilizar tags em recursos da AWS?",
+    "opcoes": [
+      "Categorizar, organizar e rastrear custos de recursos facilmente",
+      "Aumentar o desempenho do processador",
+      "Criptografar dados automaticamente",
+      "Reduzir a latência da rede"
+    ],
+    "correta": 0,
+    "dica": "Pares de chave-valor que identificam a finalidade ou proprietário do recurso.",
+    "dificuldade": "Fácil",
+    "categoria": "Gerenciamento & Governança"
+  },
+  {
+    "id": 184,
+    "pergunta": "Qual tipo de tráfego de dados de rede de saída (Data Transfer Out) é tipicamente cobrado pela AWS?",
+    "opcoes": [
+      "Tráfego enviado da AWS para a internet pública",
+      "Tráfego de entrada vindo da internet para a AWS",
+      "Tráfego entre serviços dentro da mesma AZ",
+      "Tráfego de gerenciamento do IAM"
+    ],
+    "correta": 0,
+    "dica": "Data Transfer IN é gratuito na maioria dos casos; Data Transfer OUT para a internet é cobrado.",
+    "dificuldade": "Médio",
+    "categoria": "Faturamento & Custos"
+  },
+  {
+    "id": 185,
+    "pergunta": "Qual serviço de inteligência artificial extrai automaticamente texto impresso e manuscrito de documentos digitalizados?",
+    "opcoes": [
+      "Amazon Textract",
+      "Amazon Rekognition",
+      "Amazon Comprehend",
+      "Amazon Translate"
+    ],
+    "correta": 0,
+    "dica": "Textract analisa e extrai texto estruturado de PDFs e imagens.",
+    "dificuldade": "Fácil",
+    "categoria": "Machine Learning & IA"
+  },
+  {
+    "id": 186,
+    "pergunta": "Qual serviço de linguagem natural identifica sentimentos, tópicos e entidades em textos em inglês e português?",
+    "opcoes": [
+      "Amazon Comprehend",
+      "Amazon Lex",
+      "Amazon Polly",
+      "Amazon Kendra"
+    ],
+    "correta": 0,
+    "dica": "Comprehend é um serviço de PNL (Processamento de Linguagem Natural).",
+    "dificuldade": "Médio",
+    "categoria": "Machine Learning & IA"
+  },
+  {
+    "id": 187,
+    "pergunta": "Qual a função do AWS Global Accelerator?",
+    "opcoes": [
+      "Rrotear o tráfego dos usuários através da infraestrutura de rede global da AWS para melhorar o desempenho e a disponibilidade",
+      "Aumentar a velocidade do processamento do EC2",
+      "Apressar a entrega de dispositivos Snowball",
+      "Reduzir o tamanho dos objetos no S3"
+    ],
+    "correta": 0,
+    "dica": "Usa IPs Anycast globais e a rede privada da AWS para otimizar rotas de tráfego.",
+    "dificuldade": "Hard",
+    "categoria": "Redes & Desempenho"
+  },
+  {
+    "id": 188,
+    "pergunta": "Para gerenciar dependências de pacotes e artefatos de código de forma segura na empresa, qual serviço usar?",
+    "opcoes": [
+      "AWS CodeArtifact",
+      "AWS CodeCommit",
+      "AWS CodeDeploy",
+      "AWS CodePipeline"
+    ],
+    "correta": 0,
+    "dica": "Repositório seguro de gerenciamento de artefatos de software.",
+    "dificuldade": "Hard",
+    "categoria": "Ferramentas de Desenvolvimento"
+  },
+  {
+    "id": 189,
+    "pergunta": "O que significa a sigla TCO na avaliação de migração para a nuvem?",
+    "opcoes": [
+      "Total Cost of Ownership (Custo Total de Posse)",
+      "Total Cloud Optimization",
+      "Technical Cost Operation",
+      "Transfer Cost Option"
+    ],
+    "correta": 0,
+    "dica": "Compara os custos de infraestrutura local versus os custos de rodar na nuvem.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem & Custos"
+  },
+  {
+    "id": 190,
+    "pergunta": "Qual o tempo médio de resposta para chamadas de suporte técnico no plano Developer Support para casos de orientação de sistema?",
+    "opcoes": [
+      "Menos de 24 horas úteis",
+      "Menos de 15 minutos",
+      "Menos de 1 hora",
+      "Atendimento imediato por telefone"
+    ],
+    "correta": 0,
+    "dica": "Plano Developer responde chamadas gerais em até 24h úteis.",
+    "dificuldade": "Hard",
+    "categoria": "Suporte & Planos"
+  },
+  {
+    "id": 191,
+    "pergunta": "Qual a diferença entre uma Sub-rede Pública e uma Sub-rede Privada em uma VPC?",
+    "opcoes": [
+      "Sub-redes públicas possuem rota direta para um Internet Gateway; sub-redes privadas não",
+      "Sub-redes privadas são gratuitas e públicas são pagas",
+      "Sub-redes públicas não suportam instâncias EC2",
+      "Sub-redes privadas não aceitam bancos de dados"
+    ],
+    "correta": 0,
+    "dica": "A presença de rota para o Internet Gateway define a sub-rede como pública.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & Infraestrutura"
+  },
+  {
+    "id": 192,
+    "pergunta": "Qual serviço AWS permite o gerenciamento e monitoramento de frotas de dispositivos de Internet das Coisas (IoT)?",
+    "opcoes": [
+      "AWS IoT Core",
+      "AWS Systems Manager",
+      "Amazon EC2 Spot",
+      "AWS Batch"
+    ],
+    "correta": 0,
+    "dica": "Conecta dispositivos IoT à nuvem de forma segura e bidirecional.",
+    "dificuldade": "Fácil",
+    "categoria": "Internet das Coisas (IoT)"
+  },
+  {
+    "id": 193,
+    "pergunta": "Qual pilar do Well-Architected Framework foca em evitar alterações não planejadas e manter a rastreabilidade?",
+    "opcoes": [
+      "Excelência Operacional",
+      "Segurança",
+      "Desempenho",
+      "Custos"
+    ],
+    "correta": 0,
+    "dica": "Automação e governança de mudanças operacionais.",
+    "dificuldade": "Médio",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 194,
+    "pergunta": "Para executar testes de software em centenas de dispositivos móveis reais na nuvem, qual serviço utilizar?",
+    "opcoes": [
+      "AWS Device Farm",
+      "AWS AppStream 2.0",
+      "Amazon EC2",
+      "AWS WorkSpaces"
+    ],
+    "correta": 0,
+    "dica": "Testa apps web e móveis em dispositivos Android e iOS reais.",
+    "dificuldade": "Hard",
+    "categoria": "Ferramentas de Teste"
+  },
+  {
+    "id": 195,
+    "pergunta": "O que é o Amazon Macie?",
+    "opcoes": [
+      "Serviço de segurança que usa machine learning para descobrir e proteger dados sensíveis no S3",
+      "Serviço de gerenciamento de chaves de criptografia",
+      "Antivírus para instâncias EC2",
+      "Firewall de sub-rede"
+    ],
+    "correta": 0,
+    "dica": "Proteção e classificação de dados sensíveis (PII) no S3.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Dados"
+  },
+  {
+    "id": 196,
+    "pergunta": "Qual das opções é uma opção de Tenancy no Amazon EC2 para clientes com requisitos de conformidade que exigem isolamento de hardware físico?",
+    "opcoes": [
+      "Dedicated Hosts (Hospedeiros Dedicados)",
+      "Shared Instances",
+      "Spot Instances",
+      "Serverless Instances"
+    ],
+    "correta": 0,
+    "dica": "Servidor físico do EC2 dedicado para uso exclusivo de uma conta.",
+    "dificuldade": "Médio",
+    "categoria": "Computação & Conformidade"
+  },
+  {
+    "id": 197,
+    "pergunta": "Como são chamadas as localizações globais da AWS projetadas para armazenar conteúdo em cache via CloudFront?",
+    "opcoes": [
+      "Locais de Borda (Edge Locations)",
+      "Zonas de Disponibilidade",
+      "Regiões Principais",
+      "Pontos de Saída (Outposts)"
+    ],
+    "correta": 0,
+    "dica": "Pontos de presença globais para entrega rápida de conteúdo.",
+    "dificuldade": "Fácil",
+    "categoria": "Infraestrutura Global"
+  },
+  {
+    "id": 198,
+    "pergunta": "Qual o papel do AWS KMS (Key Management Service)?",
+    "opcoes": [
+      "Criar e controlar as chaves de criptografia usadas para proteger seus dados",
+      "Gerenciar senhas de usuários do IAM",
+      "Fornecer certificados SSL/TLS gratuitos",
+      "Autenticar usuários via biometria"
+    ],
+    "correta": 0,
+    "dica": "Gerenciamento centralizado de chaves criptográficas.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Criptografia"
+  },
+  {
+    "id": 199,
+    "pergunta": "Para provisionar desktops virtuais baseados em Windows ou Linux para funcionários trabalharem remotamente, qual serviço usar?",
+    "opcoes": [
+      "Amazon WorkSpaces",
+      "Amazon AppStream 2.0",
+      "Amazon EC2",
+      "AWS Client VPN"
+    ],
+    "correta": 0,
+    "dica": "Desktop como Serviço (DaaS) gerenciado e seguro.",
+    "dificuldade": "Fácil",
+    "categoria": "End User Computing"
+  },
+  {
+    "id": 200,
+    "pergunta": "Qual ferramenta fornece visualização detalhada do histórico de faturamento mensal e permite exportar relatórios em formato CSV?",
+    "opcoes": [
+      "AWS Cost and Usage Report (CUR)",
+      "AWS Budgets",
+      "AWS Trusted Advisor",
+      "AWS Config"
+    ],
+    "correta": 0,
+    "dica": "Relatório mais completo contendo detalhes por hora/recurso.",
+    "dificuldade": "Médio",
+    "categoria": "Faturamento & Custos"
+  },
+  {
+    "id": 201,
+    "pergunta": "Qual serviço permite gerenciar atualizações e correções de segurança (patches) automaticamente em uma frota de servidores?",
+    "opcoes": [
+      "AWS Systems Manager Patch Manager",
+      "AWS Config",
+      "Amazon Inspector",
+      "AWS CloudFormation"
+    ],
+    "correta": 0,
+    "dica": "Automação do processo de patching em SO Windows e Linux.",
+    "dificuldade": "Médio",
+    "categoria": "Gerenciamento & Operações"
+  },
+  {
+    "id": 202,
+    "pergunta": "Qual recurso do Amazon S3 pode transicionar automaticamente objetos para classes de armazenamento mais baratas após determinado período?",
+    "opcoes": [
+      "Regras de Ciclo de Vida (S3 Lifecycle Rules)",
+      "S3 Replication",
+      "S3 Storage Lens",
+      "S3 Versioning"
+    ],
+    "correta": 0,
+    "dica": "Move ou exclui objetos com base na idade dos dados.",
+    "dificuldade": "Fácil",
+    "categoria": "Armazenamento & Custos"
+  },
+  {
+    "id": 203,
+    "pergunta": "Qual pilar do Well-Architected Framework engloba a capacidade de proteger informações, sistemas e ativos?",
+    "opcoes": [
+      "Segurança (Security)",
+      "Confiabilidade",
+      "Sustentabilidade",
+      "Excelência Operacional"
+    ],
+    "correta": 0,
+    "dica": "Focado em confidencialidade, integridade dos dados e gestão de acessos.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 204,
+    "pergunta": "Qual serviço permite automatizar a coleta e migração de dados de bancos de dados locais diretamente para o Amazon Redshift ou S3?",
+    "opcoes": [
+      "AWS Database Migration Service (DMS)",
+      "AWS DataSync",
+      "AWS Direct Connect",
+      "Amazon Kinesis"
+    ],
+    "correta": 0,
+    "dica": "DMS migra dados com replicação contínua.",
+    "dificuldade": "Fácil",
+    "categoria": "Migração & Bancos de Dados"
+  },
+  {
+    "id": 205,
+    "pergunta": "Qual das opções representa uma boa prática de segurança para contas AWS do cliente?",
+    "opcoes": [
+      "Habilitar autenticação multifator (MFA) para todos os usuários com acesso de gerenciamento",
+      "Usar a chave do usuário root em scripts automatizados",
+      "Manter portas RDP e SSH abertas para 0.0.0.0/0",
+      "Compartilhar a mesma conta IAM entre múltiplos funcionários"
+    ],
+    "correta": 0,
+    "dica": "MFA adiciona uma camada essencial de proteção a credenciais.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & IAM"
+  },
+  {
+    "id": 206,
+    "pergunta": "Qual o benefício de implantar instâncias em múltiplas Zonas de Disponibilidade (Multi-AZ)?",
+    "opcoes": [
+      "Aumentar a disponibilidade e a tolerância a falhas da aplicação",
+      "Reduzir os custos de licença pela metade",
+      "Melhorar a velocidade de upload da internet local",
+      "Garantir isenção de impostos"
+    ],
+    "correta": 0,
+    "dica": "Protege a aplicação contra falhas físicas de um datacenter individual.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Resiliência"
+  },
+  {
+    "id": 207,
+    "pergunta": "Para gerenciar permissões de acesso e limites de gastos entre várias contas de uma empresa, qual serviço centralizado deve ser configurado?",
+    "opcoes": [
+      "AWS Organizations",
+      "AWS IAM Access Analyzer",
+      "AWS Control Tower",
+      "AWS Budgets"
+    ],
+    "correta": 0,
+    "dica": "Governança centralizada de múltiplas contas AWS.",
+    "dificuldade": "Fácil",
+    "categoria": "Governança & Contas"
+  },
+  {
+    "id": 208,
+    "pergunta": "Qual serviço de armazenamento armazena dados em blocos e é projetado para atuar como disco rígido principal de uma instância EC2?",
+    "opcoes": [
+      "Amazon EBS",
+      "Amazon S3",
+      "Amazon EFS",
+      "Amazon Glacier"
+    ],
+    "correta": 0,
+    "dica": "Volume de bloco persitente diretamente anexado à instância.",
+    "dificuldade": "Fácil",
+    "categoria": "Armazenamento em Bloco"
+  },
+  {
+    "id": 209,
+    "pergunta": "Uma aplicação precisa enviar notificações por SMS e e-mail imediatamente para milhares de clientes após uma compra. Qual serviço usar?",
+    "opcoes": [
+      "Amazon SNS",
+      "Amazon SQS",
+      "Amazon SES",
+      "AWS Step Functions"
+    ],
+    "correta": 0,
+    "dica": "Serviço pub/sub para envio massivo de notificações.",
+    "dificuldade": "Fácil",
+    "categoria": "Integração & Notificação"
+  },
+  {
+    "id": 210,
+    "pergunta": "Qual o recurso que permite isolar o tráfego de rede de uma empresa dentro da nuvem AWS?",
+    "opcoes": [
+      "Amazon VPC",
+      "AWS Direct Connect",
+      "Security Groups",
+      "Network ACLs"
+    ],
+    "correta": 0,
+    "dica": "Virtual Private Cloud cria a rede lógica isolada do cliente.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & Infraestrutura"
+  },
+  {
+    "id": 211,
+    "pergunta": "Para rastrear quais usuários executaram alterações na infraestrutura nos últimos dias para fins de auditoria, qual serviço consultar?",
+    "opcoes": [
+      "AWS CloudTrail",
+      "Amazon CloudWatch",
+      "AWS Config",
+      "AWS Trusted Advisor"
+    ],
+    "correta": 0,
+    "dica": "Registra chamadas de API e atividades de usuários na conta.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Auditoria"
+  },
+  {
+    "id": 212,
+    "pergunta": "Qual serviço provê um ambiente seguro para emitir e gerenciar certificados SSL/TLS para seus sites na AWS?",
+    "opcoes": [
+      "AWS Certificate Manager (ACM)",
+      "AWS KMS",
+      "AWS IAM",
+      "AWS Secrets Manager"
+    ],
+    "correta": 0,
+    "dica": "ACM gerencia e renova certificados SSL/TLS gratuitamente para uso na AWS.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Certificados"
+  },
+  {
+    "id": 213,
+    "pergunta": "Qual ferramenta sugere automaticamente oportunidades para reservar instâncias e economizar custos com base no seu padrão de uso histórico?",
+    "opcoes": [
+      "AWS Cost Explorer",
+      "AWS Pricing Calculator",
+      "AWS Budgets",
+      "AWS Config"
+    ],
+    "correta": 0,
+    "dica": "Cost Explorer dá recomendações personalizadas de compra de RIs e Savings Plans.",
+    "dificuldade": "Médio",
+    "categoria": "Faturamento & Custos"
+  },
+  {
+    "id": 214,
+    "pergunta": "Qual a função do AWS Auto Scaling?",
+    "opcoes": [
+      "Ajustar automaticamente a quantidade de recursos computacionais para manter o desempenho estável ao menor custo",
+      "Reduzir o tamanho dos arquivos de imagem no S3",
+      "Reiniciar o banco de dados em horários agendados",
+      "Atribuir IPs estáticos automaticamente"
+    ],
+    "correta": 0,
+    "dica": "Escala recursos para cima ou para baixo conforme a demanda real.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação & Auto Scaling"
+  },
+  {
+    "id": 215,
+    "pergunta": "No modelo de responsabilidade compartilhada, qual das opções é de responsabilidade EXCLUSIVA do cliente em uma instância EC2?",
+    "opcoes": [
+      "Atualizações de segurança do sistema operacional e dados da aplicação",
+      "Manutenção dos servidores físicos",
+      "Atualização do firmware dos hipervisores",
+      "Proteção contra incêndios no datacenter"
+    ],
+    "correta": 0,
+    "dica": "Segurança NA nuvem cabe ao cliente (dados, SO, regras de firewall).",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Responsabilidade"
+  },
+  {
+    "id": 216,
+    "pergunta": "Qual serviço é um Data Warehouse otimizado em nuvem projetado para executar consultas SQL analíticas em escala de petabytes?",
+    "opcoes": [
+      "Amazon Redshift",
+      "Amazon Aurora",
+      "Amazon RDS",
+      "Amazon DynamoDB"
+    ],
+    "correta": 0,
+    "dica": "Data warehouse colunar de alto desempenho para analytics.",
+    "dificuldade": "Fácil",
+    "categoria": "Analytics & Data Warehouse"
+  },
+  {
+    "id": 217,
+    "pergunta": "Qual pilar do Well-Architected Framework encoraja a melhoria contínua através do aprendizado com os erros e pequenos passos reversíveis?",
+    "opcoes": [
+      "Excelência Operacional",
+      "Segurança",
+      "Eficiência de Desempenho",
+      "Sustentabilidade"
+    ],
+    "correta": 0,
+    "dica": "Aprender com as falhas e evoluir os processos continuamente.",
+    "dificuldade": "Médio",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 218,
+    "pergunta": "Para migrar petabytes ou exabytes de dados usando um caminhão contêiner especial projetado para transporte de dados, qual serviço usar?",
+    "opcoes": [
+      "AWS Snowmobile",
+      "AWS Snowball Edge",
+      "AWS DataSync",
+      "AWS Direct Connect"
+    ],
+    "correta": 0,
+    "dica": "Caminhão de dados para migração na escala de exabytes.",
+    "dificuldade": "Fácil",
+    "categoria": "Migração de Dados"
+  },
+  {
+    "id": 219,
+    "pergunta": "O que descreve a modalidade de Instâncias EC2 Spot?",
+    "opcoes": [
+      "Comprar capacidade de computação ociosa da AWS com até 90% de desconto aceitando que a instância pode ser interrompida",
+      "Reservar capacidade exclusiva por 3 anos",
+      "Contratar suporte técnico dedicado",
+      "Instâncias sem limite de memória RAM"
+    ],
+    "correta": 0,
+    "dica": "Aproveita capacidade ociosa do datacenter com grande desconto.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação & Custos"
+  },
+  {
+    "id": 220,
+    "pergunta": "Qual serviço AWS permite traduzir textos automaticamente entre dezenas de idiomas com alta precisão usando IA?",
+    "opcoes": [
+      "Amazon Translate",
+      "Amazon Comprehend",
+      "Amazon Polly",
+      "Amazon Lex"
+    ],
+    "correta": 0,
+    "dica": "Tradução neural de idiomas alimentada por machine learning.",
+    "dificuldade": "Fácil",
+    "categoria": "Machine Learning & IA"
+  },
+  {
+    "id": 221,
+    "pergunta": "Para monitorar o uso de espaço em disco e porcentagem de uso da memória RAM de instâncias EC2, o que deve ser instalado?",
+    "opcoes": [
+      "Agente do Amazon CloudWatch (CloudWatch Agent)",
+      "AWS CloudTrail",
+      "AWS Config",
+      "AWS Systems Manager Agent apenas"
+    ],
+    "correta": 0,
+    "dica": "Métricas de memória e disco exigem o agente interno do CloudWatch.",
+    "dificuldade": "Médio",
+    "categoria": "Monitoramento & Operações"
+  },
+  {
+    "id": 222,
+    "pergunta": "Qual o benefício da precificação 'Pay-as-you-go' (Pague pelo que usar)?",
+    "opcoes": [
+      "Eliminar custos fixos de capital substituindo por custos variáveis operacionais ajustados ao consumo real",
+      "Pagar um valor fixo trimestral independente do uso",
+      "Acesso a hardware gratuito",
+      "Desconto ilimitado para qualquer serviço"
+    ],
+    "correta": 0,
+    "dica": "Sem contratos longos ou compromissos forçados no modelo sob demanda.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem & Custos"
+  },
+  {
+    "id": 223,
+    "pergunta": "Qual serviço AWS provê uma ferramenta de busca corporativa que conecta fontes de dados variadas como S3, SharePoint e Salesforce com IA?",
+    "opcoes": [
+      "Amazon Kendra",
+      "Amazon Lex",
+      "Amazon Athena",
+      "Amazon OpenSearch Service"
+    ],
+    "correta": 0,
+    "dica": "Serviço de busca empresarial inteligente baseado em IA.",
+    "dificuldade": "Hard",
+    "categoria": "Machine Learning & IA"
+  },
+  {
+    "id": 224,
+    "pergunta": "Como um Security Group lida com o tráfego de retorno em uma conexão de saída permitida?",
+    "opcoes": [
+      "Permite o retorno automaticamente porque é um firewall stateful",
+      "Bloqueia o retorno até que uma regra de saída explícita seja criada",
+      "Requer autorização do AWS Support",
+      "Redireciona para o NAT Gateway"
+    ],
+    "correta": 0,
+    "dica": "Firewalls stateful autorizam a resposta do tráfego de forma automática.",
+    "dificuldade": "Médio",
+    "categoria": "Redes & Segurança"
+  },
+  {
+    "id": 225,
+    "pergunta": "Qual o objetivo de usar o AWS Elastic Beanstalk?",
+    "opcoes": [
+      "Implantar aplicações web sem se preocupar com o provisionamento e gerenciamento da infraestrutura subjacente",
+      "Automatizar backups do banco de dados",
+      "Criar regras de firewall de sub-rede",
+      "Monitorar o faturamento financeiro"
+    ],
+    "correta": 0,
+    "dica": "PaaS que automatiza o deploy mantendo controle dos recursos.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação & Deployment"
+  },
+  {
+    "id": 226,
+    "pergunta": "Qual serviço AWS permite enviar mensagens curtas e notificações para filas do SQS e endpoints HTTP de forma desacoplada?",
+    "opcoes": [
+      "Amazon SNS",
+      "Amazon SES",
+      "AWS Step Functions",
+      "Amazon Route 53"
+    ],
+    "correta": 0,
+    "dica": "Modelo pub/sub de alta velocidade.",
+    "dificuldade": "Fácil",
+    "categoria": "Integração & Mensageria"
+  },
+  {
+    "id": 227,
+    "pergunta": "Qual o tempo limite máximo de execução de uma função individual no AWS Lambda?",
+    "opcoes": [
+      "15 minutos",
+      "5 minutos",
+      "1 hora",
+      "Sem limite de tempo"
+    ],
+    "correta": 0,
+    "dica": "Funções Lambda podem rodar por no máximo 15 minutos por invocação.",
+    "dificuldade": "Médio",
+    "categoria": "Computação Serverless"
+  },
+  {
+    "id": 228,
+    "pergunta": "Qual tipo de armazenamento é recomendado para bancos de dados relacionais que exigem altíssima taxa de IOPS e latência consistente?",
+    "opcoes": [
+      "Amazon EBS com volumes de IOPS Provisionadas (io1/io2)",
+      "Amazon S3 Standard",
+      "Amazon Glacier",
+      "Amazon EBS throughput optimized (st1)"
+    ],
+    "correta": 0,
+    "dica": "Volumes io1/io2 garantem IOPS dedicadas para missões críticas.",
+    "dificuldade": "Hard",
+    "categoria": "Armazenamento em Bloco"
+  },
+  {
+    "id": 229,
+    "pergunta": "Qual o pilar do Well-Architected Framework responsável pelo rastreamento de desperdícios financeiros na nuvem?",
+    "opcoes": [
+      "Otimização de Custos (Cost Optimization)",
+      "Excelência Operacional",
+      "Desempenho",
+      "Segurança"
+    ],
+    "correta": 0,
+    "dica": "Pilar dedicado à gestão e redução de despesas financeiras.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 230,
+    "pergunta": "O que é o AWS Architecture Center?",
+    "opcoes": [
+      "Repositório oficial de orientações, arquiteturas de referência e frameworks de solução da AWS",
+      "Um centro físico para reuniões em São Paulo",
+      "Um treinamento presencial obrigatório",
+      "Painel de controle financeiro"
+    ],
+    "correta": 0,
+    "dica": "Documentação de arquiteturas recomendadas.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Recursos"
+  },
+  {
+    "id": 231,
+    "pergunta": "Qual recurso permite conectar de forma privada uma VPC aos serviços da AWS sem usar um Internet Gateway?",
+    "opcoes": [
+      "VPC Endpoints (AWS PrivateLink)",
+      "NAT Gateway",
+      "VPC Peering",
+      "Route 53"
+    ],
+    "correta": 0,
+    "dica": "PrivateLink estabelece conectividade privada no backbone da AWS.",
+    "dificuldade": "Médio",
+    "categoria": "Redes & Conectividade"
+  },
+  {
+    "id": 232,
+    "pergunta": "Qual serviço ajuda na migração de servidores locais para o EC2 replicando os discos continuamente de forma automatizada?",
+    "opcoes": [
+      "AWS Application Migration Service (MGN)",
+      "AWS Snowball",
+      "AWS DMS",
+      "AWS DataSync"
+    ],
+    "correta": 0,
+    "dica": "Ferramenta oficial de migração de servidores (Rehosting).",
+    "dificuldade": "Médio",
+    "categoria": "Migração"
+  },
+  {
+    "id": 233,
+    "pergunta": "Para configurar autenticação de dois fatores (MFA) na conta AWS, quais dispositivos podem ser usados?",
+    "opcoes": [
+      "Aplicativos de autenticação (TOTP), chaves de segurança FIDO/YubiKey ou tokens de hardware",
+      "Apenas envio de SMS para celular",
+      "Apenas e-mail pessoal",
+      "Biometria facial exclusiva"
+    ],
+    "correta": 0,
+    "dica": "Suporta apps como Google Authenticator, YubiKeys e tokens físicos.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & IAM"
+  },
+  {
+    "id": 234,
+    "pergunta": "Como são chamadas as unidades de processamento de consultas e armazenamento no Amazon Redshift?",
+    "opcoes": [
+      "Nós do Cluster (Cluster Nodes)",
+      "Instâncias de leitura",
+      "Réplicas Multi-AZ",
+      "Buckets"
+    ],
+    "correta": 0,
+    "dica": "Clusters Redshift são compostos por nós do cluster.",
+    "dificuldade": "Hard",
+    "categoria": "Analytics & Data Warehouse"
+  },
+  {
+    "id": 235,
+    "pergunta": "Qual o serviço que permite gerenciar a entrega e compra de soluções SaaS validadas diretamente na fatura da AWS?",
+    "opcoes": [
+      "AWS Marketplace",
+      "AWS Service Catalog",
+      "AWS Partner Network",
+      "AWS Control Tower"
+    ],
+    "correta": 0,
+    "dica": "Marketplace unifica o faturamento de softwares de terceiros.",
+    "dificuldade": "Fácil",
+    "categoria": "Ecossistema AWS"
+  },
+  {
+    "id": 236,
+    "pergunta": "Qual serviço provê um repositório centralizado e seguro para armazenar imagens de contêineres Docker na AWS?",
+    "opcoes": [
+      "Amazon ECR (Elastic Container Registry)",
+      "Amazon ECS",
+      "AWS CodeCommit",
+      "Amazon S3"
+    ],
+    "correta": 0,
+    "dica": "ECR armazena e gerencia imagens de contêineres.",
+    "dificuldade": "Fácil",
+    "categoria": "Contêineres"
+  },
+  {
+    "id": 237,
+    "pergunta": "Qual serviço permite a criação de painéis gráficos de BI (Business Intelligence) interativos com dados da AWS?",
+    "opcoes": [
+      "Amazon QuickSight",
+      "Amazon Athena",
+      "AWS CloudWatch",
+      "AWS Cost Explorer"
+    ],
+    "correta": 0,
+    "dica": "Serviço de BI e visualização de dados com IA.",
+    "dificuldade": "Fácil",
+    "categoria": "Analytics & BI"
+  },
+  {
+    "id": 238,
+    "pergunta": "Qual o benefício de utilizar o Amazon CloudFront para servir imagens de um bucket do S3?",
+    "opcoes": [
+      "Reduzir a latência global armazenando o conteúdo em cache em Edge Locations próximas aos usuários",
+      "Criptografar imagens automaticamente",
+      "Reduzir a resolução das imagens",
+      "Eliminar custos de armazenamento no S3"
+    ],
+    "correta": 0,
+    "dica": "Entrega via CDN reduz o tempo de carregamento no cliente.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & CDN"
+  },
+  {
+    "id": 239,
+    "pergunta": "Qual a função do AWS Billing Conductor?",
+    "opcoes": [
+      "Personalizar e estruturar relatórios de faturamento para clientes internos ou revendedores",
+      "Aumentar limites de crédito",
+      "Pagar contas automaticamente no banco",
+      "Gerenciar compras de domínios"
+    ],
+    "correta": 0,
+    "dica": "Organiza o faturamento em estruturas personalizadas de cobrança.",
+    "dificuldade": "Hard",
+    "categoria": "Faturamento & Governança"
+  },
+  {
+    "id": 240,
+    "pergunta": "Para monitorar se todos os buckets do S3 na conta estão configurados como privados, qual serviço pode aplicar essa regra continuamente?",
+    "opcoes": [
+      "AWS Config",
+      "AWS CloudTrail",
+      "Amazon Inspector",
+      "AWS Shield"
+    ],
+    "correta": 0,
+    "dica": "AWS Config verifica regras de conformidade nos recursos.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança & Governança"
+  },
+  {
+    "id": 241,
+    "pergunta": "Como a AWS apoia a conformidade de empresas da área da saúde que lidam com dados sensíveis de pacientes (HIPAA)?",
+    "opcoes": [
+      "Disponibilizando os relatórios de elegibilidade HIPAA via AWS Artifact e garantindo criptografia dos serviços",
+      "Assumindo a culpa por vazamentos de dados",
+      "Proibindo o uso de instâncias EC2",
+      "Oferecendo planos médicos gratuitos"
+    ],
+    "correta": 0,
+    "dica": "Documentação de conformidade disponível no AWS Artifact.",
+    "dificuldade": "Médio",
+    "categoria": "Conformidade"
+  },
+  {
+    "id": 242,
+    "pergunta": "Qual serviço AWS permite conectar aplicações locais com brokers de mensagens compatíveis com Apache ActiveMQ e RabbitMQ?",
+    "opcoes": [
+      "Amazon MQ",
+      "Amazon SQS",
+      "Amazon SNS",
+      "AWS Kinesis"
+    ],
+    "correta": 0,
+    "dica": "Serviço gerenciado de mensageria para RabbitMQ e ActiveMQ.",
+    "dificuldade": "Hard",
+    "categoria": "Integração & Mensageria"
+  },
+  {
+    "id": 243,
+    "pergunta": "Qual das opções é um benefício de usar o AWS Elastic Beanstalk?",
+    "opcoes": [
+      "Manter total controle sobre os recursos AWS criados por trás do ambiente",
+      "Eliminar o uso de bancos de dados",
+      "Aumentar os custos de computação de forma fixa",
+      "Proibir personalizações na infraestrutura"
+    ],
+    "correta": 0,
+    "dica": "Automatiza a gestão mas mantém total acesso e controle aos recursos subjacentes.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação & Deployment"
+  },
+  {
+    "id": 244,
+    "pergunta": "Para rodar uma aplicação em contêineres gerenciando explicitamente os servidores EC2 que formam o cluster, qual orquestrador usar?",
+    "opcoes": [
+      "Amazon ECS com EC2 Launch Type",
+      "AWS Fargate",
+      "AWS Lambda",
+      "Amazon Lightsail"
+    ],
+    "correta": 0,
+    "dica": "EC2 launch type mantém o gerenciamento dos nós do cluster pelo cliente.",
+    "dificuldade": "Médio",
+    "categoria": "Contêineres"
+  },
+  {
+    "id": 245,
+    "pergunta": "Qual a principal vantagem da precificação em lote de grande escala da AWS (Economias de escala)?",
+    "opcoes": [
+      "A AWS obtém custos menores de fornecedores e repassa essa economia na forma de redução contínua de preços",
+      "Apenas empresas grandes recebem descontos",
+      "Isenção total de custos de tráfego de rede",
+      "Acesso prioritário a novos datacenters"
+    ],
+    "correta": 0,
+    "dica": "O alto volume permite economias que baixam o valor final ao cliente.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem"
+  },
+  {
+    "id": 246,
+    "pergunta": "Qual recurso do Amazon S3 ajuda a cumprir exigências regulatórias ao bloquear a alteração de arquivos armazenados?",
+    "opcoes": [
+      "S3 Object Lock",
+      "S3 Versioning",
+      "S3 Storage Lens",
+      "S3 Transfer Acceleration"
+    ],
+    "correta": 0,
+    "dica": "Object Lock bloqueia edições ou exclusões durante um período fixo.",
+    "dificuldade": "Hard",
+    "categoria": "Armazenamento & Segurança"
+  },
+  {
+    "id": 247,
+    "pergunta": "O que é o AWS Health Dashboard?",
+    "opcoes": [
+      "Painel que fornece visibilidade sobre a saúde e status operacional dos serviços AWS e alertas sobre sua conta",
+      "Painel de métricas financeiras",
+      "Serviço de telemedicina",
+      "Relatório de acessos de usuários"
+    ],
+    "correta": 0,
+    "dica": "Notifica sobre eventos e manutenções que impactam seu ambiente.",
+    "dificuldade": "Fácil",
+    "categoria": "Monitoramento & Operações"
+  },
+  {
+    "id": 248,
+    "pergunta": "Qual a recomendação do pilar de Confiabilidade quanto ao gerenciamento de alterações em sistemas?",
+    "opcoes": [
+      "Fazer alterações através de automação declarativa e infraestrutura como código",
+      "Realizar atualizações manuais diretamente no servidor em produção",
+      "Evitar fazer alterações em qualquer hipótese",
+      "Atualizar apenas uma vez por ano"
+    ],
+    "correta": 0,
+    "dica": "Automação reduz erros humanos e permite reversão rápida em falhas.",
+    "dificuldade": "Médio",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 249,
+    "pergunta": "Como é cobrada a transferência de dados entre duas instâncias EC2 localizadas na mesma Zona de Disponibilidade usando IPs privados?",
+    "opcoes": [
+      "É gratuita na maioria das situações dentro da mesma AZ",
+      "Cobrada por terabytes transferidos",
+      "Exige assinatura do plano Enterprise",
+      "Cobrada por requisição HTTP"
+    ],
+    "correta": 0,
+    "dica": "Tráfego dentro da mesma AZ usando IP privado não possui custo de transferência na mesma VPC.",
+    "dificuldade": "Hard",
+    "categoria": "Faturamento & Custos"
+  },
+  {
+    "id": 250,
+    "pergunta": "Qual serviço provê proteção automatizada contra tráfego malicioso e robôs no nível de aplicação através de regras personalizáveis?",
+    "opcoes": [
+      "AWS WAF",
+      "AWS Shield Standard",
+      "Amazon GuardDuty",
+      "AWS Security Hub"
+    ],
+    "correta": 0,
+    "dica": "AWS WAF inspeciona requisições web com regras customizadas.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & Proteção"
+  },
+  {
+    "id": 251,
+    "pergunta": "Para consolidar e visualizar os achados de segurança do GuardDuty, Inspector e Macie em um único painel, qual serviço usar?",
+    "opcoes": [
+      "AWS Security Hub",
+      "AWS Config",
+      "AWS CloudTrail",
+      "AWS Trusted Advisor"
+    ],
+    "correta": 0,
+    "dica": "Security Hub centraliza alertas e achados de segurança de várias ferramentas.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança & Governança"
+  },
+  {
+    "id": 252,
+    "pergunta": "Qual a função do Amazon Route 53 Health Checks?",
+    "opcoes": [
+      "Monitorar a saúde dos endpoints da aplicação e redirecionar tráfego para alvos saudáveis em caso de falha",
+      "Monitorar o uso de memória do servidor",
+      "Analisar códigos em busca de vírus",
+      "Validar dados do cartão de crédito"
+    ],
+    "correta": 0,
+    "dica": "Verifica a disponibilidade de endpoints e aciona failover no DNS.",
+    "dificuldade": "Fácil",
+    "categoria": "Redes & DNS"
+  },
+  {
+    "id": 253,
+    "pergunta": "Qual serviço AWS permite conectar bancos de dados relacionais a funções Lambda através de um pool de conexões gerenciado?",
+    "opcoes": [
+      "Amazon RDS Proxy",
+      "AWS Direct Connect",
+      "Amazon API Gateway",
+      "Amazon ElastiCache"
+    ],
+    "correta": 0,
+    "dica": "RDS Proxy gerencia pools de conexões para aplicações serverless.",
+    "dificuldade": "Hard",
+    "categoria": "Bancos de Dados & Serverless"
+  },
+  {
+    "id": 254,
+    "pergunta": "Qual classe de armazenamento S3 é indicada para dados com acesso imprevisível e padrões de consumo variáveis?",
+    "opcoes": [
+      "S3 Intelligent-Tiering",
+      "S3 Glacier",
+      "S3 Standard-IA",
+      "S3 Outposts"
+    ],
+    "correta": 0,
+    "dica": "Alterna automaticamente sem taxas de análise ou impacto de performance.",
+    "dificuldade": "Fácil",
+    "categoria": "Armazenamento & Custos"
+  },
+  {
+    "id": 255,
+    "pergunta": "Para limitar quais serviços AWS um usuário do IAM pode acessar dentro de uma conta específica, qual documento deve ser anexado?",
+    "opcoes": [
+      "Política do IAM (IAM Policy)",
+      "Política de controle de serviço (SCP)",
+      "Grupo de Segurança",
+      "Network ACL"
+    ],
+    "correta": 0,
+    "dica": "IAM Policies definem permissões de usuários, grupos ou papéis.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança & IAM"
+  },
+  {
+    "id": 256,
+    "pergunta": "Qual o prazo de validade das credenciais temporárias fornecidas pelo AWS STS (Security Token Service)?",
+    "opcoes": [
+      "De alguns minutos até algumas horas (configurável)",
+      "30 dias",
+      "1 ano",
+      "Infinita"
+    ],
+    "correta": 0,
+    "dica": "Credenciais temporárias do STS expiram automaticamente após o tempo definido.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança & IAM"
+  },
+  {
+    "id": 257,
+    "pergunta": "Qual serviço permite a criação de um repositório centralizado de dados estruturados para pesquisas com SQL e integração com o Glue?",
+    "opcoes": [
+      "AWS Glue Data Catalog",
+      "Amazon S3 Glacier",
+      "Amazon EBS",
+      "AWS Secrets Manager"
+    ],
+    "correta": 0,
+    "dica": "Catálogo de dados centralizado para soluções de analytics.",
+    "dificuldade": "Hard",
+    "categoria": "Analytics & Data Catalog"
+  },
+  {
+    "id": 258,
+    "pergunta": "O que é o AWS CodeDeploy?",
+    "opcoes": [
+      "Serviço que automatiza a implantação de código em instâncias EC2, servidores locais ou AWS Fargate",
+      "Serviço para escrever código no navegador",
+      "Compilador de projetos Java",
+      "Verificador de regras do IAM"
+    ],
+    "correta": 0,
+    "dica": "Automatiza deploys de aplicações para evitar erros manuais.",
+    "dificuldade": "Médio",
+    "categoria": "Ferramentas de Desenvolvimento"
+  },
+  {
+    "id": 259,
+    "pergunta": "Qual pilar do Well-Architected Framework avalia o impacto de longo prazo do ciclo de vida dos recursos computacionais no meio ambiente?",
+    "opcoes": [
+      "Sustentabilidade (Sustainability)",
+      "Otimização de Custos",
+      "Confiabilidade",
+      "Eficiência de Desempenho"
+    ],
+    "correta": 0,
+    "dica": "6º pilar focado na redução da pegada ecológica.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 260,
+    "pergunta": "Para mover dados de arquivos entre storages locais e o Amazon EFS através de um link de rede, qual serviço usar?",
+    "opcoes": [
+      "AWS DataSync",
+      "AWS Snowball",
+      "AWS Database Migration Service",
+      "Amazon CloudFront"
+    ],
+    "correta": 0,
+    "dica": "DataSync transfere dados de arquivos de forma rápida via rede.",
+    "dificuldade": "Médio",
+    "categoria": "Migração & Dados"
+  },
+  {
+    "id": 261,
+    "pergunta": "Qual o benefício da alta disponibilidade na nuvem?",
+    "opcoes": [
+      "Garantir que a aplicação permaneça operacional e acessível mesmo se componentes falharem",
+      "Garantir que os custos sejam sempre zero",
+      "Aumentar o número de acessos de clientes automaticamente",
+      "Isentar o cliente de auditorias"
+    ],
+    "correta": 0,
+    "dica": "Minimiza o tempo de inatividade operacional do sistema.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem"
+  },
+  {
+    "id": 262,
+    "pergunta": "Qual tipo de tráfego de rede NÃO é cobrado na fatura do Amazon S3?",
+    "opcoes": [
+      "Transferência de dados para dentro do S3 vindo da internet (Data Transfer IN)",
+      "Transferência de dados para fora do S3 para a internet (Data Transfer OUT)",
+      "Download de arquivos via API pública",
+      "Replicação entre regiões distintas"
+    ],
+    "correta": 0,
+    "dica": "O envio de dados para a AWS (tráfego de entrada) é gratuito.",
+    "dificuldade": "Fácil",
+    "categoria": "Faturamento & Custos"
+  },
+  {
+    "id": 263,
+    "pergunta": "Qual serviço provê uma solução totalmente gerenciada para criar e gerenciar um cluster Kubernetes na AWS?",
+    "opcoes": [
+      "Amazon EKS (Elastic Kubernetes Service)",
+      "Amazon ECS",
+      "AWS Fargate",
+      "AWS Elastic Beanstalk"
+    ],
+    "correta": 0,
+    "dica": "EKS gerencia o Kubernetes nativamente.",
+    "dificuldade": "Médio",
+    "categoria": "Contêineres"
+  },
+  {
+    "id": 264,
+    "pergunta": "O que o pilar Eficiência de Desempenho sugere ao selecionar tipos de instâncias?",
+    "opcoes": [
+      "Usar a combinação ideal de tipos e tamanhos de recursos ajustados às características da carga de trabalho",
+      "Escolher sempre as maiores instâncias disponíveis",
+      "Utilizar apenas servidores físicos locais",
+      "Evitar o uso de bancos de dados em memória"
+    ],
+    "correta": 0,
+    "dica": "Escolha tecnologias e recursos sob medida para a aplicação.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura & Well-Architected"
+  },
+  {
+    "id": 265,
+    "pergunta": "Qual serviço da AWS permite pesquisar e gerenciar a documentação técnica oficial e treinamentos virtuais?",
+    "opcoes": [
+      "AWS Skill Builder / AWS Documentation",
+      "AWS re:Post",
+      "AWS Trusted Advisor",
+      "AWS Support Center"
+    ],
+    "correta": 0,
+    "dica": "Skill Builder é o portal oficial de treinamentos digitais da AWS.",
+    "dificuldade": "Fácil",
+    "categoria": "Recursos & Treinamento"
+  },
+  {
+    "id": 266,
+    "pergunta": "Uma empresa deseja automatizar as verificações de conformidade de segurança com base nos padrões do CIS (Center for Internet Security). Qual serviço utilizar?",
+    "opcoes": [
+      "AWS Security Hub",
+      "AWS Artifact",
+      "AWS Shield",
+      "Amazon GuardDuty"
+    ],
+    "correta": 0,
+    "dica": "Security Hub executa verificações automáticas contra padrões como CIS e PCI-DSS.",
+    "dificuldade": "Hard",
+    "categoria": "Segurança & Conformidade"
+  },
+  {
+    "id": 267,
+    "pergunta": "Qual o benefício de usar o AWS CloudFormation em comparação ao provisionamento manual via console?",
+    "opcoes": [
+      "Permite criar e atualizar pilhas de recursos de forma padronizada, rápida e reproduzível através de código",
+      "Reduz o custo das instâncias pela metade",
+      "Elimina a necessidade de configurar regras de segurança",
+      "Garante acesso telefônico ilimitado ao suporte"
+    ],
+    "correta": 0,
+    "dica": "Infraestrutura como Código garante padronização e automação sem erros manuais.",
+    "dificuldade": "Fácil",
+    "categoria": "Automação & IaC"
+  }
+]

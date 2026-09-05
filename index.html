@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#232f3e">
+  <title>Simulado AWS Cloud Practitioner</title>
+  <link rel="manifest" href="data:application/manifest+json;utf8,{%22name%22:%22Simulado%20AWS%22,%22short_name%22:%22AWS%20Quiz%22,%22start_url%22:%22index.html%22,%22display%22:%22standalone%22,%22background_color%22:%22#0f172a%22,%22theme_color%22:%22#232f3e%22}">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --primary: #ff9900;
+      --text: #f8fafc;
+      --correct: #22c55e;
+      --wrong: #ef4444;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 650px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #000;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-opcao {
+      width: 100%;
+      text-align: left;
+      padding: 0.8rem 1rem;
+      margin: 0.5rem 0;
+      background-color: #334155;
+      color: var(--text);
+      border: 2px solid transparent;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .btn-opcao:hover {
+      border-color: var(--primary);
+    }
+
+    .btn-opcao.correta {
+      background-color: var(--correct) !important;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .btn-opcao.errada {
+      background-color: var(--wrong) !important;
+      color: #fff;
+    }
+
+    .dica-box {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      background-color: #0284c7;
+      border-radius: 6px;
+      display: none;
+      font-size: 0.9rem;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+    }
+
+    .btn-nav {
+      background: var(--primary);
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn-nav:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Simulado AWS Cloud Practitioner</h1>
+    <p id="progresso">Carregando questões...</p>
+  </header>
+
+  <div class="card" id="quiz-card">
+    <span class="badge" id="categoria">Categoria</span>
+    <h3 id="pergunta">Pergunta</h3>
+    <div id="opcoes"></div>
+    <div class="dica-box" id="dica"></div>
+
+    <div class="controls">
+      <button class="btn-nav" id="btn-anterior" onclick="anteriorPergunta()">Anterior</button>
+      <button class="btn-nav" id="btn-dica" onclick="mostrarDica()">Ver Dica</button>
+      <button class="btn-nav" id="btn-proximo" onclick="proximaPergunta()">Próximo</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  let questoes = [];
+  let indiceAtual = 0;
+
+  async function carregarQuestoes() {
+    try {
+      const resposta = await fetch('questoes.json');
+      questoes = await resposta.json();
+      exibirPergunta();
+    } catch (erro) {
+      document.getElementById('pergunta').innerText = "Erro ao carregar o arquivo questoes.json";
+    }
+  }
+
+  function exibirPergunta() {
+    const q = questoes[indiceAtual];
+    document.getElementById('progresso').innerText = `Questão ${indiceAtual + 1} de ${questoes.length}`;
+    document.getElementById('categoria').innerText = `${q.categoria} | ${q.dificuldade}`;
+    document.getElementById('pergunta').innerText = q.pergunta;
+    
+    const dicaBox = document.getElementById('dica');
+    dicaBox.style.display = 'none';
+    dicaBox.innerText = `💡 Dica: ${q.dica}`;
+
+    const conteinerOpcoes = document.getElementById('opcoes');
+    conteinerOpcoes.innerHTML = '';
+
+    q.opcoes.forEach((opcao, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'btn-opcao';
+      btn.innerText = opcao;
+      btn.onclick = () => verificarResposta(idx, q.correta, btn);
+      conteinerOpcoes.appendChild(btn);
+    });
+
+    document.getElementById('btn-anterior').disabled = indiceAtual === 0;
+    document.getElementById('btn-proximo').disabled = indiceAtual === questoes.length - 1;
+  }
+
+  function verificarResposta(selecionada, correta, elemento) {
+    const botoes = document.querySelectorAll('.btn-opcao');
+    botoes.forEach(b => b.disabled = true);
+
+    if (selecionada === correta) {
+      elemento.classList.add('correta');
+    } else {
+      elemento.classList.add('errada');
+      botoes[correta].classList.add('correta');
+    }
+  }
+
+  function mostrarDica() {
+    document.getElementById('dica').style.display = 'block';
+  }
+
+  function proximaPergunta() {
+    if (indiceAtual < questoes.length - 1) {
+      indiceAtual++;
+      exibirPergunta();
+    }
+  }
+
+  function anteriorPergunta() {
+    if (indiceAtual > 0) {
+      indiceAtual--;
+      exibirPergunta();
+    }
+  }
+
+  // Registro do Service Worker para suporte PWA/Offline
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+
+  carregarQuestoes();
+</script>
+</body>
+</html>
