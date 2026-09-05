@@ -53,6 +53,40 @@
       font-size: 0.95rem;
     }
 
+    /* ESTILO DO ROBÔ E BALÃO DE FALA */
+    .bot-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .bot-avatar {
+      width: 65px;
+      height: 65px;
+      flex-shrink: 0;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .bot-speech {
+      font-size: 0.92rem;
+      line-height: 1.4;
+      color: #e2e8f0;
+    }
+
+    .bot-speech strong {
+      color: var(--primary);
+    }
+
     .card {
       background-color: var(--card-bg);
       border-radius: 16px;
@@ -74,6 +108,24 @@
       font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+    }
+
+    .input-text {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 10px;
+      border: 2px solid #334155;
+      background: #0f172a;
+      color: var(--text);
+      font-size: 1rem;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .input-text:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 8px var(--primary-glow);
     }
 
     .options-grid {
@@ -203,7 +255,6 @@
       color: var(--accent);
     }
 
-    /* GRID RESPONSIVO PARA OS CONTROLES */
     .controls {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -344,8 +395,30 @@
     <p id="progresso">Prepare-se para o CLF-C02</p>
   </header>
 
-  <!-- CARD DE CONFIGURAÇÃO DO SIMULADO -->
+  <!-- TELA INICIAL COM O ROBÔ TUTOR -->
   <div id="setup-card" class="card">
+    
+    <div class="bot-section">
+      <!-- Ícone SVG Vetorial do Robô AWS -->
+      <svg class="bot-avatar" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" fill="#1e293b" stroke="#ff9900" stroke-width="3"/>
+        <rect x="25" y="30" width="50" height="35" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+        <circle cx="40" cy="45" r="5" fill="#38bdf8"/>
+        <circle cx="60" cy="45" r="5" fill="#38bdf8"/>
+        <path d="M 40 55 Q 50 62 60 55" stroke="#ff9900" stroke-width="3" stroke-linecap="round"/>
+        <line x1="50" y1="15" x2="50" y2="30" stroke="#ff9900" stroke-width="3"/>
+        <circle cx="50" cy="12" r="4" fill="#ff9900"/>
+      </svg>
+      <div class="bot-speech">
+        👋 Olá! Eu sou o <strong>CloudBot</strong>, seu tutor virtual! Escreva seu nome abaixo para testarmos seu nível de conhecimento na AWS!
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Seu Nome ou Apelido:</label>
+      <input type="text" id="user-name" class="input-text" placeholder="Digite seu nome aqui (Ex: Djair)" autocomplete="name">
+    </div>
+
     <div class="form-group">
       <label>Dificuldade</label>
       <div class="options-grid">
@@ -378,10 +451,10 @@
       <input type="number" id="tempo-custom-input" class="input-custom" placeholder="Digite o tempo em minutos" min="1">
     </div>
 
-    <button class="btn-nav btn-primary-action btn-start" onclick="iniciarSimulado()">Iniciar Simulado</button>
+    <button class="btn-nav btn-primary-action btn-start" onclick="iniciarSimulado()">🚀 Iniciar Simulado</button>
   </div>
 
-  <!-- CARD DO QUIZ/PERGUNTAS -->
+  <!-- TELA DO QUIZ / PERGUNTAS -->
   <div id="quiz-card" class="card" style="display: none;">
     <div class="badge-bar">
       <span id="categoria" class="badge">Categoria</span>
@@ -398,7 +471,6 @@
 
     <div id="dica" class="dica-box"></div>
 
-    <!-- DISPOSIÇÃO DOS BOTÕES: COLUNA 1 (Anterior/Encerrar) | COLUNA 2 (Próximo/Dica) -->
     <div class="controls">
       <button id="btn-anterior" class="btn-nav" onclick="anteriorPergunta()">Anterior</button>
       <button id="btn-proximo" class="btn-nav btn-primary-action" onclick="proximaPergunta()">Próximo</button>
@@ -407,10 +479,24 @@
     </div>
   </div>
 
-  <!-- CARD DE RESULTADOS -->
+  <!-- TELA DE RESULTADOS COM FEEDBACK DO ROBÔ -->
   <div id="result-card" class="card" style="display: none; text-align: center;">
-    <h2>Resultado do Simulado</h2>
-    <div id="result-status" style="font-size: 1.2rem; font-weight: bold; margin-top: 0.5rem;"></div>
+    
+    <div class="bot-section" style="text-align: left;">
+      <svg class="bot-avatar" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" fill="#1e293b" stroke="#ff9900" stroke-width="3"/>
+        <rect x="25" y="30" width="50" height="35" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+        <circle cx="40" cy="45" r="5" fill="#38bdf8"/>
+        <circle cx="60" cy="45" r="5" fill="#38bdf8"/>
+        <path d="M 40 55 Q 50 62 60 55" stroke="#ff9900" stroke-width="3" stroke-linecap="round"/>
+        <line x1="50" y1="15" x2="50" y2="30" stroke="#ff9900" stroke-width="3"/>
+        <circle cx="50" cy="12" r="4" fill="#ff9900"/>
+      </svg>
+      <div class="bot-speech" id="bot-feedback">
+        <!-- Fala personalizada do robô gerada via JS -->
+      </div>
+    </div>
+
     <div id="result-percentage" class="result-score">0%</div>
 
     <div style="margin: 1.5rem 0; text-align: left;">
@@ -419,7 +505,7 @@
       <div class="result-stat"><span>Tempo Total:</span><span id="stat-tempo" style="color: var(--accent);">00:00</span></div>
     </div>
 
-    <button class="btn-nav btn-primary-action btn-start" onclick="reiniciarApp()">Novo Simulado</button>
+    <button class="btn-nav btn-primary-action btn-start" onclick="reiniciarApp()">🔄 Tentar Novamente</button>
 
     <h3 style="margin-top: 2rem; color: var(--accent); text-align: left; border-bottom: 1px solid #334155; padding-bottom: 0.5rem;">
       📚 Correção e Materiais para Estudo
@@ -433,6 +519,7 @@
   let questoesFiltradas = [];
   let respostasUsuario = {};
   let indiceAtual = 0;
+  let nomeUsuario = "";
   
   let tempoSegundos = 0;
   let tempoGastoTotal = 0;
@@ -472,6 +559,9 @@
   }
 
   function iniciarSimulado() {
+    const inputNome = document.getElementById('user-name').value.trim();
+    nomeUsuario = inputNome ? inputNome : "Futuro AWS Certified";
+
     questoesFiltradas = [...todasQuestoes];
 
     if (config.dificuldade !== 'todas') {
@@ -563,7 +653,7 @@
   function exibirPergunta() {
     const q = questoesFiltradas[indiceAtual];
     
-    document.getElementById('progresso').innerText = `Questão ${indiceAtual + 1} de ${questoesFiltradas.length}`;
+    document.getElementById('progresso').innerText = `Força, ${nomeUsuario}! Questão ${indiceAtual + 1} de ${questoesFiltradas.length}`;
     document.getElementById('categoria').innerText = `${q.categoria} | ${q.dificuldade}`;
     document.getElementById('pergunta').innerText = q.pergunta;
 
@@ -660,13 +750,11 @@
     document.getElementById('stat-erros').innerText = erros;
     document.getElementById('stat-tempo').innerText = formatarTempo(tempoGastoTotal);
 
-    const statusEl = document.getElementById('result-status');
+    const botFeedback = document.getElementById('bot-feedback');
     if (porcentagem >= 70) {
-      statusEl.innerText = "🎉 APROVADO! Excelente resultado!";
-      statusEl.style.color = "var(--correct)";
+      botFeedback.innerHTML = `🎉 <strong>Parabéns, ${nomeUsuario}!</strong> Você alcançou <strong>${porcentagem}%</strong> de acertos e seria <strong>APROVADO(A)</strong> no exame oficial AWS! Continue praticando para gabaritar na prova real!`;
     } else {
-      statusEl.innerText = "⚠️ AINDA NÃO FOI DESSA VEZ. Continue praticando!";
-      statusEl.style.color = "var(--wrong)";
+      botFeedback.innerHTML = `⚠️ <strong>Valeu a tentativa, ${nomeUsuario}!</strong> Você obteve <strong>${porcentagem}%</strong> de acertos. A nota de corte da AWS é 70%. Não desanime: confira a correção e os materiais de estudo logo abaixo para mandar bem no próximo teste! 💪`;
     }
 
     gerarRevisao();
