@@ -272,6 +272,65 @@
       justify-content: space-between;
       font-weight: bold;
     }
+
+    /* ESTILOS DA REVISÃO DE QUESTÕES */
+    .review-item {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin-top: 1.2rem;
+      text-align: left;
+    }
+
+    .review-item.errou {
+      border-left: 6px solid var(--wrong);
+    }
+
+    .review-item.acertou {
+      border-left: 6px solid var(--correct);
+    }
+
+    .review-q-title {
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+    }
+
+    .review-ans {
+      font-size: 0.88rem;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      margin-bottom: 0.4rem;
+    }
+
+    .review-ans-wrong {
+      background: rgba(239, 68, 68, 0.15);
+      color: #fca5a5;
+    }
+
+    .review-ans-correct {
+      background: rgba(16, 185, 129, 0.15);
+      color: #6ee7b7;
+    }
+
+    .review-aws-link {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: #0284c7;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .review-aws-link:hover {
+      background: #0369a1;
+    }
   </style>
 </head>
 <body>
@@ -357,6 +416,12 @@
     </div>
 
     <button class="btn-nav btn-primary-action btn-start" onclick="reiniciarApp()">Novo Simulado</button>
+
+    <!-- SEÇÃO DE REVISÃO DETALHADA E ESTUDO AWS -->
+    <h3 style="margin-top: 2rem; color: var(--accent); text-align: left; border-bottom: 1px solid #334155; padding-bottom: 0.5rem;">
+      📚 Correção e Materiais para Estudo
+    </h3>
+    <div id="review-container"></div>
   </div>
 </div>
 
@@ -406,7 +471,6 @@
   function iniciarSimulado() {
     questoesFiltradas = [...todasQuestoes];
 
-    // Filtro Flexível (não diferencia maiúsculas/minúsculas nem acentos)
     if (config.dificuldade !== 'todas') {
       const diffFiltro = config.dificuldade.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       questoesFiltradas = questoesFiltradas.filter(q => {
@@ -601,6 +665,42 @@
       statusEl.innerText = "⚠️ AINDA NÃO FOI DESSA VEZ. Continue praticando!";
       statusEl.style.color = "var(--wrong)";
     }
+
+    gerarRevisao();
+  }
+
+  function gerarRevisao() {
+    const container = document.getElementById('review-container');
+    container.innerHTML = '';
+
+    questoesFiltradas.forEach((q, idx) => {
+      const respUser = respostasUsuario[idx];
+      const acertou = (respUser === q.correta);
+
+      const div = document.createElement('div');
+      div.className = `review-item ${acertou ? 'acertou' : 'errou'}`;
+
+      let htmlContent = `
+        <div class="review-q-title">#${idx + 1}. ${q.pergunta}</div>
+        <div class="review-ans review-ans-correct">✅ <b>Correta:</b> ${q.opcoes[q.correta]}</div>
+      `;
+
+      if (!acertou) {
+        const txtRespErrada = (respUser !== undefined) ? q.opcoes[respUser] : "Não respondida";
+        htmlContent += `<div class="review-ans review-ans-wrong">❌ <b>Sua resposta:</b> ${txtRespErrada}</div>`;
+      }
+
+      if (q.dica) {
+        htmlContent += `<div style="font-size:0.85rem; color:#94a3b8; margin-top:0.5rem;">💡 <b>Explicação:</b> ${q.dica}</div>`;
+      }
+
+      // Link oficial de estudo na AWS
+      const urlAws = q.link || `https://aws.amazon.com/pt/search/?searchQuery=${encodeURIComponent(q.categoria || 'AWS Cloud')}`;
+      htmlContent += `<a href="${urlAws}" target="_blank" rel="noopener noreferrer" class="review-aws-link">📖 Estudar este tema na Documentação AWS ↗</a>`;
+
+      div.innerHTML = htmlContent;
+      container.appendChild(div);
+    });
   }
 
   function reiniciarApp() {
