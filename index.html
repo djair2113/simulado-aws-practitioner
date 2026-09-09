@@ -10,7 +10,7 @@
   <link rel="apple-touch-icon" href="bot-icon.svg">
 
   <style>
-    /* --- TEMA 2 (PADRÃO ESCURO ATUAL) --- */
+    /* --- TEMA 2 (PADRÃO ESCURO QUE VOCÊ GOSTA) --- */
     :root, body.tema-2 {
       --bg: #0b0f19;
       --card-bg: #161e2e;
@@ -451,7 +451,7 @@
     }
   </style>
 </head>
-<body class="tema-2"> <!-- Inicia por padrão no Tema 2 (Escuro) -->
+<body class="tema-2">
 
 <div class="container">
   
@@ -467,7 +467,7 @@
     <p id="progresso">Prepare-se para o CLF-C02</p>
   </header>
 
-  <!-- TELA INICIAL COM O ROBÔ TUTOR -->
+  <!-- TELA INICIAL COM AS OPÇÕES ORIGINAIS -->
   <div id="setup-card" class="card">
     
     <div class="bot-section">
@@ -550,7 +550,7 @@
     </div>
   </div>
 
-  <!-- TELA DE RESULTADOS COM FEEDBACK DO ROBÔ -->
+  <!-- TELA DE RESULTADOS -->
   <div id="result-card" class="card" style="display: none; text-align: center;">
     
     <div class="bot-section" style="text-align: left;">
@@ -634,7 +634,6 @@
     }
   }
 
-  // Carregar tema salvo ao abrir
   window.addEventListener('DOMContentLoaded', () => {
     const temaSalvo = localStorage.getItem('usuarioTema') || 'tema-2';
     document.body.className = temaSalvo;
