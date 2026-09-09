@@ -1,47 +1,829 @@
-const CACHE_NAME = 'aws-quiz-v7';
-const urlsToCache = [
-  './',
-  './index.html',
-  './questoes.json',
-  './manifest.json'
-  // Adicione aqui outros arquivos estáticos do seu app (como ícones ou CSS/JS, se houver)
-];
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#232f3e">
+  <title>Quiz Cloud Practitioner</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="bot-icon.svg">
 
-// Instalação do Service Worker e armazenamento no cache
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        return cache.addAll(urlsToCache);
-      })
-  );
-  self.skipWaiting();
-});
+  <style>
+    /* --- TEMA 1: CLÁSSICO / LIMPO --- */
+    body.tema-1 {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --primary: #d97706;
+      --primary-glow: rgba(217, 119, 6, 0.2);
+      --accent: #0284c7;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --correct: #059669;
+      --wrong: #dc2626;
+      --border: #e2e8f0;
+      --input-bg: #f8fafc;
+      --btn-bg: #e2e8f0;
+      --btn-hover: #cbd5e1;
+    }
 
-// Ativação e limpeza de caches antigos
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('Removendo cache antigo:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-  self.clients.claim();
-});
+    /* --- TEMA 2: DESIGN DA IMAGEM (MODERNO / APP MOBILE) --- */
+    :root, body.tema-2 {
+      --bg: #0b0f19;
+      --card-bg: #121824;
+      --primary: #ff9900;
+      --primary-glow: rgba(255, 153, 0, 0.25);
+      --accent: #38bdf8;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --correct: #10b981;
+      --wrong: #ef4444;
+      --border: #1e293b;
+      --input-bg: #0a0e17;
+      --btn-bg: #1a2233;
+      --btn-hover: #26334d;
+    }
 
-// Interceptação das requisições para servir o cache ou buscar na rede
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // Retorna do cache se encontrar, senão busca na rede
-        return response || fetch(event.request);
-      })
-  );
-});
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      flex-direction: column;
+      align-items: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 480px; /* Estilo de tela mobile elegante */
+      width: 100%;
+    }
+
+    /* Barra Superior com Botão de Tema */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .btn-theme {
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: bold;
+      transition: all 0.2s;
+    }
+
+    .btn-theme:hover {
+      border-color: var(--primary);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+      color: var(--primary);
+      text-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    header p {
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+      font-size: 0.88rem;
+    }
+
+    /* Bloco do Tutor Estilo App (AWS Academy Tutor) */
+    .academy-tutor-box {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      background: rgba(56, 189, 248, 0.05);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 14px;
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .tutor-icon {
+      width: 50px;
+      height: 50px;
+      flex-shrink: 0;
+    }
+
+    .tutor-text h3 {
+      margin: 0 0 0.2rem 0;
+      font-size: 0.95rem;
+      color: var(--accent);
+    }
+
+    .tutor-text p {
+      margin: 0;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 20px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      color: var(--text);
+      font-size: 0.85rem;
+    }
+
+    .input-text {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--input-bg);
+      color: var(--text);
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .input-text:focus {
+      border-color: var(--primary);
+    }
+
+    /* Grid de Dificuldade Estilizado */
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.4rem;
+    }
+
+    .btn-diff {
+      background: var(--btn-bg);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 0.6rem 0.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .btn-diff.active {
+      color: var(--text);
+      border-color: var(--primary);
+      background: rgba(255, 153, 0, 0.1);
+      box-shadow: 0 0 8px var(--primary-glow);
+    }
+
+    /* Slider de Quantidade de Questões */
+    .range-container {
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.8rem 1rem;
+    }
+
+    .range-slider {
+      width: 100%;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .range-value {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: bold;
+      margin-top: 0.3rem;
+    }
+
+    /* Tempo Limite Options */
+    .time-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.4rem;
+    }
+
+    .btn-time {
+      background: var(--btn-bg);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 0.6rem 0.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .btn-time.active {
+      background: var(--btn-hover);
+      color: var(--text);
+      border-color: var(--accent);
+    }
+
+    /* Botão Principal */
+    .btn-main {
+      width: 100%;
+      background: var(--primary);
+      color: #000;
+      border: none;
+      padding: 0.9rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 0 15px var(--primary-glow);
+      transition: opacity 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .btn-main:hover {
+      opacity: 0.9;
+    }
+
+    /* Card Cadernos de Erros */
+    .errors-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: border-color 0.2s;
+      margin-top: 1rem;
+    }
+
+    .errors-card:hover {
+      border-color: var(--accent);
+    }
+
+    .errors-card h4 {
+      margin: 0 0 0.2rem 0;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .errors-card p {
+      margin: 0;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Tela do Quiz */
+    .badge-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      background: var(--btn-bg);
+      color: var(--accent);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .timer-badge {
+      color: var(--text-muted);
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 6px;
+      background: var(--btn-bg);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      width: 0%;
+      transition: width 0.3s;
+    }
+
+    .btn-opcao {
+      width: 100%;
+      text-align: left;
+      padding: 0.85rem 1rem;
+      margin: 0.5rem 0;
+      background-color: var(--btn-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .btn-opcao:hover {
+      border-color: var(--accent);
+    }
+
+    .btn-opcao.correta {
+      background-color: var(--correct) !important;
+      color: #fff;
+      border-color: var(--correct);
+    }
+
+    .btn-opcao.errada {
+      background-color: var(--wrong) !important;
+      color: #fff;
+      border-color: var(--wrong);
+    }
+
+    .dica-box {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid var(--accent);
+      border-radius: 10px;
+      display: none;
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+    }
+
+    .btn-nav {
+      background: var(--btn-bg);
+      border: 1px solid var(--border);
+      padding: 0.7rem;
+      border-radius: 10px;
+      color: var(--text);
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .btn-nav:hover {
+      background: var(--btn-hover);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      line-height: 1.3;
+    }
+  </style>
+</head>
+<body class="tema-2">
+
+<div class="container">
+  
+  <div class="top-bar">
+    <span style="font-size: 0.85rem; color: var(--text-muted);">AWS Cloud Practitioner</span>
+    <button class="btn-theme" onclick="alternarTema()">
+      <span id="theme-icon">🌙</span> <span id="theme-text">Tema</span>
+    </button>
+  </div>
+
+  <header>
+    <h1>aws Cloud Practitioner</h1>
+    <p id="progresso">Força, Djair! Preparatório CLF-C02</p>
+  </header>
+
+  <!-- TELA INICIAL (COM O LAYOUT DA SUA IMAGEM) -->
+  <div id="setup-card" class="card">
+    
+    <div class="academy-tutor-box">
+      <svg class="tutor-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" fill="#1e293b" stroke="#ff9900" stroke-width="3"/>
+        <rect x="25" y="30" width="50" height="35" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+        <circle cx="40" cy="45" r="5" fill="#38bdf8"/>
+        <circle cx="60" cy="45" r="5" fill="#38bdf8"/>
+        <path d="M 40 55 Q 50 62 60 55" stroke="#ff9900" stroke-width="3" stroke-linecap="round"/>
+        <line x1="50" y1="15" x2="50" y2="30" stroke="#ff9900" stroke-width="3"/>
+        <circle cx="50" cy="12" r="4" fill="#ff9900"/>
+      </svg>
+      <div class="tutor-text">
+        <h3>AWS Academy Tutor</h3>
+        <p>Bem-vindo ao AWS Academy, Djair! Vamos preparar sua certificação CLF-C02.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Seu nome ou apelido:</label>
+      <input type="text" id="user-name" class="input-text" value="Djair" placeholder="Digite seu nome...">
+    </div>
+
+    <div class="form-group">
+      <label>Dificuldade</label>
+      <div class="diff-grid">
+        <button class="btn-diff active" onclick="setDiff('todas', this)">Practitioner</button>
+        <button class="btn-diff" onclick="setDiff('Fácil', this)">Fácil</button>
+        <button class="btn-diff" onclick="setDiff('Médio', this)">Médio</button>
+        <button class="btn-diff" onclick="setDiff('Hard', this)">Hard</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Quantidade de Questões</label>
+      <div class="range-container">
+        <input type="range" id="qtd-range" class="range-slider" min="5" max="50" step="5" value="10" oninput="atualizarRange(this.value)">
+        <div id="range-label" class="range-value">10 Questões</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Tempo Limite</label>
+      <div class="time-grid">
+        <button class="btn-time active" onclick="setTime(0, this)">Livre</button>
+        <button class="btn-time" onclick="setTime(15, this)">15 min</button>
+        <button class="btn-time" onclick="setTime(30, this)">30 min</button>
+        <button class="btn-time" onclick="setTime('custom', this)">Definir</button>
+      </div>
+    </div>
+
+    <button class="btn-main" onclick="iniciarSimulado()">Iniciar Simulado</button>
+  </div>
+
+  <!-- CADERNO DE ERROS CARD -->
+  <div class="errors-card" onclick="alert('Funcionalidade de Caderno de Erros em desenvolvimento!')">
+    <div>
+      <h4>Meus Cadernos de Erros</h4>
+      <p>Revise suas questões erradas para sua certificação CLF-C02.</p>
+    </div>
+    <span style="color: var(--accent); font-weight: bold;">›</span>
+  </div>
+
+  <!-- TELA DO QUIZ -->
+  <div id="quiz-card" class="card" style="display: none;">
+    <div class="badge-bar">
+      <span id="categoria" class="badge">Categoria</span>
+      <span id="timer-display" class="timer-badge">⏱️ 00:00</span>
+    </div>
+
+    <div class="progress-bar-bg">
+      <div id="progress-bar" class="progress-bar-fill"></div>
+    </div>
+
+    <h2 id="pergunta" style="font-size: 1rem; line-height: 1.4; margin-bottom: 1rem;"></h2>
+
+    <div id="opcoes"></div>
+
+    <div id="dica" class="dica-box"></div>
+
+    <div class="controls">
+      <button id="btn-anterior" class="btn-nav" onclick="anteriorPergunta()">Anterior</button>
+      <button class="btn-nav" onclick="mostrarDica()">💡 Dica</button>
+      <button id="btn-proximo" class="btn-nav" style="background: var(--primary); color: #000; border: none;" onclick="proximaPergunta()">Próximo</button>
+    </div>
+  </div>
+
+  <!-- TELA DE RESULTADOS -->
+  <div id="result-card" class="card" style="display: none; text-align: center;">
+    <div id="result-percentage" style="font-size: 2.5rem; font-weight: 900; color: var(--primary); margin: 0.5rem 0;">0%</div>
+    
+    <div style="margin: 1rem 0; text-align: left; font-size: 0.9rem;">
+      <div style="display:flex; justify-content:space-between; padding:0.4rem 0; border-bottom:1px solid var(--border);"><span>Acertos:</span><span id="stat-acertos" style="color:var(--correct)">0</span></div>
+      <div style="display:flex; justify-content:space-between; padding:0.4rem 0; border-bottom:1px solid var(--border);"><span>Erros:</span><span id="stat-erros" style="color:var(--wrong)">0</span></div>
+      <div style="display:flex; justify-content:space-between; padding:0.4rem 0;"><span>Tempo Total:</span><span id="stat-tempo" style="color:var(--accent)">00:00</span></div>
+    </div>
+
+    <button class="btn-main" onclick="reiniciarApp()">Tentar Novamente</button>
+
+    <h3 style="margin-top: 1.5rem; color: var(--accent); text-align: left; font-size: 0.95rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem;">
+      Correção e Materiais para Estudo
+    </h3>
+    <div id="review-container" style="max-height: 300px; overflow-y: auto;"></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 djair2113. Uso estritamente educacional para a certificação AWS CLF-C02. Proibida a comercialização.</p>
+</footer>
+
+<script>
+  let todasQuestoes = [];
+  let questoesFiltradas = [];
+  let respostasUsuario = {};
+  let indiceAtual = 0;
+  let nomeUsuario = "Djair";
+  
+  let tempoSegundos = 0;
+  let tempoGastoTotal = 0;
+  let timerInterval = null;
+  let modoContagemRegressiva = false;
+
+  let config = {
+    dificuldade: 'todas',
+    qtd: 10,
+    tempo: 0
+  };
+
+  function atualizarRange(val) {
+    config.qtd = parseInt(val);
+    document.getElementById('range-label').innerText = `${val} Questões`;
+  }
+
+  function setDiff(val, btn) {
+    config.dificuldade = val;
+    btn.parentElement.querySelectorAll('.btn-diff').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  function setTime(val, btn) {
+    config.tempo = val;
+    btn.parentElement.querySelectorAll('.btn-time').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  function atualizarBotaoTema(tema) {
+    const icone = document.getElementById('theme-icon');
+    const texto = document.getElementById('theme-text');
+    if (tema === 'tema-1') {
+      icone.innerText = '☀️';
+      texto.innerText = 'Claro';
+    } else {
+      icone.innerText = '🌙';
+      texto.innerText = 'Escuro';
+    }
+  }
+
+  function alternarTema() {
+    const body = document.body;
+    if (body.classList.contains('tema-2')) {
+      body.classList.remove('tema-2');
+      body.classList.add('tema-1');
+      localStorage.setItem('usuarioTema', 'tema-1');
+      atualizarBotaoTema('tema-1');
+    } else {
+      body.classList.remove('tema-1');
+      body.classList.add('tema-2');
+      localStorage.setItem('usuarioTema', 'tema-2');
+      atualizarBotaoTema('tema-2');
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const temaSalvo = localStorage.getItem('usuarioTema') || 'tema-2';
+    document.body.className = temaSalvo;
+    atualizarBotaoTema(temaSalvo);
+  });
+
+  async function carregarQuestoes() {
+    try {
+      const resposta = await fetch('questoes.json');
+      todasQuestoes = await resposta.json();
+    } catch (erro) {
+      alert("Erro ao carregar questoes.json");
+    }
+  }
+
+  function iniciarSimulado() {
+    const inputNome = document.getElementById('user-name').value.trim();
+    nomeUsuario = inputNome ? inputNome : "Djair";
+
+    questoesFiltradas = [...todasQuestoes];
+
+    if (config.dificuldade !== 'todas') {
+      const diffFiltro = config.dificuldade.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      questoesFiltradas = questoesFiltradas.filter(q => {
+        if (!q.dificuldade) return false;
+        const diffQuestao = q.dificuldade.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        return diffQuestao === diffFiltro;
+      });
+    }
+
+    questoesFiltradas = questoesFiltradas.sort(() => 0.5 - Math.random()).slice(0, config.qtd);
+
+    if (questoesFiltradas.length === 0) {
+      alert("Nenhuma questão encontrada para os filtros selecionados!");
+      return;
+    }
+
+    respostasUsuario = {};
+    indiceAtual = 0;
+    tempoGastoTotal = 0;
+
+    if (config.tempo > 0) {
+      tempoSegundos = config.tempo * 60;
+      modoContagemRegressiva = true;
+    } else {
+      tempoSegundos = 0;
+      modoContagemRegressiva = false;
+    }
+
+    document.getElementById('setup-card').style.display = 'none';
+    document.querySelector('.errors-card').style.display = 'none';
+    document.getElementById('quiz-card').style.display = 'block';
+
+    iniciarCronometro();
+    exibirPergunta();
+  }
+
+  function iniciarCronometro() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+      tempoGastoTotal++;
+      if (modoContagemRegressiva) {
+        tempoSegundos--;
+        if (tempoSegundos <= 0) {
+          clearInterval(timerInterval);
+          alert("⏰ Tempo esgotado!");
+          encerrarSimulado();
+          return;
+        }
+      } else {
+        tempoSegundos++;
+      }
+      atualizarDisplayTimer();
+    }, 1000);
+  }
+
+  function formatarTempo(segundos) {
+    let seg = Math.max(0, parseInt(segundos) || 0);
+    let min = Math.floor(seg / 60);
+    let sec = seg % 60;
+    return `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`;
+  }
+
+  function atualizarDisplayTimer() {
+    document.getElementById('timer-display').innerText = `⏱️ ${formatarTempo(tempoSegundos)}`;
+  }
+
+  function exibirPergunta() {
+    const q = questoesFiltradas[indiceAtual];
+    
+    document.getElementById('progresso').innerText = `Força, ${nomeUsuario}! Questão ${indiceAtual + 1} de ${questoesFiltradas.length}`;
+    document.getElementById('categoria').innerText = `${q.categoria || 'AWS'} | ${q.dificuldade || 'Geral'}`;
+    document.getElementById('pergunta').innerText = q.pergunta;
+
+    let progressoPct = ((indiceAtual + 1) / questoesFiltradas.length) * 100;
+    document.getElementById('progress-bar').style.width = `${progressoPct}%`;
+    
+    const dicaBox = document.getElementById('dica');
+    dicaBox.style.display = 'none';
+    dicaBox.innerText = `💡 Dica: ${q.dica}`;
+
+    const conteinerOpcoes = document.getElementById('opcoes');
+    conteinerOpcoes.innerHTML = '';
+
+    const respostaSalva = respostasUsuario[indiceAtual];
+
+    q.opcoes.forEach((opcao, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'btn-opcao';
+      btn.innerText = opcao;
+
+      if (respostaSalva !== undefined) {
+        btn.disabled = true;
+        if (idx === q.correta) {
+          btn.classList.add('correta');
+        }
+        if (respostaSalva === idx && respostaSalva !== q.correta) {
+          btn.classList.add('errada');
+        }
+      } else {
+        btn.onclick = () => verificarResposta(idx, q.correta, btn);
+      }
+
+      conteinerOpcoes.appendChild(btn);
+    });
+
+    document.getElementById('btn-anterior').disabled = indiceAtual === 0;
+  }
+
+  function verificarResposta(selecionada, correta, elemento) {
+    respostasUsuario[indiceAtual] = selecionada;
+    const botoes = document.querySelectorAll('.btn-opcao');
+    botoes.forEach(b => b.disabled = true);
+
+    if (selecionada === correta) {
+      elemento.classList.add('correta');
+    } else {
+      elemento.classList.add('errada');
+      botoes[correta].classList.add('correta');
+    }
+  }
+
+  function mostrarDica() {
+    document.getElementById('dica').style.display = 'block';
+  }
+
+  function proximaPergunta() {
+    if (indiceAtual < questoesFiltradas.length - 1) {
+      indiceAtual++;
+      exibirPergunta();
+    } else {
+      encerrarSimulado();
+    }
+  }
+
+  function anteriorPergunta() {
+    if (indiceAtual > 0) {
+      indiceAtual--;
+      exibirPergunta();
+    }
+  }
+
+  function encerrarSimulado() {
+    clearInterval(timerInterval);
+
+    let acertos = 0;
+    let totalRespondidas = Object.keys(respostasUsuario).length;
+
+    questoesFiltradas.forEach((q, index) => {
+      if (respostasUsuario[index] === q.correta) {
+        acertos++;
+      }
+    });
+
+    let erros = totalRespondidas - acertos;
+    let porcentagem = totalRespondidas > 0 ? Math.round((acertos / questoesFiltradas.length) * 100) : 0;
+
+    document.getElementById('quiz-card').style.display = 'none';
+    document.getElementById('result-card').style.display = 'block';
+
+    document.getElementById('result-percentage').innerText = `${porcentagem}%`;
+    document.getElementById('stat-acertos').innerText = `${acertos} / ${questoesFiltradas.length}`;
+    document.getElementById('stat-erros').innerText = erros;
+    document.getElementById('stat-tempo').innerText = formatarTempo(tempoGastoTotal);
+
+    gerarRevisao();
+  }
+
+  function gerarRevisao() {
+    const container = document.getElementById('review-container');
+    container.innerHTML = '';
+
+    questoesFiltradas.forEach((q, idx) => {
+      const respUser = respostasUsuario[idx];
+      const acertou = (respUser === q.correta);
+
+      const div = document.createElement('div');
+      div.style.cssText = "background: var(--input-bg); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem; margin-top: 0.8rem; text-align: left;";
+      
+      let htmlContent = `<div style="font-size: 0.85rem; font-weight: bold; margin-bottom: 0.5rem;">#${idx + 1}. ${q.pergunta}</div>`;
+      htmlContent += `<div style="font-size: 0.8rem; color: var(--correct); padding: 0.3rem; background: rgba(16,185,129,0.1); border-radius: 4px;">✅ Correta: ${q.opcoes[q.correta]}</div>`;
+
+      if (!acertou) {
+        const txtRespErrada = (respUser !== undefined) ? q.opcoes[respUser] : "Não respondida";
+        htmlContent += `<div style="font-size: 0.8rem; color: var(--wrong); padding: 0.3rem; background: rgba(239,68,68,0.1); border-radius: 4px; margin-top:0.3rem;">❌ Sua resposta: ${txtRespErrada}</div>`;
+      }
+
+      div.innerHTML = htmlContent;
+      container.appendChild(div);
+    });
+  }
+
+  function reiniciarApp() {
+    document.getElementById('result-card').style.display = 'none';
+    document.getElementById('setup-card').style.display = 'block';
+    document.querySelector('.errors-card').style.display = 'flex';
+  }
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    });
+  }
+
+  carregarQuestoes();
+</script>
+</body>
+</html>
