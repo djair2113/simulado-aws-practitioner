@@ -3736,5 +3736,980 @@
     "dica": "Infraestrutura como Código garante padronização e automação sem erros manuais.",
     "dificuldade": "Fácil",
     "categoria": "Automação & IaC"
+  },
+  {
+    "id": 268,
+    "pergunta": "Uma startup baseada no Brasil deseja lançar sua aplicação para usuários no Japão e na Alemanha em poucos dias, sem construir data centers próprios nesses locais. Qual benefício da AWS descreve a capacidade de implantar aplicações em várias partes do mundo com poucos cliques?",
+    "opcoes": [
+      "A. Elasticidade",
+      "B. Go Global in Minutes (implantar globalmente em minutos)",
+      "C. Responsabilidade compartilhada",
+      "D. Faturamento consolidado"
+    ],
+    "correta": 1,
+    "dica": "A AWS possui uma infraestrutura global massiva que permite expandir o alcance da aplicação para qualquer lugar do mundo quase instantaneamente.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem",
+    "link": "https://aws.amazon.com/pt/what-is-cloud-computing/"
+  },
+  {
+    "id": 269,
+    "pergunta": "Uma empresa passa boa parte do tempo de sua equipe de TI trocando discos rígidos e fazendo manutenção de racks de servidores, em vez de desenvolver novos recursos para os clientes. Ao migrar para a AWS, a equipe passa a se concentrar em atividades que realmente diferenciam o negócio. Esse benefício da computação em nuvem é descrito como:",
+    "opcoes": [
+      "A. Aumentar a velocidade e a agilidade",
+      "B. Parar de gastar dinheiro administrando e mantendo data centers",
+      "C. Economia de escala",
+      "D. Confiabilidade"
+    ],
+    "correta": 1,
+    "dica": "A nuvem elimina a necessidade de tarefas pesadas de manutenção física de hardware, liberando o foco da equipe para inovação.",
+    "dificuldade": "Fácil",
+    "categoria": "Benefícios da Nuvem",
+    "link": "https://aws.amazon.com/pt/what-is-cloud-computing/"
+  },
+  {
+    "id": 270,
+    "pergunta": "Uma empresa de edição de vídeo em tempo real precisa de latência de milissegundos de um dígito para usuários em uma grande cidade que não possui uma Região da AWS, mas está próxima de uma infraestrutura AWS de baixa latência. Qual infraestrutura da AWS foi projetada para colocar recursos de computação e armazenamento mais perto de grandes centros populacionais e industriais, fora das Regiões tradicionais?",
+    "opcoes": [
+      "A. AWS Outposts",
+      "B. AWS Local Zones",
+      "C. AWS Wavelength",
+      "D. Apenas edge locations do CloudFront"
+    ],
+    "correta": 1,
+    "dica": "As AWS Local Zones colocam serviços de computação, armazenamento e banco de dados próximos a grandes centros populacionais.",
+    "dificuldade": "Médio",
+    "categoria": "Infraestrutura Global",
+    "link": "https://aws.amazon.com/pt/about-aws/global-infrastructure/localzones/"
+  },
+  {
+    "id": 271,
+    "pergunta": "Uma empresa do setor de saúde precisa executar algumas cargas de trabalho totalmente dentro de seu próprio data center, por motivos de latência e residência de dados, mas quer usar exatamente os mesmos serviços, APIs e ferramentas da AWS nesse ambiente local. Qual serviço da AWS estende a infraestrutura e os serviços da AWS para praticamente qualquer data center, ambiente de colocation ou instalação local?",
+    "opcoes": [
+      "A. AWS Snowball",
+      "B. AWS Outposts",
+      "C. AWS Direct Connect",
+      "D. AWS Local Zones"
+    ],
+    "correta": 1,
+    "dica": "O AWS Outposts traz a infraestrutura e os serviços nativos da AWS para o seu data center local.",
+    "dificuldade": "Médio",
+    "categoria": "Infraestrutura Híbrida",
+    "link": "https://aws.amazon.com/pt/outposts/"
+  },
+  {
+    "id": 272,
+    "pergunta": "Qual é o principal objetivo do AWS Well-Architected Framework?",
+    "opcoes": [
+      "A. Reduzir automaticamente os custos de todas as cargas de trabalho na AWS",
+      "B. Ajudar arquitetos de nuvem a construir infraestruturas seguras, de alto desempenho, resilientes e eficientes para suas aplicações",
+      "C. Substituir a necessidade de uma equipe de segurança dedicada",
+      "D. Gerenciar automaticamente o faturamento entre múltiplas contas"
+    ],
+    "correta": 1,
+    "dica": "Ele fornece orientações para ajudar a avaliar e projetar arquiteturas seguras, de alto desempenho, resilientes e eficientes.",
+    "dificuldade": "Fácil",
+    "categoria": "Arquitetura",
+    "link": "https://aws.amazon.com/pt/architecture/well-architected/"
+  },
+  {
+    "id": 273,
+    "pergunta": "Qual das alternativas melhor descreve o modelo de nuvem pública, como o oferecido pela AWS?",
+    "opcoes": [
+      "A. Infraestrutura de nuvem operada exclusivamente para uma única organização, hospedada localmente",
+      "B. Serviços de TI fornecidos por um provedor terceirizado pela internet pública e compartilhados entre múltiplos clientes, sob demanda",
+      "C. Combinação obrigatória entre data center local e nuvem",
+      "D. Rede privada isolada sem acesso à internet"
+    ],
+    "correta": 1,
+    "dica": "Na nuvem pública, os recursos são de propriedade e operados por um provedor terceirizado, compartilhados entre múltiplos tenants.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem",
+    "link": "https://aws.amazon.com/pt/what-is-cloud-computing/"
+  },
+  {
+    "id": 274,
+    "pergunta": "Uma aplicação está enfrentando aumento de carga e a equipe decide adicionar mais instâncias EC2 idênticas atrás de um load balancer, em vez de aumentar o tamanho de uma única instância. Essa abordagem é conhecida como:",
+    "opcoes": [
+      "A. Escalabilidade vertical (scale up)",
+      "B. Escalabilidade horizontal (scale out)",
+      "C. Elasticidade reversa",
+      "D. Redundância geográfica"
+    ],
+    "correta": 1,
+    "dica": "Adicionar mais instâncias (para fora/horizontal) distribui a carga por múltiplos servidores.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação",
+    "link": "https://aws.amazon.com/pt/ec2/autoscaling/"
+  },
+  {
+    "id": 275,
+    "pergunta": "Qual das afirmações a seguir melhor diferencia tolerância a falhas de alta disponibilidade?",
+    "opcoes": [
+      "A. Alta disponibilidade e tolerância a falhas são sinônimos e significam exatamente a mesma coisa",
+      "B. Tolerância a falhas garante que o sistema continue operando sem perda de desempenho perceptível mesmo com falha de um componente, enquanto alta disponibilidade visa minimizar o tempo de inatividade, podendo haver breve interrupção",
+      "C. Alta disponibilidade elimina completamente qualquer possibilidade de falha",
+      "D. Tolerância a falhas se aplica apenas a bancos de dados"
+    ],
+    "correta": 1,
+    "dica": "Sistemas tolerantes a falhas continuam funcionando sem interrupções perceptíveis mesmo na falha de um componente crítico.",
+    "dificuldade": "Médio",
+    "categoria": "Resiliência",
+    "link": "https://aws.amazon.com/pt/whitepapers/architecting-for-the-cloud-aws/"
+  },
+  {
+    "id": 276,
+    "pergunta": "Uma empresa mantém uma versão mínima de sua infraestrutura crítica sempre em execução na AWS (como um banco de dados replicado), pronta para ser rapidamente escalada em caso de desastre na infraestrutura principal on-premises. Essa estratégia de recuperação de desastres é conhecida como:",
+    "opcoes": [
+      "A. Backup and Restore",
+      "B. Pilot Light",
+      "C. Multi-Site Active-Active",
+      "D. Warm Standby completo"
+    ],
+    "correta": 1,
+    "dica": "O modelo Pilot Light mantém uma versão mínima (uma luz piloto acesa) rodando na nuvem.",
+    "dificuldade": "Médio",
+    "categoria": "Resiliência e Recuperação",
+    "link": "https://aws.amazon.com/pt/blogs/architecture/disaster-recovery-dr-architecture-on-aws-part-i/"
+  },
+  {
+    "id": 277,
+    "pergunta": "Qual estratégia de recuperação de desastres apresenta o maior RTO (tempo de recuperação) e o menor custo entre as opções, consistindo basicamente em armazenar backups e restaurá-los quando necessário?",
+    "opcoes": [
+      "A. Multi-site ativo-ativo",
+      "B. Warm standby",
+      "C. Backup and Restore",
+      "D. Pilot light"
+    ],
+    "correta": 2,
+    "dica": "Backup e restauração é o método mais barato, porém exige mais tempo para recuperar os dados e sistemas (maior RTO).",
+    "dificuldade": "Fácil",
+    "categoria": "Resiliência e Recuperação",
+    "link": "https://aws.amazon.com/pt/blogs/architecture/disaster-recovery-dr-architecture-on-aws-part-i/"
+  },
+  {
+    "id": 278,
+    "pergunta": "Qual ferramenta/conceito da AWS ajuda uma empresa a comparar o custo total de possuir e operar uma infraestrutura on-premises com o custo de executar a mesma carga de trabalho na AWS?",
+    "opcoes": [
+      "A. AWS Budgets",
+      "B. Total Cost of Ownership (TCO)",
+      "C. AWS Cost Explorer apenas",
+      "D. Faturamento consolidado (Consolidated Billing)"
+    ],
+    "correta": 1,
+    "dica": "A análise de Custo Total de Propriedade (TCO) ajuda a entender os gastos financeiros diretos e indiretos.",
+    "dificuldade": "Fácil",
+    "categoria": "Cobrança e Custos",
+    "link": "https://aws.amazon.com/pt/tco-calculator/"
+  },
+  {
+    "id": 279,
+    "pergunta": "Uma empresa decide migrar suas aplicações para a AWS movendo-as 'como estão' para instâncias EC2, com o mínimo de alterações possível, para acelerar a migração inicial. Essa estratégia de migração é conhecida como:",
+    "opcoes": [
+      "A. Refactor (re-arquitetar)",
+      "B. Replatform",
+      "C. Rehost (lift-and-shift)",
+      "D. Repurchase"
+    ],
+    "correta": 2,
+    "dica": "Rehost significa realocar a aplicação na nuvem sem fazer alterações estruturais (o famoso lift-and-shift).",
+    "dificuldade": "Fácil",
+    "categoria": "Migração",
+    "link": "https://aws.amazon.com/pt/blogs/enterprise-strategy/6-strategies-for-migrating-applications-to-the-cloud/"
+  },
+  {
+    "id": 280,
+    "pergunta": "O AWS Cloud Adoption Framework (AWS CAF) foi criado para ajudar organizações a:",
+    "opcoes": [
+      "A. Configurar exclusivamente redes VPC",
+      "B. Desenvolver um plano eficiente e personalizado de adoção da nuvem, organizando orientações em perspectivas como negócios, pessoas, governança, plataforma, segurança e operações",
+      "C. Substituir a necessidade do modelo de responsabilidade compartilhada",
+      "D. Calcular automaticamente o TCO de uma migração"
+    ],
+    "correta": 1,
+    "dica": "O AWS CAF orienta as organizações por meio de perspectivas práticas para acelerar a jornada para a nuvem.",
+    "dificuldade": "Médio",
+    "categoria": "Estratégia",
+    "link": "https://aws.amazon.com/pt/professional-services/caf/"
+  },
+  {
+    "id": 281,
+    "pergunta": "Uma empresa precisa decidir em qual Região da AWS implantará sua nova aplicação. Quais fatores ela deve considerar principalmente ao escolher uma Região da AWS?",
+    "opcoes": [
+      "A. Apenas o número de Zonas de Disponibilidade disponíveis",
+      "B. Conformidade com requisitos legais/regulatórios, latência para os usuários finais, custo dos serviços e disponibilidade dos serviços desejados naquela Região",
+      "C. Somente a aparência do console de gerenciamento naquela Região",
+      "D. A Região não influencia nenhum desses fatores"
+    ],
+    "correta": 1,
+    "dica": "Latência, conformidade legal, custos e disponibilidade de recursos específicos variam entre as regiões.",
+    "dificuldade": "Fácil",
+    "categoria": "Infraestrutura Global",
+    "link": "https://aws.amazon.com/pt/about-aws/global-infrastructure/regions_az/"
+  },
+  {
+    "id": 282,
+    "pergunta": "Qual é a principal diferença entre elasticidade e escalabilidade na computação em nuvem?",
+    "opcoes": [
+      "A. Não há diferença, os termos são intercambiáveis em qualquer contexto",
+      "B. Escalabilidade é a capacidade de um sistema crescer para lidar com mais carga; elasticidade é a capacidade de aumentar E reduzir recursos automaticamente conforme a demanda muda",
+      "C. Elasticidade se refere apenas ao armazenamento, nunca à computação",
+      "D. Escalabilidade só pode ser feita manualmente na AWS"
+    ],
+    "correta": 1,
+    "dica": "Escalabilidade lida com o dimensionamento do crescimento, enquanto elasticidade engloba a automação de expandir e contrair os recursos.",
+    "dificuldade": "Fácil",
+    "categoria": "Conceitos de Nuvem",
+    "link": "https://aws.amazon.com/pt/what-is/scalability-vs-elasticity/"
+  },
+  {
+    "id": 283,
+    "pergunta": "Uma equipe de produto quer testar rapidamente uma nova ideia de funcionalidade, sabendo que, se não funcionar, pode descartar os recursos utilizados sem grandes perdas financeiras, já que pagou apenas pelo tempo de uso. Esse cenário demonstra qual benefício da nuvem?",
+    "opcoes": [
+      "A. Redução do princípio do menor privilégio",
+      "B. Capacidade de experimentar e inovar rapidamente com baixo risco financeiro",
+      "C. Faturamento consolidado",
+      "D. Conformidade automática com regulamentações"
+    ],
+    "correta": 1,
+    "dica": "A infraestrutura sob demanda permite testar ideias com baixo custo de falha.",
+    "dificuldade": "Fácil",
+    "categoria": "Benefícios da Nuvem",
+    "link": "https://aws.amazon.com/pt/what-is-cloud-computing/"
+  },
+  {
+    "id": 284,
+    "pergunta": "O que é uma política do IAM (IAM Policy) na AWS?",
+    "opcoes": [
+      "A. Um documento (geralmente em formato JSON) que define permissões, especificando quais ações são permitidas ou negadas em quais recursos",
+      "B. Um certificado digital para autenticação de usuários",
+      "C. Um firewall de rede aplicado a sub-redes",
+      "D. Um relatório de auditoria gerado automaticamente"
+    ],
+    "correta": 0,
+    "dica": "Políticas do IAM são documentos em formato JSON que definem quem tem acesso a o quê.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança e IAM",
+    "link": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html"
+  },
+  {
+    "id": 285,
+    "pergunta": "Qual das opções a seguir NÃO é um tipo de dispositivo de autenticação multifator (MFA) suportado pela AWS?",
+    "opcoes": [
+      "A. Aplicativo autenticador virtual (TOTP) no smartphone",
+      "B. Chave de segurança física (FIDO/U2F)",
+      "C. Dispositivo MFA de hardware",
+      "D. Envio automático da senha do usuário raiz por e-mail"
+    ],
+    "correta": 3,
+    "dica": "Enviar senhas por e-mail não constitui um método seguro de MFA.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança e IAM",
+    "link": "https://aws.amazon.com/pt/iam/features/mfa/"
+  },
+  {
+    "id": 286,
+    "pergunta": "Qual é a principal finalidade de um grupo do IAM (IAM Group)?",
+    "opcoes": [
+      "A. Armazenar chaves de criptografia",
+      "B. Organizar múltiplos usuários do IAM e aplicar o mesmo conjunto de permissões a todos eles de uma só vez",
+      "C. Substituir a necessidade de senhas individuais",
+      "D. Monitorar o tráfego de rede da VPC"
+    ],
+    "correta": 1,
+    "dica": "Grupos facilitam a atribuição de permissões a uma coleção de usuários.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança e IAM",
+    "link": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html"
+  },
+  {
+    "id": 287,
+    "pergunta": "Em uma estrutura do AWS Organizations, qual é o papel da conta de gerenciamento (management account)?",
+    "opcoes": [
+      "A. É apenas mais uma conta-membro sem privilégios especiais",
+      "B. É a conta usada para criar a organização, convidar ou criar contas-membro e gerenciar políticas como as SCPs",
+      "C. É uma conta exclusiva para armazenar logs do CloudTrail",
+      "D. É criada automaticamente pela AWS e não pode ser acessada pelo cliente"
+    ],
+    "correta": 1,
+    "dica": "A conta de gerenciamento centraliza a administração das contas e políticas da organização.",
+    "dificuldade": "Médio",
+    "categoria": "Governança",
+    "link": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs-manage-accounts-master.html"
+  },
+  {
+    "id": 288,
+    "pergunta": "Uma empresa que processa pagamentos com cartão de crédito precisa garantir conformidade com o PCI DSS. Como a AWS auxilia nesse cenário?",
+    "opcoes": [
+      "A. A AWS garante automaticamente que qualquer aplicação do cliente seja compatível com PCI DSS, sem nenhuma ação do cliente",
+      "B. A AWS mantém a infraestrutura subjacente em conformidade com PCI DSS e disponibiliza relatórios de conformidade via AWS Artifact, mas o cliente ainda é responsável pela conformidade de sua própria aplicação",
+      "C. PCI DSS não se aplica a ambientes de nuvem",
+      "D. Apenas contas com Enterprise Support têm acesso a recursos compatíveis com PCI DSS"
+    ],
+    "correta": 1,
+    "dica": "A AWS assegura a conformidade da infraestrutura física, enquanto o cliente assegura a segurança de sua aplicação.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança e Conformidade",
+    "link": "https://aws.amazon.com/pt/compliance/pci-dss-level-1-faqs/"
+  },
+  {
+    "id": 289,
+    "pergunta": "Uma empresa da área de saúde nos EUA deseja armazenar informações protegidas de saúde (PHI) na AWS em conformidade com a HIPAA. O que ela deve fazer?",
+    "opcoes": [
+      "A. Nada, qualquer serviço da AWS já é automaticamente compatível com HIPAA",
+      "B. Utilizar apenas serviços elegíveis para HIPAA e firmar um Business Associate Addendum (BAA) com a AWS",
+      "C. A HIPAA não permite o uso de provedores de nuvem",
+      "D. Contratar exclusivamente o plano de suporte Basic"
+    ],
+    "correta": 1,
+    "dica": "Para cargas reguladas pela HIPAA, é preciso assinar o BAA e usar serviços elegíveis.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança e Conformidade",
+    "link": "https://aws.amazon.com/pt/compliance/hipaa-compliance/"
+  },
+  {
+    "id": 290,
+    "pergunta": "Qual é a diferença entre criptografia 'em trânsito' e criptografia 'em repouso'?",
+    "opcoes": [
+      "A. Não existe diferença técnica entre os dois termos",
+      "B. Criptografia em trânsito protege os dados enquanto são transmitidos pela rede (ex: TLS/HTTPS); criptografia em repouso protege os dados armazenados (ex: em um volume EBS ou bucket S3)",
+      "C. Criptografia em repouso só se aplica a bancos de dados relacionais",
+      "D. Criptografia em trânsito é sempre opcional e nunca recomendada"
+    ],
+    "correta": 1,
+    "dica": "Em trânsito refere-se ao movimento pela rede; em repouso refere-se aos dados armazenados em discos ou storages.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança",
+    "link": "https://aws.amazon.com/pt/security/encryption/"
+  },
+  {
+    "id": 291,
+    "pergunta": "Um bucket do Amazon S3 foi configurado incorretamente e ficou acessível publicamente, expondo dados sensíveis. De acordo com o modelo de responsabilidade compartilhada, de quem é a responsabilidade por essa configuração incorreta?",
+    "opcoes": [
+      "A. Exclusivamente da AWS, pois ela hospeda o S3",
+      "B. Do cliente, já que a configuração de políticas de bucket e controle de acesso é responsabilidade do cliente ('segurança NA nuvem')",
+      "C. De nenhuma das partes, pois é considerado um risco aceitável",
+      "D. Do provedor de internet do cliente"
+    ],
+    "correta": 1,
+    "dica": "A segurança dos dados dentro do S3 e o gerenciamento de acesso são responsabilidade do cliente.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança",
+    "link": "https://aws.amazon.com/pt/compliance/shared-responsibility-model/"
+  },
+  {
+    "id": 292,
+    "pergunta": "Uma aplicação precisa armazenar credenciais de banco de dados de forma segura e rotacioná-las automaticamente em intervalos regulares, sem intervenção manual. Qual serviço da AWS é o mais indicado?",
+    "opcoes": [
+      "A. AWS Certificate Manager",
+      "B. AWS Secrets Manager",
+      "C. Amazon Cognito",
+      "D. AWS Config"
+    ],
+    "correta": 1,
+    "dica": "O AWS Secrets Manager gerencia segredos com suporte nativo a rotação automática.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança",
+    "link": "https://aws.amazon.com/pt/secrets-manager/"
+  },
+  {
+    "id": 293,
+    "pergunta": "Uma empresa precisa provisionar, gerenciar e renovar automaticamente certificados SSL/TLS públicos e privados para seus domínios usados em serviços como Elastic Load Balancing e CloudFront. Qual serviço da AWS deve ser utilizado?",
+    "opcoes": [
+      "A. AWS KMS",
+      "B. AWS Certificate Manager (ACM)",
+      "C. AWS Secrets Manager",
+      "D. Amazon Macie"
+    ],
+    "correta": 1,
+    "dica": "O ACM simplifica o gerenciamento e a renovação de certificados SSL/TLS.",
+    "dificuldade": "Fácil",
+    "categoria": "Segurança",
+    "link": "https://aws.amazon.com/pt/certificate-manager/"
+  },
+  {
+    "id": 294,
+    "pergunta": "Uma empresa está desenvolvendo um aplicativo móvel e deseja adicionar funcionalidades de cadastro, login e controle de acesso de usuários finais (não funcionários da empresa), incluindo login social (Google, Facebook). Qual serviço da AWS é o mais indicado?",
+    "opcoes": [
+      "A. AWS IAM Identity Center",
+      "B. Amazon Cognito",
+      "C. AWS Directory Service",
+      "D. AWS Organizations"
+    ],
+    "correta": 1,
+    "dica": "O Amazon Cognito fornece gerenciamento de identidade para aplicativos web e móveis de consumidores finais.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança",
+    "link": "https://aws.amazon.com/pt/cognito/"
+  },
+  {
+    "id": 295,
+    "pergunta": "Uma empresa com dezenas de contas AWS organizadas no AWS Organizations deseja oferecer aos funcionários um único local de login (single sign-on) para acessar múltiplas contas AWS, sem precisar de credenciais separadas para cada uma. Qual serviço é o mais adequado?",
+    "opcoes": [
+      "A. AWS IAM Identity Center (antigo AWS SSO)",
+      "B. Amazon Cognito",
+      "C. AWS Secrets Manager",
+      "D. AWS Config"
+    ],
+    "correta": 0,
+    "dica": "O IAM Identity Center centraliza o acesso de login único (SSO) às contas e aplicativos AWS.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança",
+    "link": "https://aws.amazon.com/pt/iam/identity-center/"
+  },
+  {
+    "id": 296,
+    "pergunta": "Qual é a principal diferença entre o AWS Shield Standard e o AWS Shield Advanced?",
+    "opcoes": [
+      "A. O Shield Standard é pago e o Advanced é gratuito",
+      "B. O Shield Standard oferece proteção básica gratuita contra DDoS para todos os clientes; o Shield Advanced é um serviço pago com proteção aprimorada, detecção mais rápida e acesso à equipe de resposta a DDoS (DRT)",
+      "C. Ambos oferecem exatamente os mesmos recursos",
+      "D. O Shield Advanced protege apenas o Amazon S3"
+    ],
+    "correta": 1,
+    "dica": "O Shield Standard é incluído sem custo adicional para mitigar ataques comuns de DDoS na camada de rede/transporte.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança",
+    "link": "https://aws.amazon.com/pt/shield/"
+  },
+  {
+    "id": 297,
+    "pergunta": "Uma empresa percebe que um recurso hospedado na AWS (fora de sua própria conta) está sendo usado para enviar spam ou tentar invadir seus sistemas. Qual é o canal apropriado da AWS para relatar esse comportamento?",
+    "opcoes": [
+      "A. Abrir um chamado no AWS Support Center vinculado apenas à própria conta",
+      "B. Enviar um relatório para o canal de denúncia de abuso da AWS (AWS Trust & Safety / abuse report)",
+      "C. Publicar uma reclamação pública no AWS Marketplace",
+      "D. Não é possível relatar abuso de recursos de terceiros na AWS"
+    ],
+    "correta": 1,
+    "dica": "A equipe de Trust & Safety da AWS lida com relatórios de uso abusivo ou mal-intencionado de recursos.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança",
+    "link": "https://aws.amazon.com/pt/contact-us/report-security-vulnerability/"
+  },
+  {
+    "id": 298,
+    "pergunta": "Uma empresa utiliza vários serviços de segurança da AWS (GuardDuty, Inspector, Macie, etc.) e deseja visualizar, de forma centralizada, um painel único com todas as descobertas (findings) de segurança e o status de conformidade em relação a padrões como o CIS AWS Foundations Benchmark. Qual serviço é o mais indicado?",
+    "opcoes": [
+      "A. AWS Security Hub",
+      "B. AWS Config apenas",
+      "C. AWS CloudTrail apenas",
+      "D. Amazon Inspector apenas"
+    ],
+    "correta": 0,
+    "dica": "O Security Hub agrega, organiza e prioriza alertas de segurança de múltiplos serviços AWS.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança",
+    "link": "https://aws.amazon.com/pt/security-hub/"
+  },
+  {
+    "id": 299,
+    "pergunta": "Uma empresa com dezenas de contas no AWS Organizations deseja aplicar e gerenciar de forma centralizada as mesmas regras do AWS WAF em todas as suas aplicações, em todas as contas, a partir de um único lugar. Qual serviço é o mais indicado?",
+    "opcoes": [
+      "A. AWS Firewall Manager",
+      "B. Amazon GuardDuty",
+      "C. AWS Config",
+      "D. Amazon Inspector"
+    ],
+    "correta": 0,
+    "dica": "O Firewall Manager simplifica a administração e manutenção de regras do WAF em escala através de múltiplas contas.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança",
+    "link": "https://aws.amazon.com/pt/firewall-manager/"
+  },
+  {
+    "id": 300,
+    "pergunta": "Qual é a diferença entre uma 'AWS managed key' e uma 'customer managed key' no AWS KMS?",
+    "opcoes": [
+      "A. Não existe diferença, ambas têm o mesmo nível de controle",
+      "B. Chaves gerenciadas pelo cliente oferecem controle total sobre políticas de acesso, rotação e ciclo de vida; chaves gerenciadas pela AWS são criadas e administradas automaticamente pela AWS para uso em serviços específicos, com menos controle pelo cliente",
+      "C. Apenas chaves gerenciadas pela AWS podem ser usadas no Amazon S3",
+      "D. Chaves gerenciadas pelo cliente são sempre gratuitas, enquanto as da AWS são pagas"
+    ],
+    "correta": 1,
+    "dica": "Customer managed keys dão total autonomia de gerenciamento e auditoria para o usuário.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança",
+    "link": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html"
+  },
+  {
+    "id": 301,
+    "pergunta": "Um usuário do IAM possui uma política que permite explicitamente acesso total ao Amazon S3, mas também está sujeito a outra política que nega explicitamente o acesso ao S3. Qual será o resultado final da avaliação dessas políticas?",
+    "opcoes": [
+      "A. O acesso será permitido, pois 'allow' sempre tem prioridade",
+      "B. O acesso será negado, pois uma negação explícita sempre prevalece sobre uma permissão no processo de avaliação de políticas do IAM",
+      "C. O resultado é aleatório",
+      "D. A AWS ignora automaticamente qualquer negação explícita"
+    ],
+    "correta": 1,
+    "dica": "Em IAM, a negação explícita (explicit deny) tem precedência absoluta sobre qualquer permissão concedida.",
+    "dificuldade": "Médio",
+    "categoria": "Segurança e IAM",
+    "link": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html"
+  },
+  {
+    "id": 302,
+    "pergunta": "Uma empresa quer executar contêineres Docker em produção sem precisar provisionar ou gerenciar servidores ou clusters de EC2 subjacentes. Qual combinação de serviços da AWS atende a essa necessidade?",
+    "opcoes": [
+      "A. Amazon EC2 com Auto Scaling apenas",
+      "B. Amazon ECS (ou EKS) usando o modo de lançamento AWS Fargate",
+      "C. AWS Lambda exclusivamente",
+      "D. Amazon Lightsail"
+    ],
+    "correta": 1,
+    "dica": "O Fargate é o motor serverless para contêineres no ECS e EKS.",
+    "dificuldade": "Médio",
+    "categoria": "Computação",
+    "link": "https://aws.amazon.com/pt/fargate/"
+  },
+  {
+    "id": 303,
+    "pergunta": "Uma empresa já utiliza Kubernetes em seu ambiente on-premises e deseja migrar suas cargas de trabalho para um serviço gerenciado de Kubernetes na AWS, mantendo compatibilidade com ferramentas e APIs padrão do Kubernetes. Qual serviço é o mais indicado?",
+    "opcoes": [
+      "A. Amazon ECS",
+      "B. Amazon EKS (Elastic Kubernetes Service)",
+      "C. AWS Batch",
+      "D. AWS Elastic Beanstalk"
+    ],
+    "correta": 1,
+    "dica": "O Amazon EKS executa o Kubernetes de forma gerenciada na nuvem AWS.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação",
+    "link": "https://aws.amazon.com/pt/eks/"
+  },
+  {
+    "id": 304,
+    "pergunta": "Uma empresa deseja criar, publicar, proteger, monitorar e versionar APIs RESTful que servirão como porta de entrada para funções AWS Lambda. Qual serviço é o mais adequado?",
+    "opcoes": [
+      "A. Amazon API Gateway",
+      "B. Amazon Route 53",
+      "C. AWS AppSync exclusivamente",
+      "D. Elastic Load Balancing"
+    ],
+    "correta": 0,
+    "dica": "O API Gateway facilita a criação, publicação e segurança de APIs em qualquer escala.",
+    "dificuldade": "Fácil",
+    "categoria": "Rede e Aplicações",
+    "link": "https://aws.amazon.com/pt/api-gateway/"
+  },
+  {
+    "id": 305,
+    "pergunta": "Uma empresa precisa orquestrar uma sequência de várias funções Lambda e outros serviços da AWS como etapas de um fluxo de trabalho visual, com lógica de repetição, espera e tratamento de erros entre as etapas. Qual serviço é o mais indicado?",
+    "opcoes": [
+      "A. Amazon SQS",
+      "B. AWS Step Functions",
+      "C. Amazon SNS",
+      "D. AWS Systems Manager"
+    ],
+    "correta": 1,
+    "dica": "O Step Functions permite coordenar aplicações distribuídas e microsserviços usando fluxos visuais.",
+    "dificuldade": "Médio",
+    "categoria": "Desenvolvimento",
+    "link": "https://aws.amazon.com/pt/step-functions/"
+  },
+  {
+    "id": 306,
+    "pergunta": "Uma empresa deseja construir uma arquitetura orientada a eventos, na qual diferentes serviços da AWS e aplicações de terceiros (SaaS) publicam eventos em um barramento central, que roteia automaticamente cada evento para os serviços de destino apropriados com base em regras. Qual serviço é o mais indicado?",
+    "opcoes": [
+      "A. Amazon EventBridge",
+      "B. Amazon SQS",
+      "C. AWS CloudTrail",
+      "D. Amazon Kinesis exclusivamente"
+    ],
+    "correta": 0,
+    "dica": "O EventBridge conecta aplicativos usando dados de eventos de forma simples e escalável.",
+    "dificuldade": "Médio",
+    "categoria": "Integração",
+    "link": "https://aws.amazon.com/pt/eventbridge/"
+  },
+  {
+    "id": 307,
+    "pergunta": "Uma empresa precisa capturar, processar e analisar, em tempo real, grandes volumes de dados de streaming, como cliques em um site ou leituras contínuas de sensores de IoT. Qual serviço da AWS é o mais adequado?",
+    "opcoes": [
+      "A. Amazon Kinesis",
+      "B. Amazon SQS",
+      "C. AWS Snowball",
+      "D. Amazon RDS"
+    ],
+    "correta": 0,
+    "dica": "O Amazon Kinesis foi feito para processar dados de streaming em tempo real em grande escala.",
+    "dificuldade": "Fácil",
+    "categoria": "Análise de Dados",
+    "link": "https://aws.amazon.com/pt/kinesis/"
+  },
+  {
+    "id": 308,
+    "pergunta": "Uma empresa deseja um banco de dados relacional compatível com MySQL e PostgreSQL, mas com desempenho e disponibilidade superiores aos motores de banco de dados padrão. Qual serviço é o mais indicado?",
+    "opcoes": [
+      "A. Amazon RDS for MySQL padrão",
+      "B. Amazon Aurora",
+      "C. Amazon DynamoDB",
+      "D. Amazon Redshift"
+    ],
+    "correta": 1,
+    "dica": "O Amazon Aurora é um banco de dados relacional construído para a nuvem, com desempenho de até 5x o MySQL tradicional.",
+    "dificuldade": "Fácil",
+    "categoria": "Banco de Dados",
+    "link": "https://aws.amazon.com/pt/rds/aurora/"
+  },
+  {
+    "id": 309,
+    "pergunta": "Uma aplicação web realiza consultas repetitivas e custosas a um banco de dados relacional. A empresa deseja reduzir a latência e a carga no banco de dados adicionando uma camada de cache em memória. Qual serviço da AWS é o mais indicado?",
+    "opcoes": [
+      "A. Amazon ElastiCache (Redis ou Memcached)",
+      "B. Amazon RDS Read Replica apenas",
+      "C. AWS Storage Gateway",
+      "D. Amazon S3 Transfer Acceleration"
+    ],
+    "correta": 0,
+    "dica": "O ElastiCache oferece acesso de baixa latência e alta taxa de transferência com cache em memória.",
+    "dificuldade": "Fácil",
+    "categoria": "Banco de Dados",
+    "link": "https://aws.amazon.com/pt/elasticache/"
+  },
+  {
+    "id": 310,
+    "pergunta": "Uma empresa com usuários espalhados pelo mundo quer melhorar o desempenho e a disponibilidade de uma aplicação TCP/UDP, direcionando o tráfego pela rede privada global da AWS até o ponto de entrada mais próximo, em vez de depender apenas da internet pública. Qual serviço é o mais indicado?",
+    "opcoes": [
+      "A. Amazon CloudFront",
+      "B. AWS Global Accelerator",
+      "C. Amazon Route 53 apenas",
+      "D. AWS Direct Connect"
+    ],
+    "correta": 1,
+    "dica": "O Global Accelerator melhora a performance de tráfego de rede usando a infraestrutura global da AWS.",
+    "dificuldade": "Médio",
+    "categoria": "Rede",
+    "link": "https://aws.amazon.com/pt/global-accelerator/"
+  },
+  {
+    "id": 311,
+    "pergunta": "Uma empresa possui dezenas de VPCs e várias conexões VPN com data centers locais. Gerenciar conexões ponto a ponto entre cada VPC e cada rede local está se tornando extremamente complexo. Qual serviço da AWS simplifica essa topologia, atuando como um hub central de conectividade?",
+    "opcoes": [
+      "A. AWS Transit Gateway",
+      "B. Amazon VPC Peering exclusivamente",
+      "C. AWS Direct Connect Gateway apenas",
+      "D. Elastic Load Balancing"
+    ],
+    "correta": 0,
+    "dica": "O Transit Gateway conecta VPCs e redes locais através de um hub centralizado.",
+    "dificuldade": "Médio",
+    "categoria": "Rede",
+    "link": "https://aws.amazon.com/pt/transit-gateway/"
+  },
+  {
+    "id": 312,
+    "pergunta": "Instâncias EC2 em uma sub-rede privada de uma VPC precisam iniciar conexões de saída para a internet (por exemplo, para baixar atualizações), mas não devem ser diretamente acessíveis a partir da internet. Qual componente da AWS permite isso?",
+    "opcoes": [
+      "A. Internet Gateway",
+      "B. NAT Gateway",
+      "C. VPC Peering",
+      "D. Elastic IP direto na instância privada"
+    ],
+    "correta": 1,
+    "dica": "O NAT Gateway permite que recursos em sub-redes privadas acessem a internet sem aceitar conexões de entrada dela.",
+    "dificuldade": "Fácil",
+    "categoria": "Rede",
+    "link": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html"
+  },
+  {
+    "id": 313,
+    "pergunta": "Qual componente de uma VPC é necessário para permitir a comunicação entre instâncias em uma sub-rede pública e a internet?",
+    "opcoes": [
+      "A. NAT Gateway",
+      "B. Internet Gateway",
+      "C. VPN Gateway",
+      "D. Network ACL"
+    ],
+    "correta": 1,
+    "dica": "O Internet Gateway é o componente que conecta a VPC à internet pública.",
+    "dificuldade": "Fácil",
+    "categoria": "Rede",
+    "link": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html"
+  },
+  {
+    "id": 314,
+    "pergunta": "O que é uma Amazon Machine Image (AMI)?",
+    "opcoes": [
+      "A. Um tipo de instância EC2 otimizado para machine learning",
+      "B. Um modelo que contém as informações necessárias (sistema operacional, configurações, software) para lançar uma instância EC2",
+      "C. Um serviço de monitoramento de instâncias",
+      "D. Um tipo de armazenamento em bloco"
+    ],
+    "correta": 1,
+    "dica": "A AMI fornece a base de software necessária para instanciar máquinas virtuais no EC2.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação",
+    "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html"
+  },
+  {
+    "id": 315,
+    "pergunta": "Uma empresa precisa de um endereço IPv4 público estático, que permaneça o mesmo mesmo que a instância EC2 associada a ele seja parada e reiniciada. Qual recurso da AWS atende a essa necessidade?",
+    "opcoes": [
+      "A. Endereço IP público padrão da instância",
+      "B. Elastic IP",
+      "C. Route 53 Alias Record",
+      "D. NAT Gateway"
+    ],
+    "correta": 1,
+    "dica": "O Elastic IP é um endereço IP estático projetado para computação dinâmica em nuvem.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação e Rede",
+    "link": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"
+  },
+  {
+    "id": 316,
+    "pergunta": "Um desenvolvedor independente quer hospedar um blog simples ou uma aplicação de pequeno porte, com preços previsíveis e mensais fixos, configuração simplificada (servidor, armazenamento e transferência de dados já inclusos), sem lidar com toda a complexidade do EC2/VPC. Qual serviço da AWS é o mais indicado?",
+    "opcoes": [
+      "A. Amazon EC2 configurado manualmente",
+      "B. Amazon Lightsail",
+      "C. AWS Fargate",
+      "D. Amazon ECS"
+    ],
+    "correta": 1,
+    "dica": "O Lightsail oferece recursos virtuais privados fáceis de usar com planos simples e previsíveis.",
+    "dificuldade": "Fácil",
+    "categoria": "Computação",
+    "link": "https://aws.amazon.com/pt/lightsail/"
+  },
+  {
+    "id": 317,
+    "pergunta": "Uma empresa que utiliza aplicações Windows precisa de um sistema de arquivos totalmente gerenciado, compatível nativamente com o protocolo SMB e integrado ao Microsoft Active Directory. Qual serviço da AWS é o mais indicado?",
+    "opcoes": [
+      "A. Amazon EFS",
+      "B. Amazon FSx for Windows File Server",
+      "C. Amazon S3",
+      "D. AWS Storage Gateway apenas"
+    ],
+    "correta": 1,
+    "dica": "O FSx for Windows File Server oferece armazenamento de arquivos totalmente gerenciado e nativo para Windows.",
+    "dificuldade": "Médio",
+    "categoria": "Armazenamento",
+    "link": "https://aws.amazon.com/pt/fsx/windows/"
+  },
+  {
+    "id": 318,
+    "pergunta": "Uma empresa precisa transferir e sincronizar automaticamente, de forma recorrente, grandes volumes de arquivos entre um sistema de armazenamento local (NFS) e o Amazon S3, sem escrever scripts personalizados. Qual serviço da AWS é o mais indicado?",
+    "opcoes": [
+      "A. AWS Snowball apenas",
+      "B. AWS DataSync",
+      "C. AWS Direct Connect",
+      "D. Amazon Kinesis"
+    ],
+    "correta": 1,
+    "dica": "O DataSync automatiza e acelera a movimentação de dados entre storages locais e a AWS.",
+    "dificuldade": "Médio",
+    "categoria": "Armazenamento e Migração",
+    "link": "https://aws.amazon.com/pt/datasync/"
+  },
+  {
+    "id": 319,
+    "pergunta": "Uma empresa deseja migrar seu banco de dados on-premises para o Amazon RDS com o mínimo de tempo de inatividade possível, mantendo o banco de dados de origem totalmente operacional durante a maior parte do processo de migração. Qual serviço é o mais indicado?",
+    "opcoes": [
+      "A. AWS Database Migration Service (AWS DMS)",
+      "B. AWS Snowball",
+      "C. Amazon Redshift",
+      "D. AWS Direct Connect"
+    ],
+    "correta": 0,
+    "dica": "O AWS DMS ajuda a migrar bancos de dados para a AWS de forma rápida e segura, mantendo a origem operacional.",
+    "dificuldade": "Fácil",
+    "categoria": "Banco de Dados e Migração",
+    "link": "https://aws.amazon.com/pt/dms/"
+  },
+  {
+    "id": 320,
+    "pergunta": "Uma empresa deseja fornecer aos seus funcionários remotos desktops virtuais totalmente gerenciados na nuvem, acessíveis de qualquer dispositivo, em vez de distribuir laptops físicos corporativos. Qual serviço da AWS é o mais indicado?",
+    "opcoes": [
+      "A. Amazon WorkSpaces",
+      "B. AWS Systems Manager",
+      "C. Amazon Chime",
+      "D. Amazon Connect"
+    ],
+    "correta": 0,
+    "dica": "O Amazon WorkSpaces é um serviço seguro de desktop como serviço (DaaS) gerenciado na nuvem.",
+    "dificuldade": "Fácil",
+    "categoria": "End-User Computing",
+    "link": "https://aws.amazon.com/pt/workspaces/"
+  },
+  {
+    "id": 321,
+    "pergunta": "Uma empresa de e-commerce precisa enviar e-mails transacionais (confirmação de pedido, redefinição de senha) e newsletters em grande volume para seus clientes de forma confiável e escalável. Qual serviço da AWS é o mais indicado?",
+    "opcoes": [
+      "A. Amazon SNS",
+      "B. Amazon SES (Simple Email Service)",
+      "C. Amazon Connect",
+      "D. AWS Chatbot"
+    ],
+    "correta": 1,
+    "dica": "O SES é um serviço de e-mail em nuvem econômico, flexível e escalável para envio de mensagens.",
+    "dificuldade": "Fácil",
+    "categoria": "Aplicativos e Comunicação",
+    "link": "https://aws.amazon.com/pt/ses/"
+  },
+  {
+    "id": 322,
+    "pergunta": "Uma empresa deseja se proteger contra exclusões ou sobrescritas acidentais de objetos em um bucket do Amazon S3, mantendo um histórico de todas as versões de cada objeto. Qual recurso do Amazon S3 deve ser habilitado?",
+    "opcoes": [
+      "A. S3 Object Lock apenas",
+      "B. S3 Versioning (versionamento de objetos)",
+      "C. S3 Transfer Acceleration",
+      "D. S3 Intelligent-Tiering"
+    ],
+    "correta": 1,
+    "dica": "O versionamento do S3 preserva, recupera e restaura todas as versões de cada objeto armazenado.",
+    "dificuldade": "Fácil",
+    "categoria": "Armazenamento",
+    "link": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html"
+  },
+  {
+    "id": 323,
+    "pergunta": "Qual plano de suporte da AWS é gratuito e incluído automaticamente para todas as contas AWS, oferecendo acesso a documentação, fóruns e suporte básico de faturamento/conta?",
+    "opcoes": [
+      "A. AWS Basic Support",
+      "B. AWS Developer Support",
+      "C. AWS Business Support",
+      "D. AWS Enterprise Support"
+    ],
+    "correta": 0,
+    "dica": "O Basic Support é gratuito para todas as contas e fornece acesso a recursos essenciais de autoatendimento.",
+    "dificuldade": "Fácil",
+    "categoria": "Suporte",
+    "link": "https://aws.amazon.com/pt/premiumsupport/plans/"
+  },
+  {
+    "id": 324,
+    "pergunta": "Uma pequena equipe está testando e avaliando a AWS pela primeira vez e quer um canal de suporte técnico por e-mail durante o horário comercial, a um custo mais baixo do que o plano Business. Qual plano de suporte é mais indicado?",
+    "opcoes": [
+      "A. AWS Basic Support",
+      "B. AWS Developer Support",
+      "C. AWS Enterprise Support",
+      "D. AWS Enterprise On-Ramp obrigatoriamente"
+    ],
+    "correta": 1,
+    "dica": "O plano Developer fornece acesso a suporte técnico por e-mail em horário comercial para testes e desenvolvimento.",
+    "dificuldade": "Fácil",
+    "categoria": "Suporte",
+    "link": "https://aws.amazon.com/pt/premiumsupport/plans/"
+  },
+  {
+    "id": 325,
+    "pergunta": "Qual modelo de precificação do Amazon EC2 permite pagar por capacidade de computação por hora ou por segundo, sem nenhum compromisso de longo prazo ou pagamento antecipado?",
+    "opcoes": [
+      "A. Instâncias Reservadas",
+      "B. Instâncias sob demanda (On-Demand)",
+      "C. Savings Plans",
+      "D. Instâncias Spot"
+    ],
+    "correta": 1,
+    "dica": "Instâncias sob demanda dão flexibilidade total sem compromisso de longo prazo.",
+    "dificuldade": "Fácil",
+    "categoria": "Precificação",
+    "link": "https://aws.amazon.com/pt/ec2/pricing/on-demand/"
+  },
+  {
+    "id": 326,
+    "pergunta": "Uma empresa possui licenças de software existentes vinculadas a núcleos de servidor físico ou a IDs de socket (licenciamento BYOL) e precisa garantir que suas instâncias EC2 sejam executadas em um servidor físico dedicado exclusivamente a ela. Qual opção de instância do Amazon EC2 atende a esse requisito?",
+    "opcoes": [
+      "A. Instâncias sob demanda padrão",
+      "B. Dedicated Hosts",
+      "C. Instâncias Spot",
+      "D. Instâncias Reservadas padrão (compartilhadas)"
+    ],
+    "correta": 1,
+    "dica": "Dedicated Hosts fornecem servidores físicos dedicados ao seu uso para atender a requisitos estritos de licenciamento.",
+    "dificuldade": "Médio",
+    "categoria": "Computação e Precificação",
+    "link": "https://aws.amazon.com/pt/ec2/dedicated-hosts/"
+  },
+  {
+    "id": 327,
+    "pergunta": "Uma empresa deseja encontrar e implantar rapidamente um software de terceiros (por exemplo, uma AMI pré-configurada de um fabricante específico) diretamente em sua conta AWS, com cobrança integrada à fatura da AWS. Qual recurso deve ser utilizado?",
+    "opcoes": [
+      "A. AWS Marketplace",
+      "B. AWS Artifact",
+      "C. AWS Trusted Advisor",
+      "D. AWS Organizations"
+    ],
+    "correta": 0,
+    "dica": "O AWS Marketplace é uma loja digital para encontrar e assinar softwares compatíveis com a AWS.",
+    "dificuldade": "Fácil",
+    "categoria": "Marketplace",
+    "link": "https://aws.amazon.com/pt/marketplace"
+  },
+  {
+    "id": 328,
+    "pergunta": "Uma empresa precisa do relatório mais abrangente e detalhado possível sobre seus custos e uso da AWS, incluindo metadados adicionais de produtos, preços e descontos, para importar em suas próprias ferramentas de análise. Qual recurso da AWS fornece esse nível de detalhe?",
+    "opcoes": [
+      "A. AWS Budgets",
+      "B. AWS Cost and Usage Report (CUR)",
+      "C. AWS Pricing Calculator",
+      "D. AWS Trusted Advisor"
+    ],
+    "correta": 1,
+    "dica": "O CUR contém o conjunto mais abrangente de dados de custos e uso disponíveis na AWS.",
+    "dificuldade": "Médio",
+    "categoria": "Cobrança e Custos",
+    "link": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv3/billing-reports-cur.html"
+  },
+  {
+    "id": 329,
+    "pergunta": "Uma empresa deseja identificar quanto cada departamento (Marketing, Engenharia, Vendas) está gastando na AWS, categorizando os custos por meio de rótulos aplicados aos recursos. Qual recurso da AWS permite esse rastreamento?",
+    "opcoes": [
+      "A. Tags de alocação de custos (Cost Allocation Tags)",
+      "B. AWS Organizations SCPs",
+      "C. AWS Config Rules",
+      "D. Reserved Instance Marketplace"
+    ],
+    "correta": 0,
+    "dica": "Tags de alocação de custos ajudam a rastrear os gastos da AWS em um nível detalhado de categorização.",
+    "dificuldade": "Fácil",
+    "categoria": "Cobrança e Custos",
+    "link": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv3/cost-alloc-tags.html"
+  },
+  {
+    "id": 330,
+    "pergunta": "Em relação à precificação de armazenamento do Amazon S3, qual afirmação está correta?",
+    "opcoes": [
+      "A. O preço por GB é sempre fixo, independentemente da quantidade total armazenada",
+      "B. Quanto mais dados uma conta armazena em uma classe de armazenamento do S3 em um mês, menor tende a ser o preço por GB, devido a camadas de preços (tiered pricing)",
+      "C. O Amazon S3 cobra apenas pela quantidade de solicitações (requests), nunca pelo armazenamento",
+      "D. O preço do S3 é idêntico em todas as Regiões do mundo"
+    ],
+    "correta": 1,
+    "dica": "O S3 utiliza precificação em camadas com descontos baseados no volume armazenado.",
+    "dificuldade": "Médio",
+    "categoria": "Armazenamento e Precificação",
+    "link": "https://aws.amazon.com/pt/s3/pricing/"
+  },
+  {
+    "id": 331,
+    "pergunta": "Em termos gerais de precificação da AWS, como costuma funcionar a cobrança de transferência de dados (data transfer) para a maioria dos serviços?",
+    "opcoes": [
+      "A. Tanto a transferência de dados de entrada (para a AWS) quanto a de saída são sempre cobradas da mesma forma",
+      "B. A transferência de dados de entrada (inbound, da internet para a AWS) é geralmente gratuita, enquanto a de saída (outbound, da AWS para a internet) é geralmente cobrada",
+      "C. Toda transferência de dados é sempre gratuita, independentemente da direção",
+      "D. Apenas clientes com Enterprise Support pagam por transferência de dados"
+    ],
+    "correta": 1,
+    "dica": "Na AWS, mover dados para dentro é grátis, enquanto a transferência de dados saindo para a internet pública geralmente possui custo.",
+    "dificuldade": "Fácil",
+    "categoria": "Precificação",
+    "link": "https://aws.amazon.com/pt/ec2/pricing/on-demand/"
+  },
+  {
+    "id": 332,
+    "pergunta": "O AWS Free Tier é composto por diferentes tipos de ofertas gratuitas. Qual das opções a seguir descreve corretamente essas categorias?",
+    "opcoes": [
+      "A. Apenas ofertas 'sempre gratuitas' (Always Free), sem nenhum limite de tempo em qualquer serviço",
+      "B. Ofertas de 12 meses grátis (para contas novas, dentro de certos limites de uso), ofertas 'sempre gratuitas' (Always Free) para determinados serviços, e testes de curto prazo (short-term trials) para alguns serviços específicos",
+      "C. Apenas testes de curto prazo de 7 dias, sem outras modalidades",
+      "D. O Free Tier se aplica exclusivamente ao Amazon S3"
+    ],
+    "correta": 1,
+    "dica": "O nível gratuito da AWS inclui categorias de 12 meses, sempre grátis e testes de curto prazo.",
+    "dificuldade": "Fácil",
+    "categoria": "Precificação",
+    "link": "https://aws.amazon.com/pt/free/"
   }
 ]
