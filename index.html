@@ -10,7 +10,7 @@
   <link rel="apple-touch-icon" href="bot-icon.svg">
 
   <style>
-    /* --- TEMA 2 (PADRÃO ESCURO QUE VOCÊ GOSTA) --- */
+    /* --- TEMA 2 (PADRÃO ESCURO MODERNO) --- */
     :root, body.tema-2 {
       --bg: #0b0f19;
       --card-bg: #161e2e;
@@ -467,7 +467,7 @@
     <p id="progresso">Prepare-se para o CLF-C02</p>
   </header>
 
-  <!-- TELA INICIAL COM AS OPÇÕES ORIGINAIS -->
+  <!-- TELA INICIAL COM O TUTOR -->
   <div id="setup-card" class="card">
     
     <div class="bot-section">
@@ -481,7 +481,7 @@
         <circle cx="50" cy="12" r="4" fill="#ff9900"/>
       </svg>
       <div class="bot-speech">
-        👋 Olá! Eu sou o <strong>CloudBot</strong>, seu tutor virtual! Escreva seu nome abaixo para testarmos seu nível de conhecimento na AWS!
+        👋 Olá! Eu sou o <strong>Academy Tutor CloudBot</strong>! Escreva seu nome abaixo para testarmos seu nível de conhecimento!
       </div>
     </div>
 
@@ -506,7 +506,7 @@
         <button class="btn-select active" onclick="setOpt('qtd', 'todas', this)">Todas</button>
         <button class="btn-select" onclick="setOpt('qtd', 10, this)">10</button>
         <button class="btn-select" onclick="setOpt('qtd', 20, this)">20</button>
-        <button class="btn-select" onclick="setOpt('qtd', 'custom', this)">Digitar Qtd.</button>
+        <button class="btn-select" onclick="setOpt('qtd', 'custom', this)">Definir Qtd.</button>
       </div>
       <input type="number" id="qtd-custom-input" class="input-custom" placeholder="Digite a quantidade de questões" min="1">
     </div>
@@ -584,7 +584,7 @@
 </div>
 
 <footer>
-  <p>© 2026 djair2113. Uso estritamente educacional para a certificação AWS CLF-C02.</p>
+  <p>© 2026 djair2113. Uso estritamente educacional para a certificação CLF-C02.</p>
   <p>Proibida a comercialização.</p>
 </footer>
 
@@ -606,7 +606,6 @@
     tempo: 0
   };
 
-  // --- GERENCIAMENTO DE TEMA ---
   function atualizarBotaoTema(tema) {
     const icone = document.getElementById('theme-icon');
     const texto = document.getElementById('theme-text');
@@ -668,7 +667,7 @@
 
   function iniciarSimulado() {
     const inputNome = document.getElementById('user-name').value.trim();
-    nomeUsuario = inputNome ? inputNome : "Futuro AWS Certified";
+    nomeUsuario = inputNome ? inputNome : "Estudante";
 
     questoesFiltradas = [...todasQuestoes];
 
@@ -762,7 +761,7 @@
     const q = questoesFiltradas[indiceAtual];
     
     document.getElementById('progresso').innerText = `Força, ${nomeUsuario}! Questão ${indiceAtual + 1} de ${questoesFiltradas.length}`;
-    document.getElementById('categoria').innerText = `${q.categoria} | ${q.dificuldade}`;
+    document.getElementById('categoria').innerText = `${q.categoria || 'Geral'} | ${q.dificuldade || ''}`;
     document.getElementById('pergunta').innerText = q.pergunta;
 
     let progressoPct = ((indiceAtual + 1) / questoesFiltradas.length) * 100;
@@ -770,7 +769,7 @@
     
     const dicaBox = document.getElementById('dica');
     dicaBox.style.display = 'none';
-    dicaBox.innerText = `💡 Dica: ${q.dica}`;
+    dicaBox.innerText = `💡 Dica: ${q.dica || 'Sem dica disponível'}`;
 
     const conteinerOpcoes = document.getElementById('opcoes');
     conteinerOpcoes.innerHTML = '';
@@ -860,9 +859,9 @@
 
     const botFeedback = document.getElementById('bot-feedback');
     if (porcentagem >= 70) {
-      botFeedback.innerHTML = `🎉 <strong>Parabéns, ${nomeUsuario}!</strong> Você alcançou <strong>${porcentagem}%</strong> de acertos e seria <strong>APROVADO(A)</strong> no exame oficial AWS! Continue praticando para gabaritar na prova real!`;
+      botFeedback.innerHTML = `🎉 <strong>Parabéns, ${nomeUsuario}!</strong> Você alcançou <strong>${porcentagem}%</strong> de acertos e obteve excelente desempenho! Continue praticando para gabaritar!`;
     } else {
-      botFeedback.innerHTML = `⚠️ <strong>Valeu a tentativa, ${nomeUsuario}!</strong> Você obteve <strong>${porcentagem}%</strong> de acertos. A nota de corte da AWS é 70%. Não desanime: confira a correção e os materiais de estudo logo abaixo para mandar bem no próximo teste! 💪`;
+      botFeedback.innerHTML = `⚠️ <strong>Bom esforço, ${nomeUsuario}!</strong> Você obteve <strong>${porcentagem}%</strong> de acertos. Confira a correção e os materiais de estudo abaixo para revisar os conceitos. 💪`;
     }
 
     gerarRevisao();
@@ -893,8 +892,8 @@
         htmlContent += `<div style="font-size:0.85rem; color:#94a3b8; margin-top:0.5rem;">💡 <b>Explicação:</b> ${q.dica}</div>`;
       }
 
-      const urlAws = q.link || `https://aws.amazon.com/pt/search/?searchQuery=${encodeURIComponent(q.categoria || 'AWS Cloud')}`;
-      htmlContent += `<a href="${urlAws}" target="_blank" rel="noopener noreferrer" class="review-aws-link">📖 Estudar este tema na Documentação AWS ↗</a>`;
+      const urlAws = q.link || `https://duckduckgo.com/?q=${encodeURIComponent(q.categoria || 'Cloud Computing')}`;
+      htmlContent += `<a href="${urlAws}" target="_blank" rel="noopener noreferrer" class="review-aws-link">📖 Estudar este tema ↗</a>`;
 
       div.innerHTML = htmlContent;
       container.appendChild(div);
