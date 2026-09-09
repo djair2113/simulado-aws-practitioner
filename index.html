@@ -481,7 +481,7 @@
         <circle cx="50" cy="12" r="4" fill="#ff9900"/>
       </svg>
       <div class="bot-speech">
-        👋 Olá! Eu sou o <strong>Academy Tutor CloudBot</strong>! Escreva seu nome abaixo para testarmos seu nível de conhecimento!
+        👋 Olá! Eu sou o <strong>Academy Tutor CloudBot</strong>! Vamos testar seus conhecimentos e preparar para a certificação <strong>CLF-C02</strong>. Escreva seu nome abaixo para começar!
       </div>
     </div>
 
@@ -859,9 +859,9 @@
 
     const botFeedback = document.getElementById('bot-feedback');
     if (porcentagem >= 70) {
-      botFeedback.innerHTML = `🎉 <strong>Parabéns, ${nomeUsuario}!</strong> Você alcançou <strong>${porcentagem}%</strong> de acertos e obteve excelente desempenho! Continue praticando para gabaritar!`;
+      botFeedback.innerHTML = `🎉 <strong>Parabéns, ${nomeUsuario}!</strong> Você alcançou <strong>${porcentagem}%</strong> de acertos e obteve excelente desempenho na preparação para o CLF-C02! Continue praticando!`;
     } else {
-      botFeedback.innerHTML = `⚠️ <strong>Bom esforço, ${nomeUsuario}!</strong> Você obteve <strong>${porcentagem}%</strong> de acertos. Confira a correção e os materiais de estudo abaixo para revisar os conceitos. 💪`;
+      botFeedback.innerHTML = `⚠️ <strong>Bom esforço, ${nomeUsuario}!</strong> Você obteve <strong>${porcentagem}%</strong> de acertos. Confira a correção e os materiais de estudo abaixo para revisar os conceitos para o CLF-C02. 💪`;
     }
 
     gerarRevisao();
