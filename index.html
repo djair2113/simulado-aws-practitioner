@@ -10,9 +10,7 @@
   <link rel="apple-touch-icon" href="bot-icon.svg">
 
   <style>
-    /* ==========================================
-       TEMA 1: VERSÃO CLÁSSICA / CLEAN (Opção 1)
-       ========================================== */
+    /* --- TEMA 1: CLÁSSICO / LIMPO --- */
     body.tema-1 {
       --bg: #f8fafc;
       --card-bg: #ffffff;
@@ -27,13 +25,9 @@
       --input-bg: #f8fafc;
       --btn-bg: #e2e8f0;
       --btn-hover: #cbd5e1;
-      --card-radius: 16px;
-      --max-width: 680px;
     }
 
-    /* ==========================================
-       TEMA 2: DESIGN DA IMAGEM / APP (Opção 2)
-       ========================================== */
+    /* --- TEMA 2: DESIGN DA IMAGEM (MODERNO / APP MOBILE) --- */
     :root, body.tema-2 {
       --bg: #0b0f19;
       --card-bg: #121824;
@@ -48,8 +42,6 @@
       --input-bg: #0a0e17;
       --btn-bg: #1a2233;
       --btn-hover: #26334d;
-      --card-radius: 20px;
-      --max-width: 480px; /* Estilo mobile elegante da imagem */
     }
 
     body {
@@ -64,13 +56,12 @@
       box-sizing: border-box;
       flex-direction: column;
       align-items: center;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .container {
-      max-width: var(--max-width);
+      max-width: 480px; /* Estilo de tela mobile elegante */
       width: 100%;
-      transition: max-width 0.3s ease;
     }
 
     /* Barra Superior com Botão de Tema */
@@ -85,7 +76,7 @@
       background: var(--card-bg);
       color: var(--text);
       border: 1px solid var(--border);
-      padding: 0.4rem 0.9rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 20px;
       cursor: pointer;
       font-size: 0.8rem;
@@ -103,7 +94,7 @@
     }
 
     header h1 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       margin: 0;
       color: var(--primary);
       text-shadow: 0 0 10px var(--primary-glow);
@@ -115,7 +106,7 @@
       font-size: 0.88rem;
     }
 
-    /* Bloco do Tutor Estilo App */
+    /* Bloco do Tutor Estilo App (AWS Academy Tutor) */
     .academy-tutor-box {
       display: flex;
       align-items: center;
@@ -148,12 +139,11 @@
 
     .card {
       background-color: var(--card-bg);
-      border-radius: var(--card-radius);
+      border-radius: 20px;
       padding: 1.5rem;
       border: 1px solid var(--border);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
       margin-bottom: 1rem;
-      transition: background-color 0.3s, border-color 0.3s;
     }
 
     .form-group {
@@ -208,7 +198,7 @@
     .btn-diff.active {
       color: var(--text);
       border-color: var(--primary);
-      background: rgba(255, 153, 0, 0.15);
+      background: rgba(255, 153, 0, 0.1);
       box-shadow: 0 0 8px var(--primary-glow);
     }
 
@@ -427,7 +417,7 @@
   <div class="top-bar">
     <span style="font-size: 0.85rem; color: var(--text-muted);">AWS Cloud Practitioner</span>
     <button class="btn-theme" onclick="alternarTema()">
-      <span id="theme-icon">🌙</span> <span id="theme-text">Tema 2</span>
+      <span id="theme-icon">🌙</span> <span id="theme-text">Tema</span>
     </button>
   </div>
 
@@ -436,7 +426,7 @@
     <p id="progresso">Força, Djair! Preparatório CLF-C02</p>
   </header>
 
-  <!-- TELA INICIAL (LAYOUT DA SUA IMAGEM) -->
+  <!-- TELA INICIAL (COM O LAYOUT DA SUA IMAGEM) -->
   <div id="setup-card" class="card">
     
     <div class="academy-tutor-box">
@@ -491,7 +481,7 @@
     <button class="btn-main" onclick="iniciarSimulado()">Iniciar Simulado</button>
   </div>
 
-  <!-- CADERNO DE ERROS -->
+  <!-- CADERNO DE ERROS CARD -->
   <div class="errors-card" onclick="alert('Funcionalidade de Caderno de Erros em desenvolvimento!')">
     <div>
       <h4>Meus Cadernos de Erros</h4>
@@ -587,10 +577,10 @@
     const texto = document.getElementById('theme-text');
     if (tema === 'tema-1') {
       icone.innerText = '☀️';
-      texto.innerText = 'Tema 1';
+      texto.innerText = 'Claro';
     } else {
       icone.innerText = '🌙';
-      texto.innerText = 'Tema 2';
+      texto.innerText = 'Escuro';
     }
   }
 
