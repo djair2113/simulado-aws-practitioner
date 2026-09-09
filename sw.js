@@ -1,9 +1,10 @@
-const CACHE_NAME = 'aws-quiz-v8'; // <--- Atualize o número da versão aqui
+const CACHE_NAME = 'aws-quiz-v7';
 const urlsToCache = [
   './',
   './index.html',
   './questoes.json',
   './manifest.json'
+  // Adicione aqui outros arquivos estáticos do seu app (como ícones ou CSS/JS, se houver)
 ];
 
 // Instalação do Service Worker e armazenamento no cache
@@ -39,6 +40,7 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
       .then(response => {
+        // Retorna do cache se encontrar, senão busca na rede
         return response || fetch(event.request);
       })
   );
