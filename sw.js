@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aws-quiz-v6';
+const CACHE_NAME = 'aws-quiz-v7';
 const urlsToCache = [
   './',
   './index.html',
