@@ -124,7 +124,7 @@
 
     .bot-avatar {
       width: 75px;
-      height: 100px;
+      height: 75px;
       flex-shrink: 0;
       animation: float 3s ease-in-out infinite;
     }
@@ -470,28 +470,25 @@
     <p id="progresso">Prepare-se para o CLF-C02</p>
   </header>
 
-  <!-- TELA INICIAL COM O TUTOR (CORPO INTEIRO) -->
+  <!-- TELA INICIAL COM O TUTOR (VISUAL SIMPLES, FOFO E FLUTUANTE) -->
   <div id="setup-card" class="card">
     
     <div class="bot-section">
-      <svg class="bot-avatar" viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Antena -->
-        <line x1="40" y1="12" x2="40" y2="25" stroke="#ff9900" stroke-width="3"/>
-        <circle cx="40" cy="8" r="4" fill="#ff9900"/>
-        <!-- Cabeça -->
-        <rect x="20" y="25" width="40" height="30" rx="8" fill="#1e293b" stroke="#ff9900" stroke-width="2.5"/>
-        <circle cx="32" cy="38" r="4" fill="#38bdf8"/>
-        <circle cx="48" cy="38" r="4" fill="#38bdf8"/>
-        <path d="M 34 46 Q 40 51 46 46" stroke="#ff9900" stroke-width="2.5" stroke-linecap="round"/>
-        <!-- Corpo -->
-        <rect x="25" y="58" width="30" height="38" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
-        <circle cx="40" cy="73" r="5" fill="#ff9900"/>
-        <!-- Braços -->
-        <line x1="15" y1="65" x2="25" y2="65" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
-        <line x1="55" y1="65" x2="65" y2="65" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
-        <!-- Pernas -->
-        <line x1="32" y1="96" x2="32" y2="112" stroke="#ff9900" stroke-width="3" stroke-linecap="round"/>
-        <line x1="48" y1="96" x2="48" y2="112" stroke="#ff9900" stroke-width="3" stroke-linecap="round"/>
+      <svg class="bot-avatar" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Antena flutuante minimalista -->
+        <line x1="50" y1="12" x2="50" y2="24" stroke="#ff9900" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="50" cy="8" r="4" fill="#ff9900"/>
+        
+        <!-- Corpo Cápsula Arredondado Futurista (Sem braços/pernas) -->
+        <rect x="22" y="24" width="56" height="56" rx="26" fill="#1e293b" stroke="#38bdf8" stroke-width="2.5"/>
+        
+        <!-- Visor / Olhos Expressivos -->
+        <rect x="30" y="38" width="40" height="22" rx="8" fill="#0f172a" stroke="#ff9900" stroke-width="1.5"/>
+        <circle cx="42" cy="49" r="4" fill="#38bdf8"/>
+        <circle cx="58" cy="49" r="4" fill="#38bdf8"/>
+        
+        <!-- Aura de propulsão leve na base -->
+        <ellipse cx="50" cy="86" rx="14" ry="3" fill="rgba(56, 189, 248, 0.4)"/>
       </svg>
       <div class="bot-speech">
         👋 Olá! Eu sou o <strong>CloudBot</strong>! Vamos testar seus conhecimentos e nos preparar para a certificação <strong>CLF-C02</strong>. Escreva seu nome abaixo para começar!
@@ -567,24 +564,21 @@
   <div id="result-card" class="card" style="display: none; text-align: center;">
     
     <div class="bot-section" style="text-align: left;">
-      <svg class="bot-avatar" viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Antena -->
-        <line x1="40" y1="12" x2="40" y2="25" stroke="#ff9900" stroke-width="3"/>
-        <circle cx="40" cy="8" r="4" fill="#ff9900"/>
-        <!-- Cabeça -->
-        <rect x="20" y="25" width="40" height="30" rx="8" fill="#1e293b" stroke="#ff9900" stroke-width="2.5"/>
-        <circle cx="32" cy="38" r="4" fill="#38bdf8"/>
-        <circle cx="48" cy="38" r="4" fill="#38bdf8"/>
-        <path d="M 34 46 Q 40 51 46 46" stroke="#ff9900" stroke-width="2.5" stroke-linecap="round"/>
-        <!-- Corpo -->
-        <rect x="25" y="58" width="30" height="38" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
-        <circle cx="40" cy="73" r="5" fill="#ff9900"/>
-        <!-- Braços -->
-        <line x1="15" y1="65" x2="25" y2="65" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
-        <line x1="55" y1="65" x2="65" y2="65" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
-        <!-- Pernas -->
-        <line x1="32" y1="96" x2="32" y2="112" stroke="#ff9900" stroke-width="3" stroke-linecap="round"/>
-        <line x1="48" y1="96" x2="48" y2="112" stroke="#ff9900" stroke-width="3" stroke-linecap="round"/>
+      <svg class="bot-avatar" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Antena flutuante minimalista -->
+        <line x1="50" y1="12" x2="50" y2="24" stroke="#ff9900" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="50" cy="8" r="4" fill="#ff9900"/>
+        
+        <!-- Corpo Cápsula Arredondado Futurista (Sem braços/pernas) -->
+        <rect x="22" y="24" width="56" height="56" rx="26" fill="#1e293b" stroke="#38bdf8" stroke-width="2.5"/>
+        
+        <!-- Visor / Olhos Expressivos -->
+        <rect x="30" y="38" width="40" height="22" rx="8" fill="#0f172a" stroke="#ff9900" stroke-width="1.5"/>
+        <circle cx="42" cy="49" r="4" fill="#38bdf8"/>
+        <circle cx="58" cy="49" r="4" fill="#38bdf8"/>
+        
+        <!-- Aura de propulsão leve na base -->
+        <ellipse cx="50" cy="86" rx="14" ry="3" fill="rgba(56, 189, 248, 0.4)"/>
       </svg>
       <div class="bot-speech" id="bot-feedback"></div>
     </div>
@@ -858,7 +852,6 @@
   }
 
   function dispararConfete() {
-    // Efeito de confete festivo cobrindo a tela
     confetti({
       particleCount: 120,
       spread: 70,
@@ -891,7 +884,6 @@
 
     const botFeedback = document.getElementById('bot-feedback');
     
-    // Se atingir 70% ou mais, dispara o confete na tela!
     if (porcentagem >= 70) {
       dispararConfete();
       botFeedback.innerHTML = `🎉 <strong>Parabéns, ${nomeUsuario}!</strong> Você alcançou <strong>${porcentagem}%</strong> de acertos e atingiu a meta para o CLF-C02! Excelente trabalho! 🚀`;
